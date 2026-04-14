@@ -1,0 +1,242 @@
+{
+  "annual_financial_statements": {
+    "term": "Annual Financial Statements",
+    "definition": "At the end of each year a government produces a series of financial statements that provide different perspectives on financial performance. Financial statements are audited by an auditor from outside the government to help ensure they are correct.",
+    "stewardInsights": [
+      "Annual financial statements contain a lot of information. Much of that information is hard to understand for non-experts. The savvy steward knows the critical few pieces of information in the financial statement and focuses on those.",
+      "Ask about \"change in net position\": is this going up or down? Up is good, down is bad. Look at this over multiple years.",
+      "Ask about changes in fund balance. Fund balance is essentially the accumulated results of surpluses and deficits over the history of the government. Look at this over multiple years. This measure is not as simple as \"up is good and down is bad\" as there could be very good reasons for a government to use fund balance, but it is still a good clue."
+    ]
+  },
+  "assets": {
+    "term": "Assets",
+    "definition": "Assets are resources that a government owns or controls that have value. They include cash, investments, land, buildings, roads, equipment, and amounts owed to the government.",
+    "stewardInsights": [
+      "Not all public assets are the same kind of asset. Some — like cash or land — can be sold or generate revenue. Others — like a local road — cannot be sold and will never directly generate revenue but still require ongoing maintenance."
+    ]
+  },
+  "budget": {
+    "term": "Budget",
+    "definition": "The budget provides authorization to levy taxes and spend money. The budget lists the sources of money the government expects to use and the money it plans to spend. By law, the sources have to equal (or exceed) the spending.",
+    "stewardInsights": [
+      "A budget that is balanced by the legal definition may not actually be financially sustainable. Read on to see why!",
+      "A budget is the most important policy document a government produces. It defines what will and what won't get done by virtue of where the money goes."
+    ]
+  },
+  "budget_to_actual_exception_reporting": {
+    "term": "Budget-to-Actual Exception Reporting",
+    "definition": "Reports that put the focus on things that are not going according to plan (the exceptions), rather than treating all information equally. This allows the steward to focus their attention on where it matters.",
+    "stewardInsights": [
+      "Ask for \"stop light\" presentation where color-coding and/or other visual indicators quickly draw the eye to exceptions.",
+      "Quarterly reports may be sufficient for most revenues and expenditures; monthly for critical or less predictable categories.",
+      "Ask for context to help interpret exceptions. Short-term forecasts reveal if exceptions are predicted to get better or worse. Historical patterns can show how unusual (or not) an exception is."
+    ]
+  },
+  "capital_assets": {
+    "term": "Capital Assets",
+    "definition": "Buildings, transportation systems (roads, etc.) and other costly items that are expected to serve the community for many years are called capital assets.",
+    "stewardInsights": [
+      "The initial acquisition of an asset often gets a lot of attention. Much less attention goes to the regular maintenance of the asset. Maintenance is needed to keep the asset in good working order for those who rely on it and to protect the value of the original investment.",
+      "Not keeping up with maintenance creates a quiet crisis — assets become more vulnerable to catastrophic failure, the quality of service to the public degrades, and long-term costs rise."
+    ]
+  },
+  "compounding": {
+    "term": "Compounding",
+    "definition": "Compounding is what happens when a problem — or an investment — multiplies over time. The longer it goes unaddressed, the faster it grows. The classic illustration is a credit card balance. If you owe $10,000 at 20% interest and make no payments, you don't just owe $12,000 after a year — you owe $12,000, and then interest accrues on that larger amount the following year, and on the even larger amount the year after that. The debt doesn't grow in a straight line. It accelerates.",
+    "stewardInsights": [
+      "Compounding works against governments in two powerful ways: unfunded pension obligations and deferred infrastructure maintenance. Both grow not just because the underlying problem persists, but because the cost of addressing them increases over time.",
+      "The flip side is equally powerful: early action compounds too. A government that addresses a pension shortfall ten years earlier than it otherwise would have doesn't just save the cost of ten years of contributions — it saves the compounding growth on everything it didn't pay.",
+      "Time is either your most powerful ally or your most dangerous enemy in public finance. Compounding is why."
+    ]
+  },
+  "deferred_maintenance": {
+    "term": "Deferred Maintenance",
+    "definition": "Deferred maintenance is the accumulation of repair and upkeep work on capital assets — roads, buildings, water systems, equipment — that has been postponed rather than performed on schedule. It happens when the annual budget doesn't allocate sufficient funds for maintenance, and the work gets pushed to future years.",
+    "stewardInsights": [
+      "Deferred maintenance is one of the most common and dangerous forms of fiscal risk. It is easy to defer because the consequences are invisible in the short term. The road still functions. The roof still holds. The pipes still flow. But the cost of addressing deferred maintenance grows over time — a road that needed resurfacing becomes a road that needs full reconstruction. The cost doesn't disappear. It multiplies.",
+      "Ask whether your government has an asset inventory that tracks the condition of major assets over time. If it doesn't, that is itself a warning sign. You cannot manage what you cannot see. A government that doesn't know the condition of its assets is accumulating risk it hasn't measured.",
+      "Deferred maintenance doesn't appear as a liability on the financial statements the way a bond or a pension obligation does. That invisibility is precisely what makes it dangerous. The savvy steward asks about it explicitly."
+    ]
+  },
+  "departments": {
+    "term": "Departments",
+    "definition": "Departments are administrative units. In budgeting they are used to organize costs. Common departments include public works, fire, police, library and more.",
+    "stewardInsights": [
+      "Departmental budgets are important for controlling costs during the year. The steward can monitor if department managers are staying within their budget or not.",
+      "However, departmental budgets are an incomplete perspective. They are not clear about which programs and services are being provided to the public, much less the quality and quantity of service.",
+      "Overemphasis on a departmental perspective during budgeting can create severe dysfunctions, where department managers engage in destructive competition with one another for limited budget resources."
+    ]
+  },
+  "efficiency_savings": {
+    "term": "Efficiency Savings",
+    "definition": "Governments can find ways to use taxpayer money more wisely by delivering the same services at lower cost.",
+    "stewardInsights": [
+      "More efficient ways of working often save staff time, but converting saved time into lower budgets can be tricky."
+    ]
+  },
+  "fund_balance": {
+    "term": "Fund Balance",
+    "definition": "Fund balance is the accumulated surplus in a government's operating funds — what's left over when you subtract everything the government has spent from everything it has taken in, going all the way back. It is years of surpluses and deficits added together.",
+    "stewardInsights": [
+      "Fund balance and reserves are related but not the same thing. Fund balance is an accounting concept — it's what the financial statements show. Reserves are a budgeting concept — they're the portion of fund balance that the government has deliberately set aside for specific purposes. Ask your finance director to explain the relationship between the two for your government.",
+      "Fund balance trending downward over multiple years is a warning sign worth taking seriously, even if each individual year's budget was technically balanced. The trend tells a story the annual snapshot doesn't."
+    ]
+  },
+  "liabilities": {
+    "term": "Liabilities",
+    "definition": "Liabilities are amounts a government owes — to employees, vendors, bondholders, and others. They include accounts payable, bonds, pension obligations, and other post-employment benefit obligations.",
+    "stewardInsights": [
+      "The most visible liabilities — like bonds — are often the most manageable because they're explicit, scheduled, and priced. The more dangerous liabilities are the hidden ones: pension obligations that have been quietly underfunded and deferred maintenance that has no obvious price tag until something fails.",
+      "A government's liabilities can grow without anyone making a deliberate decision to take on more debt. Every year a pension contribution falls short of what's required, the liability grows automatically — whether or not anyone notices."
+    ]
+  },
+  "line_items": {
+    "term": "Line Items",
+    "definition": "Line items describe spending in detail, like \"salaries,\" \"benefits,\" or \"contractual services\". Line items are useful for cost control because actual spending can be compared to what was budgeted. Line items are less helpful for making savvy decisions about the best use of available funds during budget planning.",
+    "stewardInsights": [
+      "Line-items are a cost-control tool, not the fundamental building block of a budget. However, they often are mistaken for the fundamental building block.",
+      "Complement line-items with other perspectives that are necessary for savvy budget planning. These include: rigorous revenue forecasts to provide insight into how much money is available; a sense of community priorities so that money can be directed to the most urgent needs; information on programs and services the government provides so that the trade-offs involved in moving funds from one purpose to another can be wisely considered."
+    ]
+  },
+  "long_term_capital_planning": {
+    "term": "Long-term Capital Planning",
+    "definition": "Many governments purchase or build buildings, transportation systems (roads, etc.) and other costly items that are expected to serve the community for many years. These are called \"capital assets\". A long-term capital plan projects out such purchases for the next five to ten years or even longer. This provides the foresight to arrange funding for these large purposes.",
+    "stewardInsights": [
+      "Capital plans sometimes become \"wish lists\". Know the difference between capital assets on the plan that have clearly defined funding sources and those that don't.",
+      "The total cost to operate and maintain a capital asset over its life often exceeds the cost to initially acquire it. The capital plan should address how operation and maintenance will be funded, not just the initial acquisition."
+    ]
+  },
+  "long_term_financial_forecast": {
+    "term": "Long-term Financial Forecast",
+    "definition": "A long-term financial forecast projects a government's revenues and expenditures out over a period of several years — typically five to ten — to help understand whether current trends are sustainable.",
+    "stewardInsights": [
+      "Many governments don't produce a formal long-term forecast. If yours doesn't, that's worth knowing — and worth encouraging. A forecast doesn't need to be precise to be useful. Its value is in surfacing assumptions, identifying risks, and making the consequences of today's decisions visible before they become irreversible.",
+      "A forecast that simply projects past trends forward is better than nothing, but a forecast can be much more. Ask whether the forecast accounts for known changes in your community — demographic shifts, aging infrastructure, expiring revenues, or growing obligations."
+    ]
+  },
+  "long_term_obligations": {
+    "term": "Long-term Obligations",
+    "definition": "Local governments often have long-term obligations that go well beyond the term of the budget. Common examples include debt used to purchase capital assets, postemployment benefit costs, and the long-term maintenance required for long-lived assets.",
+    "stewardInsights": [
+      "The annual budget does not typically provide great insight into the effect of long-term obligations on overall financial health.",
+      "The annual financial statements created at the end of the year provide insights into the effect of long-term obligations."
+    ]
+  },
+  "net_position": {
+    "term": "Net Position",
+    "definition": "Net position is the difference between a government's total assets and its total liabilities. It is the public sector equivalent of net worth — what the government owns minus what it owes. When net position is growing over time, the government's overall financial health is generally improving. When it is shrinking, something worth investigating is happening beneath the surface.",
+    "stewardInsights": [
+      "Net position is one of the most powerful signals in your government's financial statements. But like any single number, it is just one perspective on financial health.",
+      "Ask to see net position trending over multiple years, not just the current year. Direction and pace of change tell you more than any single year's number."
+    ]
+  },
+  "non_recurring_revenues": {
+    "term": "Non-Recurring Revenues",
+    "definition": "Non-recurring revenues are any source of funding that can't be counted on to repeat in a consistent amount each year. Classic examples are selling an asset like a surplus piece of property, or winning a judgment in a lawsuit. Grants are a non-obvious example — they often last multiple years, but the intent of the organizations providing the grant is often that costs will be borne by the government beyond the term of the grant.",
+    "stewardInsights": [
+      "Non-recurring revenues should be used carefully. Using them to fund ongoing expenditures, like salaries for permanent staff positions, can put the government in a risky financial position.",
+      "Ideally, non-recurring revenues should be matched with a use that has a similar duration. For example, money from an asset sale could be used to pay off a debt or purchase a special piece of equipment."
+    ]
+  },
+  "ongoing_expenses": {
+    "term": "Ongoing Expenses",
+    "definition": "Any use of funds that can be expected to occur every year. The most common example is salary and benefit costs for permanent staff positions.",
+    "stewardInsights": [
+      "Ongoing expenses should be matched with ongoing revenues. When ongoing expenses are funded by one-time revenues, the budget may look balanced this year but face a structural gap next year."
+    ]
+  },
+  "ongoing_revenues": {
+    "term": "Ongoing Revenues",
+    "definition": "Revenues that can be expected to occur every year. The most common examples are tax revenues, like a property tax.",
+    "stewardInsights": [
+      "Ongoing revenues are the source of support for ongoing expenditures, but could also support special projects and other one-time expenditures."
+    ]
+  },
+  "operating_costs": {
+    "term": "Operating Costs",
+    "definition": "Operating costs are the ongoing expenses required to keep a government's services running day to day. They include salaries, utilities, supplies, repairs, and contracted services. Operating costs recur every year in relatively consistent amounts, unlike capital costs which can vary a great deal depending on what projects the government is working on.",
+    "stewardInsights": [
+      "Operating costs have a tendency to escalate every year as new costs are \"layered on\". The savvy steward knows a budget needs to control this tendency.",
+      "Every capital asset your government builds or buys comes with operating costs that will need to be funded year after year, long after the ribbon-cutting is over. Ask about these costs before approving any new capital project.",
+      "Operating costs tend to grow over time as assets age and require more maintenance. A budget that looks balanced today may be under pressure in five years simply because operating costs have quietly increased."
+    ]
+  },
+  "pension_funding_ratio": {
+    "term": "Pension Funding Ratio",
+    "definition": "The pension funding ratio compares how much money a government has set aside in its pension fund to how much it has promised to pay out to current and future retirees. It is expressed as a percentage. A ratio of 100% means the pension is fully funded — the assets on hand are sufficient to cover all projected obligations. A ratio below 100% means there is a gap between what has been saved and what has been promised.",
+    "stewardInsights": [
+      "No pension fund is perfectly funded at all times, and a ratio somewhat below 100% is not necessarily cause for alarm. What matters more than the current ratio is the trend — is the funding ratio improving, stable, or declining over time? A declining ratio year after year is a compounding problem that becomes harder to address the longer it is ignored.",
+      "Ask to see the pension funding ratio trend over the past five to ten years. Also ask whether the actuarial assumptions underlying the ratio are realistic — particularly the assumed rate of investment return. Overly optimistic assumptions can make a pension look healthier than it actually is."
+    ]
+  },
+  "postemployment_benefit_obligations": {
+    "term": "Postemployment Benefit Obligations",
+    "definition": "Governments often provide benefits to employees that are paid after the employee ends their tenure with the government. Pensions are the most common example. Some governments also offer healthcare to employees after they retire.",
+    "stewardInsights": [
+      "Local governments should put aside the funds necessary to pay for postemployment benefits before the employee retires.",
+      "If a government waits to pay for these benefits until after the employee retires, then taxpayers are paying for services that were delivered in the past."
+    ]
+  },
+  "programs_and_services": {
+    "term": "Programs and Services",
+    "definition": "Programs and services are the things government does that constituents directly experience. Programs and services are not the same as departments. Public works is a department. Sidewalk maintenance is a program or service. The fire department may provide services like fire response, fire inspections, and emergency medical transport.",
+    "stewardInsights": [
+      "Budgets are traditionally organized around departments. Departments provide useful information for managing the government, particularly for organizing and controlling costs. However, they don't provide a great deal of insight into what the community is actually getting for its tax money.",
+      "Ask for departmental information to be supplemented by information on the programs and services being provided.",
+      "Program and service information can go beyond just costs to include the quality and quantity of service provided to the public. Savvy stewards know that quality and quantity can be adjusted according to the resources available and what the community needs."
+    ]
+  },
+  "reserves": {
+    "term": "Reserves",
+    "definition": "Money that is held outside of the regular budget, typically to cover extraordinary costs. Reserves are built up by saving surpluses from past years.",
+    "stewardInsights": [
+      "Reserves are like a self-insurance policy — they can be used to cover unexpected, unavoidable losses that can't be covered by regular insurance.",
+      "Reserves are also like a savings account — money can be saved up to pay for a project that would not be affordable within a single year's revenue.",
+      "The \"right\" amount of reserves for your government depends on knowing the risks you are subject to (what you are self-insuring) and your long-term plans for big projects."
+    ]
+  },
+  "revenue_forecast": {
+    "term": "Revenue Forecast",
+    "definition": "A local government must predict how much revenue it will receive each year. This prediction determines how much money can be spent.",
+    "stewardInsights": [
+      "All forecasts will be wrong. It is just a matter of by how much and whether the forecast will be higher or lower than actual.",
+      "Some governments prefer a conservative forecast, where the prediction is deliberately lower than the revenues the local government will probably receive. This makes it more likely a surplus will be realized at the end of the year.",
+      "Other governments prefer an objective forecast, where the forecast attempts to get as close as possible to actual revenue. This makes it possible to budget for more services, but reduces the chance of a surplus at the end of the year.",
+      "The savvy steward understands whether the forecast is conservative or objective and the risks of each."
+    ]
+  },
+  "revenue_per_acre": {
+    "term": "Revenue Per Acre",
+    "definition": "Revenue per acre is a way of measuring how much tax revenue a given piece of land generates relative to its size. Different land uses — a dense downtown mixed-use building, a single-family subdivision, a big-box retail store — generate very different amounts of revenue per acre, and also cost different amounts to serve with roads, utilities, and emergency services. Comparing revenue per acre across different parts of a community reveals which land uses are fiscally productive and which are not.",
+    "stewardInsights": [
+      "Many communities have grown in ways that feel prosperous but are quietly fiscally unsustainable — adding new roads, utilities, and services that cost more to maintain than the development generates in revenue. Revenue per acre analysis makes this visible before the math catches up.",
+      "This kind of analysis is not something most governments produce routinely. Asking for it — or asking whether your planning and finance departments have ever looked at the fiscal productivity of different development patterns — is itself a powerful steward's question.",
+      "Revenue per acre is most powerful when looked at over time and across different parts of the community. Which neighborhoods are carrying the fiscal load? Which are being subsidized? The answers may surprise you."
+    ]
+  },
+  "statement_of_net_position": {
+    "term": "Statement of Net Position",
+    "definition": "The statement of net position is a financial document produced as part of a government's annual financial statements. It lists the government's assets, liabilities, and the resulting net position — assets minus liabilities — at a specific point in time.",
+    "stewardInsights": [
+      "The statement of net position is one of the most important documents in your government's annual financial statements. It gives you a snapshot of accumulated financial health — not just what happened this year, but the result of years of financial decisions.",
+      "Pay particular attention to the trend in net position over multiple years. A single year's statement tells you where you are. Several years of statements tell you where you're headed.",
+      "The statement of net position includes all major liabilities — including pension obligations and other post-employment benefits — that may not be fully visible in the annual budget. This is one of the reasons the annual financial statements tell a different and equally important story from the budget."
+    ]
+  },
+  "structural_balance": {
+    "term": "Structural Balance",
+    "definition": "A budget is structurally balanced when ongoing revenues are sufficient to cover ongoing expenses — without relying on one-time revenues, reserve drawdowns, or other temporary sources to close the gap. It is a stricter and more meaningful test of financial sustainability than the legal definition of a balanced budget.",
+    "stewardInsights": [
+      "A budget can meet the legal definition of balance while being structurally unbalanced. This happens when one-time revenues — a property sale, a legal settlement, a federal grant — are used to cover recurring costs like salaries or services. The budget looks fine this year. Next year, the one-time revenue is gone but the ongoing costs remain.",
+      "Structural imbalance rarely announces itself dramatically. It accumulates quietly, one seemingly reasonable budget decision at a time. Ask your finance director explicitly: are we structurally balanced? Are ongoing revenues covering ongoing expenses?"
+    ]
+  },
+  "vacancy_savings": {
+    "term": "Vacancy Savings",
+    "definition": "It is very unlikely that all of the employee positions a government has will be filled at every point during the year. A government can budget less than the full cost of all of its positions under the assumption that some positions will be vacant at least part of the year.",
+    "stewardInsights": [
+      "Overly conservative vacancy assumptions will likely result in a larger surplus at the end of year, but make it harder to adopt a balanced budget at the start of the year.",
+      "Overly aggressive assumptions make it easier to adopt a balanced budget at the start of the year, but make it harder to realize a surplus at year end."
+    ]
+  }
+}

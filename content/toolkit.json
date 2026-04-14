@@ -1,0 +1,273 @@
+{
+  "sections": [
+    {
+      "clock": "annual",
+      "clockLabel": "The Annual Clock",
+      "clockColor": "#1F4E79",
+      "questions": [
+        {
+          "keyQuestion": "Are we living within our means?",
+          "rows": [
+            {
+              "question": "How is our fund balance trending?",
+              "whatToLookFor": "Unrestricted fund balance as a percentage of expenditures over five or more years. Stable, growing, declining?",
+              "whereToFind": "Multi-year summary in ACFR or request from staff",
+              "availability": "green",
+              "glossaryTerms": ["fund_balance"]
+            },
+            {
+              "question": "Are we adequately funding our pension obligation?",
+              "whatToLookFor": "Pension contribution vs required contribution",
+              "whereToFind": "Budget document, ACFR",
+              "availability": "green",
+              "glossaryTerms": ["postemployment_benefit_obligations"]
+            },
+            {
+              "question": "What is the risk in our revenue forecast?",
+              "whatToLookFor": "Key assumptions behind the revenue projection",
+              "whereToFind": "Budget document",
+              "availability": "green",
+              "glossaryTerms": ["revenue_forecast"]
+            },
+            {
+              "question": "Are critical cost assumptions realistic?",
+              "whatToLookFor": "Vacancy savings, employee compensation increases",
+              "whereToFind": "Budget document",
+              "availability": "green",
+              "glossaryTerms": ["vacancy_savings", "efficiency_savings"]
+            },
+            {
+              "question": "Are we structurally balanced?",
+              "whatToLookFor": "Ongoing revenues vs ongoing expenditures — are one-time revenues filling a recurring gap?",
+              "whereToFind": "Request from finance director",
+              "availability": "yellow",
+              "glossaryTerms": ["structural_balance", "ongoing_revenues", "ongoing_expenses", "non_recurring_revenues"]
+            },
+            {
+              "question": "Are we staying on track during the year?",
+              "whatToLookFor": "Quarterly budget-to-actual reports with exception highlights; monthly on volatile or critical items",
+              "whereToFind": "Request from finance director",
+              "availability": "yellow",
+              "glossaryTerms": ["budget_to_actual_exception_reporting"]
+            },
+            {
+              "question": "Are we deferring critical maintenance?",
+              "whatToLookFor": "Evidence of deferred maintenance backlogs and condition trends",
+              "whereToFind": "Request from staff",
+              "availability": "yellow",
+              "glossaryTerms": ["deferred_maintenance"]
+            }
+          ]
+        },
+        {
+          "keyQuestion": "Where is the money going?",
+          "rows": [
+            {
+              "question": "What is the balance between current services and future investment?",
+              "whatToLookFor": "Capital outlay vs operating expenditures",
+              "whereToFind": "Budget document, ACFR",
+              "availability": "green",
+              "glossaryTerms": ["operating_costs", "capital_assets"]
+            },
+            {
+              "question": "Are we funding priorities — or just continuing past patterns?",
+              "whatToLookFor": "Alignment between spending and stated priorities",
+              "whereToFind": "Budget narrative, staff presentation",
+              "availability": "yellow",
+              "glossaryTerms": []
+            },
+            {
+              "question": "Can we afford to operate what we are building?",
+              "whatToLookFor": "Operating cost projections for new capital assets",
+              "whereToFind": "Request from staff",
+              "availability": "yellow",
+              "glossaryTerms": ["operating_costs", "capital_assets"]
+            },
+            {
+              "question": "What services are we actually delivering?",
+              "whatToLookFor": "Spending by program, not just by department or function",
+              "whereToFind": "Request program-level budget from staff",
+              "availability": "red",
+              "glossaryTerms": ["programs_and_services", "departments", "line_items"]
+            },
+            {
+              "question": "How does this budget make the community better off?",
+              "whatToLookFor": "Evidence that spending programs are achieving goals",
+              "whereToFind": "Budget document narrative, ACFR MD&A",
+              "availability": "red",
+              "glossaryTerms": []
+            },
+            {
+              "question": "How does this year's budget connect to our long-term capital plan?",
+              "whatToLookFor": "Capital plan and financing strategy",
+              "whereToFind": "Request from staff",
+              "availability": "red",
+              "glossaryTerms": ["long_term_capital_planning"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clock": "trajectory",
+      "clockLabel": "The Trajectory Clock",
+      "clockColor": "#C97D1A",
+      "questions": [
+        {
+          "keyQuestion": "How do our assets compare to our liabilities?",
+          "rows": [
+            {
+              "question": "Is our overall financial position getting stronger or weaker?",
+              "whatToLookFor": "Net position trend over multiple years — not just direction, but pace of change",
+              "whereToFind": "Statement of net position, ACFR",
+              "availability": "green",
+              "glossaryTerms": ["net_position", "statement_of_net_position", "annual_financial_statements"]
+            },
+            {
+              "question": "How did our pension liability change this year?",
+              "whatToLookFor": "Net pension liability year-over-year change",
+              "whereToFind": "ACFR, required supplementary information",
+              "availability": "green",
+              "glossaryTerms": ["postemployment_benefit_obligations", "pension_funding_ratio"]
+            },
+            {
+              "question": "What is our plan to fund maintenance of existing assets?",
+              "whatToLookFor": "Maintenance funding levels vs estimated need",
+              "whereToFind": "Request from staff",
+              "availability": "yellow",
+              "glossaryTerms": ["deferred_maintenance", "capital_assets"]
+            },
+            {
+              "question": "What is the condition of our major assets?",
+              "whatToLookFor": "Asset inventory and condition ratings",
+              "whereToFind": "Request from staff",
+              "availability": "red",
+              "glossaryTerms": ["capital_assets", "deferred_maintenance"]
+            },
+            {
+              "question": "Do we know the market value of our major land holdings?",
+              "whatToLookFor": "Current market value vs book value of key properties",
+              "whereToFind": "Request from staff",
+              "availability": "red",
+              "glossaryTerms": ["assets"]
+            }
+          ]
+        },
+        {
+          "keyQuestion": "Are we following our own reserve policies?",
+          "note": "A note on terminology: reserves and fund balance are related but not the same thing. Fund balance is an accounting concept — it's what the financial statements show. Reserves are a budgeting concept — they're the portion of fund balance that the government has deliberately set aside for specific purposes of insurance against the unexpected and saving up for future projects. Your government's reserve policy should define both the target level and the intended purpose. When in doubt, ask your finance director to walk you through the relationship between the two.",
+          "rows": [
+            {
+              "question": "Are we within our target range — the goldilocks zone?",
+              "whatToLookFor": "Actual reserve levels vs policy targets",
+              "whereToFind": "Budget document, fund balance reports",
+              "availability": "green",
+              "glossaryTerms": ["reserves", "fund_balance"]
+            },
+            {
+              "question": "Are reserves being used for ongoing costs?",
+              "whatToLookFor": "Draw-down patterns over multiple years",
+              "whereToFind": "Multi-year reserve trend, request from staff",
+              "availability": "green",
+              "glossaryTerms": ["reserves", "ongoing_expenses"]
+            },
+            {
+              "question": "How have reserve levels trended?",
+              "whatToLookFor": "Five or more years of reserve history",
+              "whereToFind": "ACFR statistics section, request from staff",
+              "availability": "green",
+              "glossaryTerms": ["reserves"]
+            },
+            {
+              "question": "Do we have a formal reserve policy?",
+              "whatToLookFor": "Written policy with defined targets",
+              "whereToFind": "Request from staff",
+              "availability": "yellow",
+              "glossaryTerms": ["reserves"]
+            }
+          ]
+        },
+        {
+          "keyQuestion": "Where are we actually headed?",
+          "rows": [
+            {
+              "question": "Where is our fund balance trending?",
+              "whatToLookFor": "Unrestricted fund balance headed up, down, or staying steady over multiple years",
+              "whereToFind": "ACFR balance sheet, statistics section",
+              "availability": "green",
+              "glossaryTerms": ["fund_balance"]
+            },
+            {
+              "question": "Do we have a long-term financial forecast?",
+              "whatToLookFor": "Forecast covering five or more years",
+              "whereToFind": "Request from staff",
+              "availability": "red",
+              "glossaryTerms": ["long_term_financial_forecast"]
+            },
+            {
+              "question": "Is there a forecast for changes in our environment?",
+              "whatToLookFor": "Demographic shifts, economic trends, aging infrastructure reflected in assumptions",
+              "whereToFind": "Review forecast assumptions",
+              "availability": "red",
+              "glossaryTerms": ["long_term_financial_forecast"]
+            },
+            {
+              "question": "What are our biggest long-term risks?",
+              "whatToLookFor": "Explicit risk identification in forecast or staff presentation",
+              "whereToFind": "Request from staff",
+              "availability": "red",
+              "glossaryTerms": ["long_term_obligations"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clock": "generational",
+      "clockLabel": "The Generational Clock",
+      "clockColor": "#0D6B5E",
+      "questions": [
+        {
+          "keyQuestion": "Are we building a community that can sustain itself?",
+          "rows": [
+            {
+              "question": "Are we addressing our compounding obligations?",
+              "whatToLookFor": "Pension funding ratio trends over multiple years",
+              "whereToFind": "ACFR, required supplementary information, MD&A",
+              "availability": "green",
+              "glossaryTerms": ["pension_funding_ratio", "compounding", "postemployment_benefit_obligations"]
+            },
+            {
+              "question": "Which parts of our community are financially carrying the load?",
+              "whatToLookFor": "Revenue vs cost to serve by area or development pattern",
+              "whereToFind": "Request from staff",
+              "availability": "red",
+              "glossaryTerms": ["revenue_per_acre"]
+            },
+            {
+              "question": "When we make land use decisions, are we accounting for fiscal implications?",
+              "whatToLookFor": "Fiscal impact analysis for major development decisions",
+              "whereToFind": "Request from staff",
+              "availability": "red",
+              "glossaryTerms": ["revenue_per_acre"]
+            },
+            {
+              "question": "Do we have a long-term capital plan?",
+              "whatToLookFor": "Plan covering five or more years of capital needs and financing strategy",
+              "whereToFind": "Request from staff",
+              "availability": "red",
+              "glossaryTerms": ["long_term_capital_planning", "capital_assets"]
+            },
+            {
+              "question": "What would it look like to hand this community to the next generation in better shape?",
+              "whatToLookFor": "Trend lines on net position, pension funding ratio, reserve levels, infrastructure condition",
+              "whereToFind": "Composite view, request from staff",
+              "availability": "red",
+              "glossaryTerms": ["net_position", "pension_funding_ratio", "reserves", "deferred_maintenance"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
