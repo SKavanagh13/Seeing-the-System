@@ -10,3 +10,5 @@
 ## Review Rules
 - Before reviewing, confirm you are looking at the correct local repository and branch.
 - If the repository or branch appears stale, mismatched, or not aligned with the requested work, stop and say so clearly before continuing.
+- Read `/docs/spec.md` before reviewing product work.
+- Use `/docs/review-checklist.md` as the framework for evaluation.
