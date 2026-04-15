@@ -38,7 +38,7 @@ function ContentBlock({ node }: BlockProps) {
       return (
         <ul className="chapter-bullet-list">
           {node.items.map((item, index) => (
-            <li key={`${item}-${index}`}>
+            <li key={`${item}-${index}`} className="chapter-bullet-item">
               <InlineContent text={item} />
             </li>
           ))}
