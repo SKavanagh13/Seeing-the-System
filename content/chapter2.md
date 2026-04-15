@@ -30,17 +30,17 @@ Like all signals, [GLOSSARY:net_position]net position[/GLOSSARY] as described in
 
 [L2]
 
-**Behind the asset numbers...**
+### Behind the asset numbers...
 
 - Land and buildings are carried at acquisition cost, not market value — meaning governments are often sitting on significant hidden value their financial statements don't reflect. Consider a public works facility built decades ago on what was then the edge of town. Today that site is surrounded by restaurants, hotels, and thriving development. The books still show it at its original acquisition cost. The real value — and the real opportunity — is invisible in the financial statements.
 - More [GLOSSARY:assets]assets[/GLOSSARY] doesn't always mean a stronger position. Many public assets can't generate revenue and can't be sold — a local road will never have a toll and has no potential buyers. Yet it still requires ongoing maintenance.
 
-**Behind the liability numbers...**
+### Behind the liability numbers...
 
 - The most dangerous [GLOSSARY:liabilities]liabilities[/GLOSSARY] are the hidden ones: [GLOSSARY:postemployment_benefit_obligations]pension obligations[/GLOSSARY] that have been quietly underfunded year after year, and [GLOSSARY:deferred_maintenance]deferred maintenance[/GLOSSARY] on infrastructure that has no obvious price tag until something fails
 - [GLOSSARY:deferred_maintenance]Deferred maintenance[/GLOSSARY] is the silent crisis — gradual deterioration makes the community less functional and less attractive, and catastrophic failure can arrive without warning
 
-**Key questions to ask**
+### Key questions to ask
 
 - What is the condition of our major [GLOSSARY:capital_assets]assets[/GLOSSARY], and do we have an asset inventory that tracks how that condition is changing? What is our plan to fund maintenance of existing assets?
 - For any new capital asset we are acquiring: what will it cost to operate, and where will that money come from?
@@ -60,8 +60,8 @@ Like all signals, [GLOSSARY:net_position]net position[/GLOSSARY] as described in
 
 [GLOSSARY:reserves]Reserves[/GLOSSARY] serve two distinct purposes that are easy to conflate:
 
-- **Insurance:** a cushion against unplanned, unavoidable costs — a natural disaster, a recession, a sudden revenue shortfall. Without adequate reserves a government is forced into crisis decisions: slashing services, laying off staff, taking on emergency debt
-- **Savings:** accumulated funds for projects or investments that wouldn't be affordable in a single year
+- Insurance: a cushion against unplanned, unavoidable costs — a natural disaster, a recession, a sudden revenue shortfall. Without adequate reserves a government is forced into crisis decisions: slashing services, laying off staff, taking on emergency debt
+- Savings: accumulated funds for projects or investments that wouldn't be affordable in a single year
 
 The critical discipline is keeping these two purposes separate — and never raiding either one for [GLOSSARY:ongoing_expenses]ongoing expenses[/GLOSSARY]. Using reserves to balance the budget is the financial equivalent of eating your seed corn. It solves a short-term problem by making the next one worse.
 
