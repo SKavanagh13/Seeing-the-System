@@ -221,16 +221,6 @@ select {
   gap: var(--space-xl);
 }
 
-.home-page__prose {
-  display: grid;
-  gap: var(--space-lg);
-  max-width: 46rem;
-}
-
-.home-page__prose p {
-  margin: 0;
-}
-
 .home-page__actions {
   display: flex;
   flex-wrap: wrap;
@@ -273,6 +263,193 @@ select {
   background: none;
   color: var(--color-link);
   cursor: pointer;
+}
+
+.chapter-page {
+  display: grid;
+  gap: var(--space-xxl);
+}
+
+.chapter-page__hero {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.chapter-page__title {
+  max-width: 20ch;
+}
+
+.chapter-renderer {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.chapter-paragraph,
+.chapter-bullet-list,
+.chapter-exit__text,
+.chapter-visual__description {
+  max-width: 46rem;
+}
+
+.chapter-paragraph,
+.chapter-billboard__text,
+.chapter-exit__text,
+.chapter-visual__description {
+  margin: 0;
+}
+
+.chapter-heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  line-height: 1.15;
+}
+
+.chapter-heading--level-2 {
+  font-size: clamp(1.7rem, 2.8vw, 2.25rem);
+}
+
+.chapter-heading--level-3 {
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+
+.chapter-key-question,
+.chapter-billboard,
+.chapter-visual {
+  display: grid;
+  gap: var(--space-sm);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  border: 1px solid rgba(212, 194, 170, 0.9);
+  border-radius: var(--radius-md);
+}
+
+.chapter-key-question {
+  background: linear-gradient(180deg, rgba(31, 78, 121, 0.06), rgba(255, 255, 255, 0.85));
+}
+
+.chapter-key-question__label,
+.chapter-billboard__label,
+.chapter-exit__label,
+.chapter-visual__label {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chapter-key-question__title {
+  margin: 0;
+  max-width: 28ch;
+  font-family: var(--font-heading);
+  font-size: var(--size-key-question);
+  line-height: 1.08;
+}
+
+.chapter-billboard {
+  background: linear-gradient(135deg, rgba(201, 125, 26, 0.12), rgba(255, 255, 255, 0.78));
+}
+
+.chapter-billboard__text {
+  max-width: 30rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  line-height: 1.2;
+}
+
+.chapter-exit {
+  display: grid;
+  gap: var(--space-xs);
+  padding-left: var(--space-lg);
+  border-left: 3px solid rgba(109, 46, 28, 0.32);
+}
+
+.chapter-exit__text {
+  color: var(--color-link);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+
+.chapter-bullet-list,
+.glossary-entry__insight-list,
+.glossary-drawer__insight-list {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.chapter-block {
+  display: grid;
+  gap: var(--space-lg);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: var(--radius-md);
+}
+
+.chapter-block--l1 {
+  background: rgba(241, 229, 209, 0.4);
+  border: 1px solid rgba(212, 194, 170, 0.75);
+}
+
+.chapter-block--l2 {
+  background: rgba(255, 255, 255, 0.62);
+  border-left: 4px solid rgba(31, 78, 121, 0.24);
+}
+
+.chapter-visual {
+  background:
+    linear-gradient(135deg, rgba(13, 107, 94, 0.1), transparent 55%),
+    rgba(255, 255, 255, 0.72);
+}
+
+.chapter-visual__description {
+  color: var(--color-text-muted);
+}
+
+.chapter-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--color-text-muted);
+}
+
+.chapter-divider__rule {
+  flex: 1;
+  height: 1px;
+  background: rgba(212, 194, 170, 0.95);
+}
+
+.chapter-divider__label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.chapter-page__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(212, 194, 170, 0.9);
+}
+
+.chapter-page__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 250, 242, 0.92);
+  color: var(--color-link);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
 .glossary-page {
@@ -373,10 +550,6 @@ select {
 
 .glossary-entry__insight-list,
 .glossary-drawer__insight-list {
-  display: grid;
-  gap: var(--space-sm);
-  margin: 0;
-  padding-left: 1.25rem;
   color: var(--color-text-muted);
 }
 
@@ -468,6 +641,11 @@ select {
   .page {
     min-height: auto;
     padding: var(--space-xl);
+  }
+
+  .chapter-page__footer {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .glossary-entry__header,
