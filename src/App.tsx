@@ -2,29 +2,10 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { AppShell } from './layout/AppShell'
 import { ChapterPage } from './pages/ChapterPage'
+import { EpiloguePage } from './pages/EpiloguePage'
 import { GlossaryPage } from './pages/GlossaryPage'
 import { HomePage } from './pages/HomePage'
 import { ToolkitPage } from './pages/ToolkitPage'
-
-type PlaceholderPageProps = {
-  eyebrow: string
-  title: string
-  description: string
-}
-
-function PlaceholderPage({
-  eyebrow,
-  title,
-  description,
-}: PlaceholderPageProps) {
-  return (
-    <section className="page">
-      <p className="page__eyebrow">{eyebrow}</p>
-      <h1 className="page__title">{title}</h1>
-      <p className="page__description">{description}</p>
-    </section>
-  )
-}
 
 export default function App() {
   return (
@@ -45,16 +26,7 @@ export default function App() {
           element={<ToolkitPage />}
         />
         <Route path="glossary" element={<GlossaryPage />} />
-        <Route
-          path="epilogue"
-          element={
-            <PlaceholderPage
-              eyebrow="Epilogue"
-              title="Epilogue placeholder"
-              description="This route is present so the application shell is complete, but the final epilogue experience is intentionally deferred."
-            />
-          }
-        />
+        <Route path="epilogue" element={<EpiloguePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
