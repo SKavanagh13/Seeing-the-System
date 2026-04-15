@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { AppShell } from './layout/AppShell'
+import { ChapterPage } from './pages/ChapterPage'
 import { GlossaryPage } from './pages/GlossaryPage'
 import { HomePage } from './pages/HomePage'
 
@@ -29,35 +30,14 @@ export default function App() {
     <Routes>
       <Route path="/" element={<AppShell />}>
         <Route index element={<HomePage />} />
-        <Route
-          path="annual-clock"
-          element={
-            <PlaceholderPage
-              eyebrow="Annual Clock"
-              title="Annual Clock placeholder"
-              description="PR1 establishes the route, persistent shell, and visited-state tracking only. Chapter rendering and scroll-driven behavior are intentionally deferred."
-            />
-          }
-        />
+        <Route path="annual-clock" element={<ChapterPage chapterId="annual-clock" />} />
         <Route
           path="trajectory-clock"
-          element={
-            <PlaceholderPage
-              eyebrow="Trajectory Clock"
-              title="Trajectory Clock placeholder"
-              description="This route reserves the chapter surface for later work while keeping the app structure aligned with the spec."
-            />
-          }
+          element={<ChapterPage chapterId="trajectory-clock" />}
         />
         <Route
           path="generational-clock"
-          element={
-            <PlaceholderPage
-              eyebrow="Generational Clock"
-              title="Generational Clock placeholder"
-              description="The page exists now so later PRs can layer in chapter engine, content parsing, and interactive storytelling without changing the route foundation."
-            />
-          }
+          element={<ChapterPage chapterId="generational-clock" />}
         />
         <Route
           path="toolkit"
