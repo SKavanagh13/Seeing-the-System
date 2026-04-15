@@ -11,26 +11,38 @@ export const defaultClockVisitedState: ClockVisitedState = {
   generational: false,
 }
 
+let _cachedRaw: string | null = null
+let _cachedState: ClockVisitedState = defaultClockVisitedState
+
 export function readClockVisitedState(): ClockVisitedState {
   if (typeof window === 'undefined') {
     return defaultClockVisitedState
   }
 
   const rawValue = window.localStorage.getItem(STORAGE_KEY)
+
+  if (rawValue === _cachedRaw) {
+    return _cachedState
+  }
+
+  _cachedRaw = rawValue
+
   if (!rawValue) {
-    return defaultClockVisitedState
+    _cachedState = defaultClockVisitedState
+    return _cachedState
   }
 
   try {
     const parsed = JSON.parse(rawValue) as Partial<ClockVisitedState>
-
-    return {
+    _cachedState = {
       annual: Boolean(parsed.annual),
       trajectory: Boolean(parsed.trajectory),
       generational: Boolean(parsed.generational),
     }
+    return _cachedState
   } catch {
-    return defaultClockVisitedState
+    _cachedState = defaultClockVisitedState
+    return _cachedState
   }
 }
 
