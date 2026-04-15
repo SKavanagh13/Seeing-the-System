@@ -47,7 +47,7 @@ A community that has been growing in ways that cost more to serve than they gene
 
 Every government wrestles with [GLOSSARY:postemployment_benefit_obligations]pensions[/GLOSSARY] and infrastructure. But the relationship between land use and long-term fiscal health is specific to your community — to the decisions made about where to grow, how to grow, and what to build. And it connects directly to why most officials ran for office in the first place: they care about their community as a place.
 
-**What to ask**
+### What to ask
 
 - Are we growing in ways that generate more revenue than they cost to serve — or are we making long-term fiscal commitments that look affordable today and won't be tomorrow?
 - Do we know our [GLOSSARY:revenue_per_acre]revenue per acre[/GLOSSARY] profile — which parts of our community are financially carrying the load?
