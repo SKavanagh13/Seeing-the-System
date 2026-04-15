@@ -8,6 +8,7 @@ import {
   readClockVisitedState,
   subscribeToClockVisitedState,
 } from '../lib/clockState'
+import { GlossaryDrawerProvider } from '../lib/glossaryDrawer'
 import { useScrollPattern } from '../lib/useScrollPattern'
 
 export function AppShell() {
@@ -33,9 +34,11 @@ export function AppShell() {
     <div className="app-shell">
       <TopNav visitedState={visitedState} />
 
-      <main className="app-shell__main">
-        <Outlet />
-      </main>
+      <GlossaryDrawerProvider key={location.pathname}>
+        <main className="app-shell__main">
+          <Outlet />
+        </main>
+      </GlossaryDrawerProvider>
     </div>
   )
 }

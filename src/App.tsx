@@ -1,6 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { AppShell } from './layout/AppShell'
+import { GlossaryPage } from './pages/GlossaryPage'
+import { HomePage } from './pages/HomePage'
 
 type PlaceholderPageProps = {
   eyebrow: string
@@ -26,16 +28,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<AppShell />}>
-        <Route
-          index
-          element={
-            <PlaceholderPage
-              eyebrow="PR1 Foundation"
-              title="Application shell and navigation are in place."
-              description="This route is intentionally a placeholder. Later PRs will add the prologue experience, parser-driven chapter rendering, glossary interactions, and the remaining narrative systems."
-            />
-          }
-        />
+        <Route index element={<HomePage />} />
         <Route
           path="annual-clock"
           element={
@@ -76,16 +69,7 @@ export default function App() {
             />
           }
         />
-        <Route
-          path="glossary"
-          element={
-            <PlaceholderPage
-              eyebrow="Glossary"
-              title="Glossary placeholder"
-              description="PR1 creates the glossary route only. Glossary drawer behavior and content integration are reserved for PR2."
-            />
-          }
-        />
+        <Route path="glossary" element={<GlossaryPage />} />
         <Route
           path="epilogue"
           element={
