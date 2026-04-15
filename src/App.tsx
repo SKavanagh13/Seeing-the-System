@@ -4,6 +4,7 @@ import { AppShell } from './layout/AppShell'
 import { ChapterPage } from './pages/ChapterPage'
 import { GlossaryPage } from './pages/GlossaryPage'
 import { HomePage } from './pages/HomePage'
+import { ToolkitPage } from './pages/ToolkitPage'
 
 type PlaceholderPageProps = {
   eyebrow: string
@@ -41,13 +42,7 @@ export default function App() {
         />
         <Route
           path="toolkit"
-          element={
-            <PlaceholderPage
-              eyebrow="Toolkit"
-              title="Toolkit placeholder"
-              description="PR1 creates the toolkit route only. Table behavior and data presentation are intentionally out of scope."
-            />
-          }
+          element={<ToolkitPage />}
         />
         <Route path="glossary" element={<GlossaryPage />} />
         <Route
