@@ -1,4 +1,4 @@
-# Seeing the System - Full Build Spec
+# The Three Clocks of Public Finance - Full Build Spec
 
 Single authoritative product spec for implementation and review.
 
@@ -9,7 +9,7 @@ If it serves the story, build it.
 If it is decorative, cut it.
 
 ## Product Summary
-Seeing the System is a narrative-first, lightly interactive desktop web experience for newly elected local government officials. Its job is to help the reader understand public finance as a system rather than as a disconnected set of annual decisions.
+The Three Clocks of Public Finance is a narrative-first, lightly interactive desktop web experience for newly elected local government officials. Its job is to help the reader understand public finance as a system rather than as a disconnected set of annual decisions.
 
 The experience should feel deliberate, readable, reflective, and structurally clear. It is not a dashboard product, a data-entry application, or a gamified explainer.
 
