@@ -690,7 +690,7 @@ select {
 }
 
 .epilogue-page__content .chapter-renderer {
-  gap: 1.25rem;
+  gap: 32px;
 }
 
 .epilogue-page__content .chapter-paragraph,
@@ -712,15 +712,7 @@ select {
 
 .epilogue-page__stewardship .chapter-renderer,
 .epilogue-page__closing .chapter-renderer {
-  gap: 1rem;
-}
-
-.epilogue-page__closing .chapter-paragraph {
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  line-height: 1.45;
+  gap: 32px;
 }
 
 .epilogue-page__clocks {
@@ -748,26 +740,77 @@ select {
   background: var(--color-generational);
 }
 
-.epilogue-page__links {
+.epilogue-page__next-steps {
   display: grid;
-  justify-items: center;
-  gap: 0.8rem;
-  margin-top: 1.8rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid rgba(212, 194, 170, 0.72);
+  gap: 80px;
 }
 
-.epilogue-page__text-link {
-  color: var(--color-link);
+.epilogue-page__transition {
+  display: grid;
+  gap: 32px;
+  margin-top: 80px;
+}
+
+.epilogue-page__transition-paragraph {
+  max-width: 45rem;
+  margin: 0;
+  color: #1A1A18;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.85;
+}
+
+.epilogue-page__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.epilogue-page__card {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-height: 100%;
+  padding: 32px;
+  border: 1px solid #E0DED8;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #1A1A18;
+  text-decoration: none;
+  transition: border-color 200ms ease;
+}
+
+.epilogue-page__card:hover,
+.epilogue-page__card:focus-visible {
+  border-color: #A8A49C;
+}
+
+.epilogue-page__card-icon {
+  color: #1F4E79;
+}
+
+.epilogue-page__card--glossary .epilogue-page__card-icon {
+  color: #595956;
+}
+
+.epilogue-page__card-title {
   font-family: var(--font-heading);
-  font-size: 0.98rem;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.25;
 }
 
-.epilogue-page__text-link:hover {
-  color: var(--color-text);
+.epilogue-page__card-description {
+  color: #595956;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@media (max-width: 720px) {
+  .epilogue-page__cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .toolkit-page__hero,

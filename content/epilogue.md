@@ -1,4 +1,4 @@
-# Epilogue: The Commons Held
+# Epilogue
 
 You are no longer the official sitting in that first budget briefing, nodding along at unfamiliar and overwhelming information, hoping you were asking the right questions.
 

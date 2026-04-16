@@ -1,5 +1,6 @@
 import epilogueSource from '../../content/epilogue.md?raw'
 
+import { BookOpen, Search } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
 import { ChapterRenderer } from '../components/chapter/ChapterRenderer'
@@ -10,6 +11,12 @@ const stewardshipParagraph =
 
 const firstClosingParagraph =
   'The clocks were running before you arrived. They will keep running after you leave.'
+
+const transitionParagraphs = [
+  "You've read the clocks. Now the work begins.",
+  'The Critical Questions are what you carry with you throughout your term \u2014 organized by clock, ready for any conversation about your community\'s finances.',
+  'The Glossary is there whenever you need to look something up.',
+] as const
 
 const epilogueDocument = createEpilogueDocument(epilogueSource)
 const stewardshipIndex = findParagraphIndex(
@@ -37,7 +44,6 @@ export function EpiloguePage() {
   return (
     <section className="page epilogue-page">
       <header className="epilogue-page__hero">
-        <p className="page__eyebrow">Epilogue</p>
         <h1 className="page__title epilogue-page__title">
           {epilogueDocument.title}
         </h1>
@@ -68,14 +74,46 @@ export function EpiloguePage() {
           </div>
         </section>
 
-        <nav className="epilogue-page__links" aria-label="Related links">
-          <NavLink to="/toolkit" className="epilogue-page__text-link">
-            Return to the toolkit
-          </NavLink>
-          <NavLink to="/glossary" className="epilogue-page__text-link">
-            Browse the glossary
-          </NavLink>
-        </nav>
+        <section className="epilogue-page__next-steps" aria-label="Next destinations">
+          <div className="epilogue-page__transition">
+            {transitionParagraphs.map((paragraph) => (
+              <p key={paragraph} className="epilogue-page__transition-paragraph">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <nav className="epilogue-page__cards" aria-label="Related links">
+            <NavLink to="/toolkit" className="epilogue-page__card">
+              <Search
+                className="epilogue-page__card-icon"
+                aria-hidden="true"
+                size={28}
+                strokeWidth={1.75}
+              />
+              <span className="epilogue-page__card-title">Critical Questions</span>
+              <span className="epilogue-page__card-description">
+                Organized by clock. Ready to ask.
+              </span>
+            </NavLink>
+
+            <NavLink
+              to="/glossary"
+              className="epilogue-page__card epilogue-page__card--glossary"
+            >
+              <BookOpen
+                className="epilogue-page__card-icon"
+                aria-hidden="true"
+                size={28}
+                strokeWidth={1.75}
+              />
+              <span className="epilogue-page__card-title">Glossary</span>
+              <span className="epilogue-page__card-description">
+                Every defined term in one place.
+              </span>
+            </NavLink>
+          </nav>
+        </section>
       </div>
     </section>
   )

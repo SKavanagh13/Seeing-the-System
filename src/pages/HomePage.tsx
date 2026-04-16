@@ -17,7 +17,6 @@ export function HomePage() {
   return (
     <section className="page home-page">
       <header className="chapter-page__hero">
-        <p className="page__eyebrow">{prologue.eyebrow}</p>
         <h1 className="page__title chapter-page__title">{prologue.title}</h1>
       </header>
 
