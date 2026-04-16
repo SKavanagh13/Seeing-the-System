@@ -156,62 +156,23 @@ select {
 .clock-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  justify-content: center;
+  gap: 16px;
 }
 
 .clock-nav__link {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.6rem 0.85rem;
-  border: 1px solid rgba(189, 168, 140, 0.75);
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.44);
-  color: var(--color-text-soft);
-}
-
-.clock-nav__link.is-active {
-  border-color: rgba(189, 168, 140, 0.95);
-  background: rgba(255, 255, 255, 0.86);
-  color: var(--color-text);
-  box-shadow: 0 6px 20px rgba(74, 55, 34, 0.08);
-}
-
-.clock-nav__link:hover {
-  border-color: rgba(189, 168, 140, 0.95);
-  background: rgba(255, 255, 255, 0.76);
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  line-height: 0;
 }
 
 .clock-nav__link:focus-visible {
   outline-offset: 4px;
-}
-
-.clock-nav__circle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border: 2px solid var(--clock-color);
-  border-radius: 50%;
-  color: var(--clock-color);
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.clock-nav__link.is-active .clock-nav__circle {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--clock-color) 14%, transparent);
-}
-
-.clock-nav__circle.is-visited {
-  background: var(--clock-color);
-  color: #fffdf8;
-}
-
-.clock-nav__text {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
 }
 
 .app-shell__main {

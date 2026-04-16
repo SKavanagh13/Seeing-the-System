@@ -1,37 +1,29 @@
-import type { CSSProperties } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import type { ClockKey, ClockVisitedState } from '../lib/clockState'
+import { ClockCircle } from './ClockCircle'
 
 type ClockLink = {
   key: ClockKey
   label: string
-  shortLabel: string
   to: string
-  colorVar: string
 }
 
 const clockLinks: ClockLink[] = [
   {
     key: 'annual',
     label: 'Annual Clock',
-    shortLabel: 'A',
     to: '/annual-clock',
-    colorVar: 'var(--color-annual)',
   },
   {
     key: 'trajectory',
     label: 'Trajectory Clock',
-    shortLabel: 'T',
     to: '/trajectory-clock',
-    colorVar: 'var(--color-trajectory)',
   },
   {
     key: 'generational',
     label: 'Generational Clock',
-    shortLabel: 'G',
     to: '/generational-clock',
-    colorVar: 'var(--color-generational)',
   },
 ]
 
@@ -46,21 +38,14 @@ export function ClockNav({ visitedState }: ClockNavProps) {
         <NavLink
           key={clock.key}
           to={clock.to}
-          className={({ isActive }) =>
-            `clock-nav__link${isActive ? ' is-active' : ''}`
-          }
+          className="clock-nav__link"
           aria-label={clock.label}
+          title={clock.label}
         >
-          <span
-            className={`clock-nav__circle${
-              visitedState[clock.key] ? ' is-visited' : ''
-            }`}
-            style={{ '--clock-color': clock.colorVar } as CSSProperties}
-            aria-hidden="true"
-          >
-            {clock.shortLabel}
-          </span>
-          <span className="clock-nav__text">{clock.label}</span>
+          <ClockCircle
+            clockType={clock.key}
+            visited={visitedState[clock.key]}
+          />
         </NavLink>
       ))}
     </div>
