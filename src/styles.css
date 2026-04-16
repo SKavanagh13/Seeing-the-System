@@ -223,6 +223,47 @@ select {
   gap: 2.4rem;
 }
 
+.home-page__goal-block {
+  margin: 0;
+  color: #1A1A18;
+}
+
+.home-page__goal-block + .home-page__goal-block {
+  margin-top: 24px;
+}
+
+.home-page__goal-lead {
+  font-weight: 500;
+}
+
+.home-page__primary-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+  margin-bottom: 80px;
+}
+
+.home-page__primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 48px;
+  border: 0;
+  border-radius: 6px;
+  background: #1F4E79;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 200ms ease;
+}
+
+.home-page__primary-cta:hover,
+.home-page__primary-cta:focus-visible {
+  background: #2563A0;
+}
+
 .home-page__actions {
   display: flex;
   flex-wrap: wrap;
