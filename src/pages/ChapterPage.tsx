@@ -25,7 +25,9 @@ export function ChapterPage({ chapterId }: ChapterPageProps) {
         <h1 className="page__title chapter-page__title">{chapter.title}</h1>
       </header>
 
-      <ChapterRenderer nodes={chapter.nodes} />
+      <div className="chapter-page__content">
+        <ChapterRenderer nodes={chapter.nodes} />
+      </div>
 
       <nav className="chapter-page__footer" aria-label="Chapter navigation">
         {previousChapter ? (

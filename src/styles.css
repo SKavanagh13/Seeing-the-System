@@ -18,6 +18,8 @@
   --size-body: 17px;
   --size-key-question: 28px;
   --size-title: clamp(2rem, 3vw, 3rem);
+  --chapter-content-max-width: 46rem;
+  --chapter-title-max-width: 52rem;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -377,6 +379,11 @@ select {
   gap: 2.75rem;
 }
 
+.chapter-page__content,
+.chapter-page__footer {
+  width: min(100%, var(--chapter-content-max-width));
+}
+
 .chapter-page__hero,
 .toolkit-page__hero,
 .glossary-page__hero,
@@ -386,8 +393,12 @@ select {
   max-width: 44rem;
 }
 
+.chapter-page__hero {
+  max-width: var(--chapter-title-max-width);
+}
+
 .chapter-page__title {
-  max-width: 44rem;
+  max-width: var(--chapter-title-max-width);
 }
 
 .chapter-renderer {

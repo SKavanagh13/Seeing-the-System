@@ -25,9 +25,14 @@ export type ChapterContent = {
   nextChapterId: ChapterId | null
 }
 
-type ChapterSourceDefinition = Omit<ChapterContent, 'title' | 'nodes'>
+type ChapterSourceDefinition = Omit<ChapterContent, 'title' | 'nodes'> & {
+  pageTitle?: string
+}
 
-const chapterSources: Record<ChapterId, ChapterSourceDefinition & { markdown: string }> = {
+const chapterSources: Record<
+  ChapterId,
+  ChapterSourceDefinition & { markdown: string }
+> = {
   prologue: {
     id: 'prologue',
     route: '/',
@@ -40,6 +45,7 @@ const chapterSources: Record<ChapterId, ChapterSourceDefinition & { markdown: st
     id: 'annual-clock',
     route: '/annual-clock',
     eyebrow: 'Annual Clock',
+    pageTitle: 'The Annual Clock',
     markdown: chapter1Source,
     previousChapterId: 'prologue',
     nextChapterId: 'trajectory-clock',
@@ -48,6 +54,7 @@ const chapterSources: Record<ChapterId, ChapterSourceDefinition & { markdown: st
     id: 'trajectory-clock',
     route: '/trajectory-clock',
     eyebrow: 'Trajectory Clock',
+    pageTitle: 'The Trajectory Clock',
     markdown: chapter2Source,
     previousChapterId: 'annual-clock',
     nextChapterId: 'generational-clock',
@@ -56,6 +63,7 @@ const chapterSources: Record<ChapterId, ChapterSourceDefinition & { markdown: st
     id: 'generational-clock',
     route: '/generational-clock',
     eyebrow: 'Generational Clock',
+    pageTitle: 'The Generational Clock',
     markdown: chapter3Source,
     previousChapterId: 'trajectory-clock',
     nextChapterId: null,
@@ -72,7 +80,7 @@ const chapterContentMap = new Map(
         id: definition.id,
         route: definition.route,
         eyebrow: definition.eyebrow,
-        title: document.title,
+        title: definition.pageTitle ?? document.title,
         nodes: document.nodes,
         previousChapterId: definition.previousChapterId,
         nextChapterId: definition.nextChapterId,
