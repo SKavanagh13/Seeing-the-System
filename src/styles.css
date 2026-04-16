@@ -333,8 +333,7 @@ select {
 .home-page__link,
 .chapter-page__link,
 .toolkit-table-card__toggle,
-.glossary-entry__drawer-link,
-.glossary-drawer__link {
+.glossary-entry__drawer-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -356,8 +355,7 @@ select {
 .home-page__link:hover,
 .chapter-page__link:hover,
 .toolkit-table-card__toggle:hover,
-.glossary-entry__drawer-link:hover,
-.glossary-drawer__link:hover {
+.glossary-entry__drawer-link:hover {
   transform: translateY(-1px);
   border-color: rgba(109, 46, 28, 0.38);
   background: rgba(241, 229, 209, 0.66);
@@ -1137,12 +1135,14 @@ select {
 .glossary-entry__insights,
 .glossary-drawer__insights {
   display: grid;
-  gap: var(--space-sm);
+}
+
+.glossary-drawer__insights {
+  gap: 0;
 }
 
 .glossary-entry__insights-label,
-.glossary-drawer__insights-label,
-.glossary-drawer__eyebrow {
+.glossary-drawer__insights-label {
   margin: 0;
   color: var(--color-text-muted);
   font-family: var(--font-heading);
@@ -1178,10 +1178,10 @@ select {
   top: 0;
   right: 0;
   display: grid;
-  gap: var(--space-lg);
+  gap: 0;
   width: min(100%, 34rem);
   height: 100%;
-  padding: clamp(1.25rem, 3vw, 2rem);
+  padding: 1.5rem 1.75rem 2rem;
   border-left: 1px solid rgba(212, 194, 170, 0.9);
   background:
     linear-gradient(180deg, rgba(255, 250, 242, 0.98), rgba(246, 241, 232, 0.98));
@@ -1205,8 +1205,9 @@ select {
 .glossary-drawer__header {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: var(--space-md);
+  margin-bottom: 0.25rem;
 }
 
 .glossary-drawer__close {
@@ -1227,13 +1228,54 @@ select {
 .glossary-drawer__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-  line-height: 1.08;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #1a1a18;
 }
 
 .glossary-drawer__definition {
   margin: 0;
-  line-height: 1.7;
+  margin-top: 1rem;
+  color: #1a1a18;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.glossary-drawer__insights-label {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #595956;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.glossary-drawer__insight-list {
+  gap: 0.75rem;
+  color: #1a1a18;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.glossary-drawer__link {
+  margin-top: 1.5rem;
+  color: #595956;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-decoration: none;
+  transition:
+    color 150ms ease,
+    text-decoration-color 150ms ease;
+}
+
+.glossary-drawer__link:hover {
+  color: #1a1a18;
+  text-decoration: underline;
 }
 
 @media (max-width: 1080px) {
