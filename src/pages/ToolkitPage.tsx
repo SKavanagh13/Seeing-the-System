@@ -57,7 +57,7 @@ export function ToolkitPage() {
   return (
     <section className="page toolkit-page">
       <header className="toolkit-page__hero">
-        <p className="page__eyebrow">Toolkit</p>
+        <p className="page__eyebrow">Critical Questions</p>
         <h1 className="page__title toolkit-page__title">
           Questions to carry into the work.
         </h1>
