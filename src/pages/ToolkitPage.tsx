@@ -62,10 +62,12 @@ export function ToolkitPage() {
           Questions to carry into the work.
         </h1>
         <p className="page__description toolkit-page__description">
-          This is not a dashboard. It is a field guide for better questions:
-          what to ask, what to look for, and where a first answer may already be
-          waiting. Each table begins with the questions most likely to be
-          within reach.
+          It is a field guide for better questions: what to ask, what to look
+          for, and where a first answer may already be waiting. Each table
+          begins with the questions most likely to be within reach. These are
+          the “green” items. You can also see other items, which are not so
+          easily available in all governments. As a steward, you can advocate
+          for your government to produce these.
         </p>
       </header>
 
@@ -99,7 +101,6 @@ export function ToolkitPage() {
             aria-labelledby={`toolkit-section-${section.clock}`}
           >
             <div className="toolkit-section__header">
-              <p className="toolkit-section__eyebrow">Toolkit section</p>
               <h2
                 id={`toolkit-section-${section.clock}`}
                 className="toolkit-section__title"

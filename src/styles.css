@@ -110,7 +110,7 @@ select {
 
 .top-nav__title {
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1.1;
@@ -122,7 +122,7 @@ select {
   margin: 0;
   color: #595956;
   font-family: var(--font-heading);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.2;
   white-space: nowrap;
@@ -132,6 +132,7 @@ select {
   display: flex;
   justify-self: center;
   justify-content: center;
+  margin-left: 3.125rem;
 }
 
 .top-nav__utilities {
@@ -332,8 +333,7 @@ select {
 
 .home-page__link,
 .chapter-page__link,
-.toolkit-table-card__toggle,
-.glossary-entry__drawer-link {
+.toolkit-table-card__toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -354,8 +354,7 @@ select {
 
 .home-page__link:hover,
 .chapter-page__link:hover,
-.toolkit-table-card__toggle:hover,
-.glossary-entry__drawer-link:hover {
+.toolkit-table-card__toggle:hover {
   transform: translateY(-1px);
   border-color: rgba(109, 46, 28, 0.38);
   background: rgba(241, 229, 209, 0.66);
@@ -388,7 +387,7 @@ select {
 }
 
 .chapter-page__title {
-  max-width: 20ch;
+  max-width: 44rem;
 }
 
 .chapter-renderer {
@@ -1128,10 +1127,6 @@ select {
   line-height: 1.7;
 }
 
-.glossary-entry__drawer-link {
-  flex-shrink: 0;
-}
-
 .glossary-entry__insights,
 .glossary-drawer__insights {
   display: grid;
@@ -1283,6 +1278,10 @@ select {
     padding: clamp(1.75rem, 4vw, 3rem);
   }
 
+  .top-nav__center {
+    margin-left: 1.5rem;
+  }
+
   .toolkit-page__legend {
     grid-template-columns: 1fr;
   }
@@ -1300,6 +1299,10 @@ select {
 
   .top-nav {
     padding: var(--space-md);
+  }
+
+  .top-nav__center {
+    margin-left: 0;
   }
 
   .page {
