@@ -155,9 +155,9 @@ select {
 
 .clock-nav {
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .clock-nav__link {
@@ -169,6 +169,24 @@ select {
   background: transparent;
   color: inherit;
   line-height: 0;
+}
+
+.clock-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.clock-nav__label {
+  color: var(--clock-label-color, #595956);
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: color 300ms ease;
 }
 
 .clock-nav__link:focus-visible {
