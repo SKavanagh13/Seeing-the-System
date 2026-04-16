@@ -110,7 +110,7 @@ select {
 
 .top-nav__title {
   font-family: var(--font-heading);
-  font-size: 1.08rem;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1.1;
@@ -122,7 +122,7 @@ select {
   margin: 0;
   color: #595956;
   font-family: var(--font-heading);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
   line-height: 1.2;
   white-space: nowrap;
@@ -136,7 +136,7 @@ select {
 
 .top-nav__utilities {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-self: end;
   gap: 20px;
 }
@@ -184,7 +184,7 @@ select {
 
 .clock-nav {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
   gap: 24px;
 }
