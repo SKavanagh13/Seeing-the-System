@@ -1,15 +1,11 @@
 import { getGlossaryEntries } from '../lib/glossary'
-import { useGlossaryDrawer } from '../lib/useGlossaryDrawer'
 
 const glossaryEntries = getGlossaryEntries()
 
 export function GlossaryPage() {
-  const { openTerm } = useGlossaryDrawer()
-
   return (
     <section className="page glossary-page">
       <div className="glossary-page__hero">
-        <p className="page__eyebrow">Glossary</p>
         <h1 className="page__title">A working vocabulary for the system.</h1>
         <p className="page__description">
           Public finance has a language of its own. This glossary keeps key
@@ -61,14 +57,6 @@ export function GlossaryPage() {
                     {entry.term}
                   </h2>
                 </div>
-
-                <button
-                  type="button"
-                  className="glossary-entry__drawer-link"
-                  onClick={(event) => openTerm(entry.key, event.currentTarget)}
-                >
-                  Open in drawer
-                </button>
               </div>
 
               <p className="glossary-entry__definition">{entry.definition}</p>
@@ -76,7 +64,7 @@ export function GlossaryPage() {
               {entry.stewardInsights.length > 0 ? (
                 <div className="glossary-entry__insights">
                   <p className="glossary-entry__insights-label">
-                    Steward insights
+                    {'The savvy steward\u2019s insights\u2026'}
                   </p>
                   <ul className="glossary-entry__insight-list">
                     {entry.stewardInsights.map((insight) => (
