@@ -52,7 +52,6 @@ export function GlossaryDrawer({ term, onClose }: GlossaryDrawerProps) {
         {term ? (
           <>
             <div className="glossary-drawer__header">
-              <p className="glossary-drawer__eyebrow">Glossary term</p>
               <button
                 ref={closeButtonRef}
                 type="button"
@@ -91,7 +90,7 @@ export function GlossaryDrawer({ term, onClose }: GlossaryDrawerProps) {
               className="glossary-drawer__link"
               onClick={() => onClose({ restoreFocus: false })}
             >
-              View this term in the master glossary
+              View in full glossary →
             </Link>
           </>
         ) : null}
