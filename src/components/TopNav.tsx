@@ -1,6 +1,6 @@
+import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import type { ClockVisitedState } from '../lib/clockState'
 import { ClockNav } from './ClockNav'
 
 const utilityLinks = [
@@ -10,17 +10,41 @@ const utilityLinks = [
   { to: '/epilogue', label: 'Epilogue' },
 ]
 
-type TopNavProps = {
-  visitedState: ClockVisitedState
-}
+const compressedScrollOffset = 24
 
-export function TopNav({ visitedState }: TopNavProps) {
+export function TopNav() {
+  const [compressed, setCompressed] = useState(false)
+
+  useEffect(() => {
+    const updateCompressed = () => {
+      setCompressed(window.scrollY > compressedScrollOffset)
+    }
+
+    updateCompressed()
+    window.addEventListener('scroll', updateCompressed, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', updateCompressed)
+    }
+  }, [])
+
   return (
     <header className="top-nav">
       <div className="top-nav__bar">
         <NavLink to="/" end className="top-nav__title">
           Seeing the System
         </NavLink>
+
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            justifyContent: 'center',
+            minWidth: 0,
+          }}
+        >
+          <ClockNav compressed={compressed} />
+        </div>
 
         <nav className="top-nav__links" aria-label="Primary">
           {utilityLinks.map((link) => (
@@ -37,8 +61,6 @@ export function TopNav({ visitedState }: TopNavProps) {
           ))}
         </nav>
       </div>
-
-      <ClockNav visitedState={visitedState} />
     </header>
   )
 }
