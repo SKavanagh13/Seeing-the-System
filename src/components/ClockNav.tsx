@@ -28,20 +28,15 @@ const clockLinks: ClockLink[] = [
   },
 ]
 
-type ClockNavProps = {
-  compressed?: boolean
-}
-
 const filledLabelColors: Record<ClockKey, string> = {
   annual: '#1F4E79',
   trajectory: '#C97D1A',
   generational: '#0D6B5E',
 }
 
-export function NavClockGroup({ compressed = false }: ClockNavProps) {
+export function NavClockGroup() {
   const location = useLocation()
   const filledState = getRouteDerivedClockState(location.pathname)
-  const size = compressed ? 36 : 48
 
   return (
     <nav className="clock-nav" aria-label="Clock navigation">
@@ -63,10 +58,8 @@ export function NavClockGroup({ compressed = false }: ClockNavProps) {
               } as CSSProperties
             }
           >
-            <ClockFace clockType={clock.key} filled={filledState[clock.key]} size={size} />
-            {!compressed ? (
-              <span className="clock-nav__label">{clock.label}</span>
-            ) : null}
+            <ClockFace clockType={clock.key} filled={filledState[clock.key]} size={48} />
+            <span className="clock-nav__label">{clock.label}</span>
           </span>
         </NavLink>
       ))}
@@ -74,6 +67,6 @@ export function NavClockGroup({ compressed = false }: ClockNavProps) {
   )
 }
 
-export function ClockNav(props: ClockNavProps) {
-  return <NavClockGroup {...props} />
+export function ClockNav() {
+  return <NavClockGroup />
 }

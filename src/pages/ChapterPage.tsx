@@ -22,7 +22,6 @@ export function ChapterPage({ chapterId }: ChapterPageProps) {
   return (
     <section className={`page chapter-page chapter-page--${chapter.id}`}>
       <header className="chapter-page__hero">
-        <p className="page__eyebrow">{chapter.eyebrow}</p>
         <h1 className="page__title chapter-page__title">{chapter.title}</h1>
       </header>
 
