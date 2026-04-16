@@ -1,4 +1,4 @@
-import type { ContentNode } from './contentParser'
+import { stripInlineGlossaryMarkup, type ContentNode } from './contentParser'
 import type { ChapterId } from './chapterContent'
 
 export type CardType = 'challenge' | 'steward' | 'offramp' | 'practice'
@@ -52,7 +52,7 @@ const keyQuestionInventories: Record<
     { cards: ['challenge', 'steward', 'offramp'] },
     { cards: ['challenge', 'steward', 'offramp'] },
   ],
-  'generational-clock': [{ cards: ['steward', 'offramp'] }],
+  'generational-clock': [{ cards: ['challenge', 'steward', 'offramp'] }],
 }
 
 export function transformChapterNodes(
@@ -89,7 +89,7 @@ export function transformChapterNodes(
     const sectionNodes = nodes.slice(index + 1, sectionEndIndex)
 
     transformedNodes.push(
-      transformKeyQuestionSection(node.text, sectionNodes, inventory),
+      transformKeyQuestionSection(chapterId, node.text, sectionNodes, inventory),
     )
 
     index = sectionEndIndex
@@ -106,6 +106,7 @@ export function transformChapterNodes(
 }
 
 function transformKeyQuestionSection(
+  chapterId: ChapterId,
   title: string,
   sectionNodes: ContentNode[],
   inventory: KeyQuestionInventory,
@@ -128,31 +129,23 @@ function transformKeyQuestionSection(
   let currentIndex = stewardBlockIndex
 
   if (inventory.cards.includes('challenge')) {
-    const challengeNodes = mainNodes.slice(0, stewardBlockIndex)
-    const challengeHeadingIndex = findNodeIndex(
-      challengeNodes,
-      (node) => node.type === 'heading' && node.level === 3,
+    const challengeContent = getChallengeContent(
+      chapterId,
+      title,
+      mainNodes,
+      stewardBlockIndex,
     )
 
-    if (challengeHeadingIndex === -1) {
-      throw new Error(`Missing challenge heading in key question "${title}".`)
-    }
-
-    const openingNodes = challengeNodes.slice(0, challengeHeadingIndex)
-
-    if (openingNodes.length > 0) {
+    if (challengeContent.openingNodes.length > 0) {
       sequence.push({
         type: 'content',
-        nodes: openingNodes,
+        nodes: challengeContent.openingNodes,
       })
     }
 
     sequence.push({
       type: 'card',
-      card: createTitledCard(
-        'challenge',
-        challengeNodes.slice(challengeHeadingIndex),
-      ),
+      card: challengeContent.card,
     })
   } else if (stewardBlockIndex > 0) {
     sequence.push({
@@ -222,6 +215,70 @@ function transformKeyQuestionSection(
     type: 'keyQuestionSection',
     title,
     sequence,
+  }
+}
+
+function getChallengeContent(
+  chapterId: ChapterId,
+  title: string,
+  mainNodes: ContentNode[],
+  stewardBlockIndex: number,
+): { openingNodes: ContentNode[]; card: Card } {
+  const challengeNodes = mainNodes.slice(0, stewardBlockIndex)
+
+  if (chapterId === 'generational-clock') {
+    return getGenerationalClockChallengeContent(challengeNodes, title)
+  }
+
+  const challengeHeadingIndex = findNodeIndex(
+    challengeNodes,
+    (node) => node.type === 'heading' && node.level === 3,
+  )
+
+  if (challengeHeadingIndex === -1) {
+    throw new Error(`Missing challenge heading in key question "${title}".`)
+  }
+
+  return {
+    openingNodes: challengeNodes.slice(0, challengeHeadingIndex),
+    card: createTitledCard('challenge', challengeNodes.slice(challengeHeadingIndex)),
+  }
+}
+
+function getGenerationalClockChallengeContent(
+  challengeNodes: ContentNode[],
+  sectionTitle: string,
+): { openingNodes: ContentNode[]; card: Card } {
+  const splitIndex = findNodeIndex(
+    challengeNodes,
+    (node) =>
+      node.type === 'paragraph' &&
+      stripInlineGlossaryMarkup(node.text).startsWith(
+        'The compounding nature of these obligations',
+      ),
+  )
+
+  if (splitIndex === -1) {
+    throw new Error(
+      `Missing Chapter 3 challenge split paragraph in key question "${sectionTitle}".`,
+    )
+  }
+
+  const challengeList = challengeNodes[splitIndex + 1]
+
+  if (!challengeList || challengeList.type !== 'bulletList') {
+    throw new Error(
+      `Expected bullet list after Chapter 3 challenge split in key question "${sectionTitle}".`,
+    )
+  }
+
+  return {
+    openingNodes: challengeNodes.slice(0, splitIndex),
+    card: {
+      type: 'challenge',
+      title: "Why it's harder than it looks",
+      children: [challengeNodes[splitIndex], challengeList],
+    },
   }
 }
 
