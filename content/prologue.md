@@ -22,13 +22,13 @@ That's the job.
 
 You don't need to be a public finance expert. That's what your finance director is for. What you do need is something different — the ability to be a powerful steward of your community's financial health and a confident participant in the decisions that shape it. That's what this guide is for.
 
-**Seeing the system.** You'll move beyond documents and processes to understand how your government's financial health actually works — non-obvious forces and hidden connections that make small decisions compound into big consequences.
+[GOAL]Seeing the system.|You'll move beyond documents and processes to understand how your government's financial health actually works — non-obvious forces and hidden connections that make small decisions compound into big consequences.[/GOAL]
 
-**Thinking in time.** You'll develop a new instinct for reading financial decisions across three time horizons — the annual budget, the long-term trajectory, and the generational legacy. Often, financial problems look fine on one clock and alarming on another.
+[GOAL]Thinking in time.|You'll develop a new instinct for reading financial decisions across three time horizons — the annual budget, the long-term trajectory, and the generational legacy. Often, financial problems look fine on one clock and alarming on another.[/GOAL]
 
-**Reading the signals.** You'll know what the key financial documents are, what they can tell you, and — just as important — what they can't. No single perspective on public finance tells you everything — so you need more than one.
+[GOAL]Reading the signals.|You'll know what the key financial documents are, what they can tell you, and — just as important — what they can't. No single perspective on public finance tells you everything — so you need more than one.[/GOAL]
 
-**Asking the powerful questions.** You'll have a set of questions that any elected official can ask — in a budget briefing, a mid-year review, or an end-of-year report — that cut through complexity and go straight to what matters for long-term financial stewardship.
+[GOAL]Asking the powerful questions.|You'll have a set of questions that any elected official can ask — in a budget briefing, a mid-year review, or an end-of-year report — that cut through complexity and go straight to what matters for long-term financial stewardship.[/GOAL]
 
 These aren't just things to know. They're things to do — in every budget cycle, for as long as you serve.
 
