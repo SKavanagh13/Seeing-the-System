@@ -1,18 +1,23 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 
 import { GlossaryTerm } from '../GlossaryTerm'
 import {
   parseInlineGlossary,
-  type ContentNode,
   type InlineContentNode,
 } from '../../lib/contentParser'
+import {
+  OFFRAMP_THRESHOLD_LINE,
+  type ChapterRenderNode,
+  type KeyQuestionSequenceNode,
+} from '../../lib/chapterCards'
+import { Card } from './Card'
 
 type ChapterRendererProps = {
-  nodes: ContentNode[]
+  nodes: ChapterRenderNode[]
 }
 
 type BlockProps = {
-  node: ContentNode
+  node: ChapterRenderNode
 }
 
 export function ChapterRenderer({ nodes }: ChapterRendererProps) {
@@ -27,6 +32,9 @@ export function ChapterRenderer({ nodes }: ChapterRendererProps) {
 
 function ContentBlock({ node }: BlockProps) {
   switch (node.type) {
+    case 'keyQuestionSection':
+      return <KeyQuestionBlock node={node} />
+
     case 'paragraph':
       return (
         <p className="chapter-paragraph">
@@ -63,7 +71,6 @@ function ContentBlock({ node }: BlockProps) {
     case 'keyQuestion':
       return (
         <section className="chapter-key-question" aria-label="Key question">
-          <p className="chapter-key-question__label">Key question</p>
           <h2 className="chapter-key-question__title">
             <InlineContent text={node.text} />
           </h2>
@@ -87,7 +94,6 @@ function ContentBlock({ node }: BlockProps) {
     case 'billboard':
       return (
         <aside className="chapter-billboard">
-          <p className="chapter-billboard__label">Pause here</p>
           <p className="chapter-billboard__text">
             <InlineContent text={node.text} />
           </p>
@@ -97,7 +103,6 @@ function ContentBlock({ node }: BlockProps) {
     case 'exit':
       return (
         <div className="chapter-exit">
-          <p className="chapter-exit__label">Steward prompt</p>
           <p className="chapter-exit__text">
             <InlineContent text={node.text} />
           </p>
@@ -126,6 +131,89 @@ function ContentBlock({ node }: BlockProps) {
         </div>
       )
   }
+}
+
+function KeyQuestionBlock({
+  node,
+}: {
+  node: Extract<ChapterRenderNode, { type: 'keyQuestionSection' }>
+}) {
+  const [openCardIndex, setOpenCardIndex] = useState<number | null>(null)
+
+  return (
+    <section className="chapter-key-question-block">
+      <header className="chapter-key-question">
+        <h2 className="chapter-key-question__title">
+          <InlineContent text={node.title} />
+        </h2>
+      </header>
+
+      <div className="chapter-key-question-block__sequence">
+        {node.sequence.map((item, index) => (
+          <KeyQuestionSequenceItem
+            key={createSequenceKey(item, index)}
+            item={item}
+            isOpen={getCardIndex(node.sequence, index) === openCardIndex}
+            onToggle={() => {
+              const nextCardIndex = getCardIndex(node.sequence, index)
+
+              if (nextCardIndex === -1) {
+                return
+              }
+
+              setOpenCardIndex((currentIndex) =>
+                currentIndex === nextCardIndex ? null : nextCardIndex,
+              )
+            }}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function KeyQuestionSequenceItem({
+  item,
+  isOpen,
+  onToggle,
+}: {
+  item: KeyQuestionSequenceNode
+  isOpen: boolean
+  onToggle: () => void
+}) {
+  switch (item.type) {
+    case 'content':
+      return (
+        <div className="chapter-key-question-block__content">
+          <ChapterRenderer nodes={item.nodes} />
+        </div>
+      )
+
+    case 'offrampThreshold':
+      return <OfframpThresholdLine />
+
+    case 'card':
+      return (
+        <Card
+          type={item.card.type}
+          title={item.card.title}
+          isOpen={isOpen}
+          onToggle={onToggle}
+        >
+          <ChapterRenderer nodes={item.card.children} />
+        </Card>
+      )
+  }
+}
+
+function OfframpThresholdLine() {
+  return (
+    <p className="chapter-offramp-threshold">
+      {OFFRAMP_THRESHOLD_LINE.prefix}
+      <strong>{OFFRAMP_THRESHOLD_LINE.emphasis}</strong>
+      {OFFRAMP_THRESHOLD_LINE.suffix}
+    </p>
+  )
 }
 
 function InlineContent({ text }: { text: string }) {
@@ -158,8 +246,10 @@ function InlineGlossaryTerm({
   )
 }
 
-function createNodeKey(node: ContentNode, index: number) {
+function createNodeKey(node: ChapterRenderNode, index: number) {
   switch (node.type) {
+    case 'keyQuestionSection':
+      return `${node.type}-${node.title}-${index}`
     case 'paragraph':
     case 'keyQuestion':
     case 'billboard':
@@ -179,6 +269,29 @@ function createNodeKey(node: ContentNode, index: number) {
     case 'l2Block':
       return `${node.type}-${index}`
   }
+}
+
+function createSequenceKey(node: KeyQuestionSequenceNode, index: number) {
+  switch (node.type) {
+    case 'content':
+      return `${node.type}-${index}-${node.nodes.length}`
+    case 'offrampThreshold':
+      return `${node.type}-${index}`
+    case 'card':
+      return `${node.type}-${node.card.type}-${node.card.title}-${index}`
+  }
+}
+
+function getCardIndex(sequence: KeyQuestionSequenceNode[], currentIndex: number) {
+  let cardIndex = -1
+
+  for (let index = 0; index <= currentIndex; index += 1) {
+    if (sequence[index]?.type === 'card') {
+      cardIndex += 1
+    }
+  }
+
+  return sequence[currentIndex]?.type === 'card' ? cardIndex : -1
 }
 
 function createInlineKey(node: InlineContentNode, index: number) {
