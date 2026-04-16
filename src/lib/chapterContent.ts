@@ -3,7 +3,11 @@ import chapter2Source from '../../content/chapter2.md?raw'
 import chapter3Source from '../../content/chapter3.md?raw'
 import prologueSource from '../../content/prologue.md?raw'
 
-import { parseContent, type ContentNode } from './contentParser'
+import { parseContent } from './contentParser'
+import {
+  transformChapterNodes,
+  type ChapterRenderNode,
+} from './chapterCards'
 
 export type ChapterId =
   | 'prologue'
@@ -16,7 +20,7 @@ export type ChapterContent = {
   route: string
   eyebrow: string
   title: string
-  nodes: ContentNode[]
+  nodes: ChapterRenderNode[]
   previousChapterId: ChapterId | null
   nextChapterId: ChapterId | null
 }
@@ -60,7 +64,7 @@ const chapterSources: Record<ChapterId, ChapterSourceDefinition & { markdown: st
 
 const chapterContentMap = new Map(
   Object.values(chapterSources).map((definition) => {
-    const document = parseChapterDocument(definition.markdown)
+    const document = parseChapterDocument(definition.id, definition.markdown)
 
     return [
       definition.id,
@@ -87,9 +91,9 @@ export function getChapterContent(chapterId: ChapterId) {
   return chapter
 }
 
-function parseChapterDocument(markdown: string): {
+function parseChapterDocument(chapterId: ChapterId, markdown: string): {
   title: string
-  nodes: ContentNode[]
+  nodes: ChapterRenderNode[]
 } {
   const normalizedMarkdown = markdown.replace(/\r\n?/g, '\n')
   const lines = normalizedMarkdown.split('\n')
@@ -101,6 +105,6 @@ function parseChapterDocument(markdown: string): {
 
   return {
     title: firstLine.slice(2).trim(),
-    nodes: parseContent(lines.slice(1).join('\n')),
+    nodes: transformChapterNodes(chapterId, parseContent(lines.slice(1).join('\n'))),
   }
 }

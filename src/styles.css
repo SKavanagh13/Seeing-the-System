@@ -386,9 +386,6 @@ select {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
 }
 
-.chapter-key-question__label,
-.chapter-billboard__label,
-.chapter-exit__label,
 .chapter-visual__label {
   margin: 0;
   color: var(--color-text-muted);
@@ -407,30 +404,119 @@ select {
   line-height: 1.08;
 }
 
+.chapter-key-question-block {
+  display: grid;
+  gap: 1rem;
+}
+
+.chapter-key-question-block__sequence {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.chapter-key-question-block__content .chapter-renderer {
+  gap: 1rem;
+}
+
 .chapter-billboard {
-  background:
-    linear-gradient(135deg, rgba(201, 125, 26, 0.16), rgba(255, 255, 255, 0.82));
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .chapter-billboard__text {
-  max-width: 30rem;
+  max-width: 34rem;
+  margin-bottom: 24px;
   font-family: var(--font-heading);
-  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.2;
+  color: #7b6b8d;
 }
 
 .chapter-exit {
   display: grid;
   gap: 0.35rem;
-  max-width: 40rem;
-  padding: 0.2rem 0 0.2rem 1.1rem;
-  border-left: 3px solid rgba(109, 46, 28, 0.34);
+  max-width: 42rem;
 }
 
 .chapter-exit__text {
   color: var(--color-link);
   font-family: var(--font-heading);
   font-size: 1.05rem;
+}
+
+.chapter-offramp-threshold {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-style: italic;
+}
+
+.chapter-offramp-threshold strong {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.chapter-card {
+  border: 1px solid #e0ded8;
+  border-left: 4px solid var(--card-accent-color);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+}
+
+.chapter-card__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.chapter-card__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.chapter-card__chevron {
+  flex-shrink: 0;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 180ms ease;
+}
+
+.chapter-card__chevron.is-open {
+  transform: rotate(225deg);
+}
+
+.chapter-card__content {
+  padding: 0 20px 20px;
+  animation: chapter-card-fade-in 300ms ease;
+}
+
+.chapter-card__content .chapter-renderer {
+  gap: 1rem;
+}
+
+@keyframes chapter-card-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .chapter-bullet-list,
