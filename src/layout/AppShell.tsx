@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 
 import { TopNav } from '../components/TopNav'
 import {
+  defaultClockVisitedState,
   getClockKeyForPath,
   markClockVisited,
   readClockVisitedState,
@@ -13,11 +14,20 @@ import { useScrollPattern } from '../lib/useScrollPattern'
 
 export function AppShell() {
   const location = useLocation()
-  const visitedState = useSyncExternalStore(
+  const persistedVisitedState = useSyncExternalStore(
     subscribeToClockVisitedState,
     readClockVisitedState,
     readClockVisitedState,
   )
+  const visitedState =
+    location.pathname === '/epilogue'
+      ? {
+          ...defaultClockVisitedState,
+          annual: true,
+          trajectory: true,
+          generational: true,
+        }
+      : persistedVisitedState
 
   useScrollPattern()
 

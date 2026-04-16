@@ -2,7 +2,12 @@ export type ClockKey = 'annual' | 'trajectory' | 'generational'
 
 export type ClockVisitedState = Record<ClockKey, boolean>
 
-const STORAGE_KEY = 'seeing-the-system.clock-visited'
+const LEGACY_STORAGE_KEY = 'seeing-the-system.clock-visited'
+const STORAGE_KEYS: Record<ClockKey, string> = {
+  annual: 'clock-visited-annual',
+  trajectory: 'clock-visited-trajectory',
+  generational: 'clock-visited-generational',
+}
 const listeners = new Set<() => void>()
 
 export const defaultClockVisitedState: ClockVisitedState = {
@@ -19,7 +24,11 @@ export function readClockVisitedState(): ClockVisitedState {
     return defaultClockVisitedState
   }
 
-  const rawValue = window.localStorage.getItem(STORAGE_KEY)
+  const rawValue = JSON.stringify({
+    annual: window.localStorage.getItem(STORAGE_KEYS.annual),
+    trajectory: window.localStorage.getItem(STORAGE_KEYS.trajectory),
+    generational: window.localStorage.getItem(STORAGE_KEYS.generational),
+  })
 
   if (rawValue === _cachedRaw) {
     return _cachedState
@@ -27,18 +36,30 @@ export function readClockVisitedState(): ClockVisitedState {
 
   _cachedRaw = rawValue
 
-  if (!rawValue) {
-    _cachedState = defaultClockVisitedState
-    return _cachedState
-  }
-
   try {
-    const parsed = JSON.parse(rawValue) as Partial<ClockVisitedState>
+    const parsed = JSON.parse(rawValue) as Record<ClockKey, string | null>
     _cachedState = {
-      annual: Boolean(parsed.annual),
-      trajectory: Boolean(parsed.trajectory),
-      generational: Boolean(parsed.generational),
+      annual: parsed.annual === 'true',
+      trajectory: parsed.trajectory === 'true',
+      generational: parsed.generational === 'true',
     }
+
+    if (Object.values(_cachedState).some(Boolean)) {
+      return _cachedState
+    }
+
+    const legacyRawValue = window.localStorage.getItem(LEGACY_STORAGE_KEY)
+    if (!legacyRawValue) {
+      return _cachedState
+    }
+
+    const legacyParsed = JSON.parse(legacyRawValue) as Partial<ClockVisitedState>
+    _cachedState = {
+      annual: Boolean(legacyParsed.annual),
+      trajectory: Boolean(legacyParsed.trajectory),
+      generational: Boolean(legacyParsed.generational),
+    }
+
     return _cachedState
   } catch {
     _cachedState = defaultClockVisitedState
@@ -51,7 +72,15 @@ export function writeClockVisitedState(state: ClockVisitedState) {
     return
   }
 
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
+  ;(Object.keys(STORAGE_KEYS) as ClockKey[]).forEach((clock) => {
+    window.localStorage.setItem(STORAGE_KEYS[clock], String(state[clock]))
+  })
+  _cachedState = state
+  _cachedRaw = JSON.stringify({
+    annual: String(state.annual),
+    trajectory: String(state.trajectory),
+    generational: String(state.generational),
+  })
   listeners.forEach((listener) => listener())
 }
 
