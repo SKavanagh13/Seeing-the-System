@@ -57,12 +57,9 @@ export function ToolkitPage() {
   return (
     <section className="page toolkit-page">
       <header className="toolkit-page__hero">
-        <p className="page__eyebrow">Critical Questions</p>
-        <h1 className="page__title toolkit-page__title">
-          Questions to carry into the work.
-        </h1>
+        <h1 className="page__title toolkit-page__title">Critical Questions</h1>
         <p className="page__description toolkit-page__description">
-          It is a field guide for better questions: what to ask, what to look
+          This is a field guide for better questions: what to ask, what to look
           for, and where a first answer may already be waiting. Each table
           begins with the questions most likely to be within reach. These are
           the “green” items. You can also see other items, which are not so
