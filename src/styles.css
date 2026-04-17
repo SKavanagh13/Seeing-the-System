@@ -98,7 +98,7 @@ select {
 
 .top-nav__bar {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(max-content, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 1.5rem;
 }
@@ -135,7 +135,6 @@ select {
   display: flex;
   justify-self: center;
   justify-content: center;
-  margin-left: 100px;
 }
 
 .top-nav__utilities {
@@ -1315,10 +1314,6 @@ select {
     padding: clamp(1.75rem, 4vw, 3rem);
   }
 
-  .top-nav__center {
-    margin-left: 1.5rem;
-  }
-
   .toolkit-page__legend {
     grid-template-columns: 1fr;
   }
@@ -1336,10 +1331,6 @@ select {
 
   .top-nav {
     padding: var(--space-md);
-  }
-
-  .top-nav__center {
-    margin-left: 0;
   }
 
   .page {
