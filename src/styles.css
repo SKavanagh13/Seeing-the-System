@@ -380,7 +380,8 @@ select {
 }
 
 .chapter-page__content,
-.chapter-page__footer {
+.chapter-page__footer,
+.chapter-page__closing {
   width: min(100%, var(--chapter-content-max-width));
 }
 
@@ -661,6 +662,33 @@ select {
   gap: var(--space-md);
   padding-top: 1.15rem;
   border-top: 1px solid rgba(212, 194, 170, 0.9);
+}
+
+.chapter-page__closing {
+  display: grid;
+  gap: 24px;
+}
+
+.chapter-page__closing-eyebrow {
+  margin: 0;
+  color: #595956;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.chapter-page__closing .chapter-renderer {
+  gap: 0;
+}
+
+.chapter-page__closing-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 80px;
 }
 
 .glossary-page {

@@ -8,3 +8,4 @@ PR5 - Chapters 2 and 3
 PR6 - Toolkit
 PR7 - Epilogue
 PR8 - Visuals and polish
+PR9 - Chapter 3 closing refresh
