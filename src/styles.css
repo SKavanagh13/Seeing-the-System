@@ -117,6 +117,7 @@ select {
   letter-spacing: 0.08em;
   line-height: 1.1;
   text-transform: uppercase;
+  white-space: nowrap;
   color: #1A1A18;
 }
 
@@ -285,17 +286,18 @@ select {
   gap: 2.4rem;
 }
 
+.home-page__goal-group {
+  display: grid;
+  gap: 16px;
+}
+
 .home-page__goal-block {
   margin: 0;
   color: #1A1A18;
 }
 
-.home-page__goal-block + .home-page__goal-block {
-  margin-top: 24px;
-}
-
 .home-page__goal-lead {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .home-page__primary-cta-wrap {
@@ -725,6 +727,11 @@ select {
   max-width: 14ch;
 }
 
+.epilogue-page__narrative {
+  display: grid;
+  gap: 32px;
+}
+
 .epilogue-page__content .chapter-renderer {
   gap: 32px;
 }
@@ -736,18 +743,9 @@ select {
   max-width: 45rem;
 }
 
-.epilogue-page__stewardship,
-.epilogue-page__closing {
-  margin-top: 64px;
-}
-
-.epilogue-page__stewardship {
-  padding-top: 64px;
-  border-top: 1px solid rgba(148, 132, 117, 0.65);
-}
-
-.epilogue-page__stewardship .chapter-renderer,
+.epilogue-page__closing,
 .epilogue-page__closing .chapter-renderer {
+  display: grid;
   gap: 32px;
 }
 
