@@ -57,4 +57,8 @@ Every government wrestles with [GLOSSARY:postemployment_benefit_obligations]pens
 
 [/L2]
 
+---
+
+## Closing
+
 You can now read all three clocks. The question that has been running quietly beneath this resource is the one that history will ultimately answer: did the stewards of this place make choices that sustained the local government, or quietly depleted it? That question doesn't have a finish line. It gets answered one budget cycle at a time, for as long as you serve…
