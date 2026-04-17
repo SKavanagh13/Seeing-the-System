@@ -159,6 +159,24 @@ Final line:
 The clocks were running before you arrived.
 What matters is what you did while you were here.
 
+## Chapter 3 Closing Update
+The Generational Clock closing now transitions directly into the epilogue rather than toward toolkit or generic chapter navigation.
+
+Requirements:
+- replace the existing Chapter 3 closing prose in `content/chapter3.md` with a single exact paragraph ending in an ellipsis
+- remove the old "Chapter closing — into the epilogue" heading
+- remove the old toolkit transition sentence
+- remove any horizontal rule tied to the old closing section
+- render a quiet `Closing` eyebrow above the final prose using the site's eyebrow treatment with `11px` size, `500` weight, `0.08em` letter spacing, uppercase styling, and `#595956` color
+- render a single centered CTA below the closing prose linking to `/epilogue`
+- reuse the prologue CTA styling for that button rather than creating a new variant
+- remove the old `Back to Trajectory Clock` footer treatment from Chapter 3
+
+Scope guardrail:
+- touch `content/chapter3.md` only for the prose replacement
+- implement the eyebrow and CTA in the chapter page/component layer
+- do not change Chapters 1 or 2, the epilogue page content, glossary behavior, toolkit content, or global navigation structure
+
 ## Design System
 Clock colors:
 - Annual: `#1F4E79`
@@ -218,6 +236,7 @@ Avoid:
 - PR6: toolkit
 - PR7: epilogue
 - PR8: visuals and polish
+- PR9: Chapter 3 closing refresh
 
 Each PR should stay tightly scoped to its intended slice. Do not smuggle future work into an earlier PR.
 

@@ -57,14 +57,4 @@ Every government wrestles with [GLOSSARY:postemployment_benefit_obligations]pens
 
 [/L2]
 
----
-
-## Chapter closing — into the epilogue
-
-You can now read all three clocks. You know what the annual budget and financial statements are really telling you and what they aren't. You know how to look beneath the surface at accumulated position and trajectory. And you know that the choices made on those two clocks eventually become the generational legacy — the community that the next generation of residents, taxpayers, and elected officials will inherit.
-
-The question that has been running quietly beneath this entire chapter — beneath this entire resource — is the one that history will ultimately answer: did the stewards of this place make choices that sustained the local government, or quietly depleted it?
-
-That question doesn't have a finish line. It gets answered one budget cycle at a time, for as long as you serve.
-
-Which brings us to the toolkit — and what you do next.
+You can now read all three clocks. The question that has been running quietly beneath this resource is the one that history will ultimately answer: did the stewards of this place make choices that sustained the local government, or quietly depleted it? That question doesn't have a finish line. It gets answered one budget cycle at a time, for as long as you serve…
