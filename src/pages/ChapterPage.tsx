@@ -18,12 +18,14 @@ export function ChapterPage({ chapterId }: ChapterPageProps) {
   const nextChapter = chapter.nextChapterId
     ? getChapterContent(chapter.nextChapterId)
     : null
-  // Chapter 3's spec-defined closing is authored as the final paragraph node.
-  const hasDedicatedClosing =
-    chapter.id === 'generational-clock' &&
-    chapter.nodes.at(-1)?.type === 'paragraph'
-  const contentNodes = hasDedicatedClosing ? chapter.nodes.slice(0, -1) : chapter.nodes
-  const closingNodes = hasDedicatedClosing ? chapter.nodes.slice(-1) : []
+  const closingStartIndex = getClosingStartIndex(chapter)
+  const hasDedicatedClosing = closingStartIndex !== -1
+  const contentNodes = hasDedicatedClosing
+    ? chapter.nodes.slice(0, closingStartIndex)
+    : chapter.nodes
+  const closingNodes = hasDedicatedClosing
+    ? chapter.nodes.slice(closingStartIndex + 2)
+    : []
 
   return (
     <section className={`page chapter-page chapter-page--${chapter.id}`}>
@@ -41,7 +43,7 @@ export function ChapterPage({ chapterId }: ChapterPageProps) {
           <ChapterRenderer nodes={closingNodes} />
           <div className="chapter-page__closing-action">
             <NavLink to="/epilogue" className="home-page__primary-cta">
-              Continue to the Epilogue →
+              Continue to the Epilogue {'\u2192'}
             </NavLink>
           </div>
         </section>
@@ -62,4 +64,31 @@ export function ChapterPage({ chapterId }: ChapterPageProps) {
       )}
     </section>
   )
+}
+
+function getClosingStartIndex(chapter: ReturnType<typeof getChapterContent>) {
+  if (chapter.id !== 'generational-clock') {
+    return -1
+  }
+
+  const dividerIndex = chapter.nodes.findIndex(
+    (node) => node.type === 'subsectionDivider' && node.label === '',
+  )
+
+  if (dividerIndex === -1) {
+    return chapter.nodes.at(-1)?.type === 'paragraph' ? chapter.nodes.length - 1 : -1
+  }
+
+  const headingNode = chapter.nodes[dividerIndex + 1]
+  const paragraphNode = chapter.nodes[dividerIndex + 2]
+
+  if (
+    headingNode?.type === 'heading' &&
+    headingNode.text === 'Closing' &&
+    paragraphNode?.type === 'paragraph'
+  ) {
+    return dividerIndex
+  }
+
+  return -1
 }
