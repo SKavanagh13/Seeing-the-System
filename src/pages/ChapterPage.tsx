@@ -20,11 +20,15 @@ export function ChapterPage({ chapterId }: ChapterPageProps) {
     : null
   const closingStartIndex = getClosingStartIndex(chapter)
   const hasDedicatedClosing = closingStartIndex !== -1
+  const contentEndIndex =
+    hasDedicatedClosing && chapter.nodes[closingStartIndex - 1]?.type === 'subsectionDivider'
+      ? closingStartIndex - 1
+      : closingStartIndex
   const contentNodes = hasDedicatedClosing
-    ? chapter.nodes.slice(0, closingStartIndex)
+    ? chapter.nodes.slice(0, contentEndIndex)
     : chapter.nodes
   const closingNodes = hasDedicatedClosing
-    ? chapter.nodes.slice(closingStartIndex + 2)
+    ? chapter.nodes.slice(closingStartIndex + 1)
     : []
 
   return (
@@ -67,28 +71,11 @@ export function ChapterPage({ chapterId }: ChapterPageProps) {
 }
 
 function getClosingStartIndex(chapter: ReturnType<typeof getChapterContent>) {
-  if (chapter.id !== 'generational-clock') {
-    return -1
-  }
-
-  const dividerIndex = chapter.nodes.findIndex(
-    (node) => node.type === 'subsectionDivider' && node.label === '',
+  if (chapter.id !== 'generational-clock') return -1
+  const headingIndex = chapter.nodes.findLastIndex(
+    (node) => node.type === 'heading' && node.text === 'Closing'
   )
-
-  if (dividerIndex === -1) {
-    return chapter.nodes.at(-1)?.type === 'paragraph' ? chapter.nodes.length - 1 : -1
-  }
-
-  const headingNode = chapter.nodes[dividerIndex + 1]
-  const paragraphNode = chapter.nodes[dividerIndex + 2]
-
-  if (
-    headingNode?.type === 'heading' &&
-    headingNode.text === 'Closing' &&
-    paragraphNode?.type === 'paragraph'
-  ) {
-    return dividerIndex
-  }
-
-  return -1
+  if (headingIndex === -1) return -1
+  const paragraphNode = chapter.nodes[headingIndex + 1]
+  return paragraphNode?.type === 'paragraph' ? headingIndex : -1
 }
