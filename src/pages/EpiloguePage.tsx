@@ -50,29 +50,27 @@ export function EpiloguePage() {
       </header>
 
       <div className="epilogue-page__content">
-        <ChapterRenderer nodes={introNodes} />
-
-        <section className="epilogue-page__stewardship">
+        <div className="epilogue-page__narrative">
+          <ChapterRenderer nodes={introNodes} />
           <ChapterRenderer nodes={[stewardshipNode]} />
-        </section>
+          <ChapterRenderer nodes={reflectionNodes} />
 
-        <ChapterRenderer nodes={reflectionNodes} />
+          <section className="epilogue-page__closing" aria-label="Closing reflection">
+            <ChapterRenderer nodes={closingNodes} />
 
-        <section className="epilogue-page__closing" aria-label="Closing reflection">
-          <ChapterRenderer nodes={closingNodes} />
-
-          <div className="epilogue-page__clocks" aria-hidden="true">
-            <span
-              className="epilogue-page__clock epilogue-page__clock--annual"
-            />
-            <span
-              className="epilogue-page__clock epilogue-page__clock--trajectory"
-            />
-            <span
-              className="epilogue-page__clock epilogue-page__clock--generational"
-            />
-          </div>
-        </section>
+            <div className="epilogue-page__clocks" aria-hidden="true">
+              <span
+                className="epilogue-page__clock epilogue-page__clock--annual"
+              />
+              <span
+                className="epilogue-page__clock epilogue-page__clock--trajectory"
+              />
+              <span
+                className="epilogue-page__clock epilogue-page__clock--generational"
+              />
+            </div>
+          </section>
+        </div>
 
         <section className="epilogue-page__next-steps" aria-label="Next destinations">
           <div className="epilogue-page__transition">

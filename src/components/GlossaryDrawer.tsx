@@ -75,7 +75,7 @@ export function GlossaryDrawer({ term, onClose }: GlossaryDrawerProps) {
             {term.stewardInsights.length > 0 ? (
               <div className="glossary-drawer__insights">
                 <p className="glossary-drawer__insights-label">
-                  Steward insights
+                  {'The savvy steward\u2019s insights\u2026'}
                 </p>
                 <ul className="glossary-drawer__insight-list">
                   {term.stewardInsights.map((insight) => (

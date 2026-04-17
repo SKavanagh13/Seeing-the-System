@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, type ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { GlossaryTerm } from '../components/GlossaryTerm'
@@ -20,17 +20,7 @@ export function HomePage() {
         <h1 className="page__title chapter-page__title">{prologue.title}</h1>
       </header>
 
-      {contentSegments.map((segment, index) =>
-        segment.type === 'chapter' ? (
-          <ChapterRenderer key={`chapter-${index}`} nodes={segment.nodes} />
-        ) : (
-          <GoalBlock
-            key={`goal-${segment.goal.lead}-${index}`}
-            lead={segment.goal.lead}
-            body={segment.goal.body}
-          />
-        ),
-      )}
+      {renderContentSegments(contentSegments)}
 
       <div className="home-page__primary-cta-wrap">
         <NavLink to="/annual-clock" className="home-page__primary-cta">
@@ -60,6 +50,53 @@ type GoalMarkup = {
 type ContentSegment =
   | { type: 'chapter'; nodes: ChapterRenderNode[] }
   | { type: 'goal'; goal: GoalMarkup }
+
+function renderContentSegments(segments: ContentSegment[]) {
+  const renderedSegments: ReactNode[] = []
+  let index = 0
+
+  while (index < segments.length) {
+    const segment = segments[index]
+
+    if (segment.type === 'chapter') {
+      renderedSegments.push(
+        <ChapterRenderer key={`chapter-${index}`} nodes={segment.nodes} />,
+      )
+      index += 1
+      continue
+    }
+
+    const goals: GoalMarkup[] = []
+    let goalIndex = index
+
+    while (goalIndex < segments.length) {
+      const goalSegment = segments[goalIndex]
+
+      if (goalSegment.type !== 'goal') {
+        break
+      }
+
+      goals.push(goalSegment.goal)
+      goalIndex += 1
+    }
+
+    renderedSegments.push(
+      <div className="home-page__goal-group" key={`goal-group-${index}`}>
+        {goals.map((goal, groupIndex) => (
+          <GoalBlock
+            key={`goal-${goal.lead}-${index + groupIndex}`}
+            lead={goal.lead}
+            body={goal.body}
+          />
+        ))}
+      </div>,
+    )
+
+    index = goalIndex
+  }
+
+  return renderedSegments
+}
 
 function buildContentSegments(nodes: ChapterRenderNode[]): ContentSegment[] {
   const segments: ContentSegment[] = []
