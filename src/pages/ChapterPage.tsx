@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { ClockDial } from '../components/ClockDial'
@@ -8,6 +9,7 @@ import {
   type ChapterClosingMetadata,
 } from '../lib/chapterContent'
 import type { ChapterId } from '../lib/chapterContent'
+import { SeenTermsContext } from '../lib/seenTerms'
 
 type ChapterPageProps = {
   chapterId: Exclude<ChapterId, 'prologue'>
@@ -15,6 +17,8 @@ type ChapterPageProps = {
 
 export function ChapterPage({ chapterId }: ChapterPageProps) {
   const chapter = getChapterContent(chapterId)
+  // Fresh Set per chapter — tracks first-mention-only glossary terms
+  const seenTerms = useMemo(() => new Set<string>(), [chapterId])
 
   // Detect markdown-based closing (Generational only)
   const closingStartIndex = getClosingStartIndex(chapter)
@@ -36,6 +40,7 @@ export function ChapterPage({ chapterId }: ChapterPageProps) {
   const bodyNodes = firstKQIndex >= 0 ? allContentNodes.slice(firstKQIndex) : allContentNodes
 
   return (
+    <SeenTermsContext.Provider value={seenTerms}>
     <article className={`page chapter-page chapter-page--${chapterId}`}>
       <div className="chapter-page__header">
         {chapter.clockNumber && (
@@ -75,6 +80,7 @@ export function ChapterPage({ chapterId }: ChapterPageProps) {
         </section>
       )}
     </article>
+    </SeenTermsContext.Provider>
   )
 }
 

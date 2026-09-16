@@ -4,6 +4,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import { GlossaryDrawer } from '../components/GlossaryDrawer'
 import { getGlossaryEntry } from './glossary'
@@ -19,6 +20,7 @@ export function GlossaryDrawerProvider({
   const [activeTermKey, setActiveTermKey] = useState<string | null>(null)
   const triggerElementRef = useRef<HTMLElement | null>(null)
   const activeTerm = activeTermKey ? getGlossaryEntry(activeTermKey) : null
+  const location = useLocation()
 
   const closeDrawer = (options?: { restoreFocus?: boolean }) => {
     const shouldRestoreFocus = options?.restoreFocus ?? true
@@ -30,6 +32,13 @@ export function GlossaryDrawerProvider({
       triggerElement?.focus()
     }
   }
+
+  // Close on route change — no focus restore (user is navigating)
+  useEffect(() => {
+    if (activeTermKey) {
+      closeDrawer({ restoreFocus: false })
+    }
+  }, [location.pathname])
 
   useEffect(() => {
     if (!activeTerm) {
