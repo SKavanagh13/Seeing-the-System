@@ -48,6 +48,8 @@ The challenge is not that the numbers are wrong — it's that they don't tell th
 - What if things don't go according to the budget plan? How are we managing risk?
 - If all forecasts and cost estimates in this budget are correct, will our overall financial position be stronger than last year when we include [GLOSSARY:long_term_obligations]long-term obligations[/GLOSSARY]?
 
+**Further reading:** GFOA — [Achieving a Structurally Balanced Budget](https://www.gfoa.org/materials/achieving-a-structurally-balanced-budget) · NLC — [Making Sense of Municipal Budgets](https://www.nlc.org/article/2019/09/11/making-sense-of-municipal-budgets/)
+
 [/L2]
 
 ---
@@ -88,6 +90,8 @@ A [GLOSSARY:budget]budget[/GLOSSARY] tells you how much is being spent. The stew
 - What is the balance between current services and investment in the future?
 - What [GLOSSARY:capital_assets]capital assets[/GLOSSARY] are we building or buying this year, and do we have a plan to fund the [GLOSSARY:operating_costs]operating costs[/GLOSSARY]?
 - Is there a [GLOSSARY:long_term_capital_planning]long-term capital plan[/GLOSSARY], and how does this year's budget connect to it?
+
+**Further reading:** GFOA — [Performance Measures](https://www.gfoa.org/materials/performance-measures)
 
 [/L2]
 

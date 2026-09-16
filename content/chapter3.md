@@ -29,6 +29,8 @@ Ask what it would look like to hand this community to the next generation in bet
 - Do we have a plan — and a funding source — to catch up on [GLOSSARY:deferred_maintenance]deferred maintenance[/GLOSSARY]?
 - What would it take to hand this community to the next generation in better shape than we found it?
 
+**Further reading:** GFOA — [Sustainable Funding Practices for Defined Benefit Pensions and OPEB](https://www.gfoa.org/materials/sustainable-funding-practices-for-defined-benefit-pensions) · NLC — [Pension Fiscal Health and How to Measure It](https://www.nlc.org/resource/pension-fiscal-health-and-how-to-measure-it/)
+
 [/L2]
 
 ---
@@ -57,6 +59,8 @@ Ask whether your government tracks [GLOSSARY:revenue_per_acre]revenue per acre[/
 - Do we know our [GLOSSARY:revenue_per_acre]revenue per acre[/GLOSSARY] profile — which parts of our community are carrying the fiscal load, and which are being subsidized?
 - When we make land use decisions, do we account for their long-term fiscal implications?
 - How has our revenue per acre changed as the community has grown?
+
+**Further reading:** GFOA — [The Root of Local Government Revenues](https://www.gfoa.org/materials/the-root-of-local-government-revenues)
 
 [VISUAL:Revenue per acre comparison — dense downtown block vs. sprawling subdivision, with revenue and cost figures.]
 
