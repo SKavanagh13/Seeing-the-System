@@ -268,36 +268,6 @@ select {
   background: var(--paper);
 }
 
-.page__eyebrow {
-  margin: 0 0 var(--space-sm);
-  color: var(--clock-annual);
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding-bottom: 14px;
-  border-bottom: 2px solid var(--clock-annual);
-  margin-bottom: 18px;
-}
-
-.page__title {
-  margin: 0 0 var(--space-md);
-  font-family: var(--font-sans);
-  font-size: var(--size-title);
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  color: var(--ink);
-  max-width: 17ch;
-}
-
-.page__description {
-  max-width: 640px;
-  margin: 0;
-  color: var(--body-muted);
-  font-size: 19px;
-  line-height: 1.65;
-}
 
 /* ── Home page ──────────────────────────────────────────────────────────────── */
 
@@ -1909,14 +1879,6 @@ select {
     padding: clamp(1.75rem, 4vw, 3rem);
   }
 
-  .toolkit-page__legend {
-    grid-template-columns: 1fr;
-  }
-
-  .chapter-page__footer {
-    flex-direction: column;
-    align-items: stretch;
-  }
 }
 
 @media (max-width: 720px) {
@@ -1935,8 +1897,6 @@ select {
     padding: var(--space-xl);
   }
 
-  .toolkit-table-card__header,
-  .toolkit-table-card__meta,
   .glossary-drawer__header {
     flex-direction: column;
   }
