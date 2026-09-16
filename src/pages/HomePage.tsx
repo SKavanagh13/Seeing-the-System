@@ -1,6 +1,7 @@
 import { Fragment, type ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 
+import { ClockDial } from '../components/ClockDial'
 import { GlossaryTerm } from '../components/GlossaryTerm'
 import { ChapterRenderer } from '../components/chapter/ChapterRenderer'
 import { getChapterContent } from '../lib/chapterContent'
@@ -12,33 +13,37 @@ import {
 
 export function HomePage() {
   const prologue = getChapterContent('prologue')
-  const contentSegments = buildContentSegments(prologue.nodes)
+  const segments = buildHomeSegments(prologue.nodes)
 
   return (
-    <section className="page home-page">
-      <header className="chapter-page__hero">
-        <h1 className="page__title chapter-page__title">{prologue.title}</h1>
-      </header>
-
-      {renderContentSegments(contentSegments)}
-
-      <div className="home-page__primary-cta-wrap">
-        <NavLink to="/annual-clock" className="home-page__primary-cta">
-          Begin with the Annual Clock {'\u2192'}
-        </NavLink>
+    <article className="page home-page">
+      <div className="home-page__header">
+        <p className="home-page__eyebrow">Prologue / Start here</p>
+        <h1 className="home-page__title">{prologue.title}</h1>
       </div>
-    </section>
-  )
-}
 
-function GoalBlock({ lead, body }: GoalMarkup) {
-  return (
-    <p className="chapter-paragraph home-page__goal-block">
-      <span className="home-page__goal-lead">
-        <InlineContent text={lead} />
-      </span>{' '}
-      <InlineContent text={body} />
-    </p>
+      {renderHomeSegments(segments)}
+
+      <section className="chapter-closing-panel home-page__closing" aria-label="Get started">
+        <div className="chapter-closing-panel__header">
+          <ClockDial clock="annual" size={40} visited={false} />
+          <span className="chapter-closing-panel__label">Clock 01 / The Annual Clock</span>
+        </div>
+        <p className="chapter-closing-panel__primary">
+          Every steward starts with the same question: how is this year really going?
+        </p>
+        <p className="chapter-closing-panel__secondary">
+          The Annual Clock is where the work begins — and the foundation for everything that follows.
+        </p>
+        <NavLink
+          to="/annual-clock"
+          className="chapter-cta"
+          style={{ background: '#1F4E79' }}
+        >
+          Begin with the Annual Clock &#x2192;
+        </NavLink>
+      </section>
+    </article>
   )
 }
 
@@ -47,75 +52,84 @@ type GoalMarkup = {
   body: string
 }
 
-type ContentSegment =
+type VisualMarkup = {
+  caption: string
+}
+
+type HomeSegment =
   | { type: 'chapter'; nodes: ChapterRenderNode[] }
   | { type: 'goal'; goal: GoalMarkup }
+  | { type: 'visual'; visual: VisualMarkup }
 
-function renderContentSegments(segments: ContentSegment[]) {
-  const renderedSegments: ReactNode[] = []
-  let index = 0
+function renderHomeSegments(segments: HomeSegment[]): ReactNode[] {
+  const result: ReactNode[] = []
+  let i = 0
 
-  while (index < segments.length) {
-    const segment = segments[index]
+  while (i < segments.length) {
+    const seg = segments[i]
 
-    if (segment.type === 'chapter') {
-      renderedSegments.push(
-        <ChapterRenderer key={`chapter-${index}`} nodes={segment.nodes} />,
+    if (seg.type === 'visual') {
+      result.push(
+        <ImagePlaceholder key={`visual-${i}`} caption={seg.visual.caption} />,
       )
-      index += 1
+      i += 1
       continue
     }
 
-    const goals: GoalMarkup[] = []
-    let goalIndex = index
-
-    while (goalIndex < segments.length) {
-      const goalSegment = segments[goalIndex]
-
-      if (goalSegment.type !== 'goal') {
-        break
-      }
-
-      goals.push(goalSegment.goal)
-      goalIndex += 1
+    if (seg.type === 'chapter') {
+      result.push(
+        <ChapterRenderer key={`chapter-${i}`} nodes={seg.nodes} />,
+      )
+      i += 1
+      continue
     }
 
-    renderedSegments.push(
-      <div className="home-page__goal-group" key={`goal-group-${index}`}>
-        {goals.map((goal, groupIndex) => (
-          <GoalBlock
-            key={`goal-${goal.lead}-${index + groupIndex}`}
-            lead={goal.lead}
-            body={goal.body}
-          />
+    // Collect consecutive goals into a numbered ledger
+    const goals: GoalMarkup[] = []
+    let j = i
+    while (j < segments.length && segments[j].type === 'goal') {
+      goals.push((segments[j] as { type: 'goal'; goal: GoalMarkup }).goal)
+      j += 1
+    }
+    result.push(
+      <div className="home-page__goal-ledger" key={`goal-ledger-${i}`}>
+        {goals.map((goal, idx) => (
+          <GoalRow key={`goal-${idx}`} number={idx + 1} lead={goal.lead} body={goal.body} />
         ))}
       </div>,
     )
-
-    index = goalIndex
+    i = j
   }
 
-  return renderedSegments
+  return result
 }
 
-function buildContentSegments(nodes: ChapterRenderNode[]): ContentSegment[] {
-  const segments: ContentSegment[] = []
+function buildHomeSegments(nodes: ChapterRenderNode[]): HomeSegment[] {
+  const segments: HomeSegment[] = []
   let currentNodes: ChapterRenderNode[] = []
 
   for (const node of nodes) {
     const goal = getGoalMarkup(node)
-
-    if (!goal) {
-      currentNodes.push(node)
+    if (goal) {
+      if (currentNodes.length > 0) {
+        segments.push({ type: 'chapter', nodes: currentNodes })
+        currentNodes = []
+      }
+      segments.push({ type: 'goal', goal })
       continue
     }
 
-    if (currentNodes.length > 0) {
-      segments.push({ type: 'chapter', nodes: currentNodes })
-      currentNodes = []
+    const visual = getVisualMarkup(node)
+    if (visual) {
+      if (currentNodes.length > 0) {
+        segments.push({ type: 'chapter', nodes: currentNodes })
+        currentNodes = []
+      }
+      segments.push({ type: 'visual', visual })
+      continue
     }
 
-    segments.push({ type: 'goal', goal })
+    currentNodes.push(node)
   }
 
   if (currentNodes.length > 0) {
@@ -126,25 +140,83 @@ function buildContentSegments(nodes: ChapterRenderNode[]): ContentSegment[] {
 }
 
 function getGoalMarkup(node: ChapterRenderNode): GoalMarkup | null {
-  if (node.type !== 'paragraph') {
-    return null
-  }
-
+  if (node.type !== 'paragraph') return null
   const match = node.text.match(/^\[GOAL\]([^|]+)\|(.+)\[\/GOAL\]$/)
+  if (!match) return null
+  return { lead: match[1].trim(), body: match[2].trim() }
+}
 
-  if (!match) {
-    return null
-  }
+function getVisualMarkup(node: ChapterRenderNode): VisualMarkup | null {
+  if (node.type !== 'paragraph') return null
+  const match = node.text.match(/^\[VISUAL:(.+)\]$/)
+  if (!match) return null
+  return { caption: match[1].trim() }
+}
 
-  return {
-    lead: match[1].trim(),
-    body: match[2].trim(),
-  }
+function GoalRow({
+  number,
+  lead,
+  body,
+}: {
+  number: number
+  lead: string
+  body: string
+}) {
+  const num = String(number).padStart(2, '0')
+  return (
+    <div className="home-page__goal-row">
+      <span className="home-page__goal-number">{num}</span>
+      <div className="home-page__goal-content">
+        <span className="home-page__goal-lead">
+          <InlineContent text={lead} />
+        </span>{' '}
+        <InlineContent text={body} />
+      </div>
+    </div>
+  )
+}
+
+function ImagePlaceholder({ caption }: { caption: string }) {
+  return (
+    <figure className="home-page__image-placeholder">
+      <div className="home-page__image-placeholder__box" aria-hidden="true">
+        <svg
+          width="100%"
+          height="100%"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="placeholder-stripes"
+              width="12"
+              height="12"
+              patternUnits="userSpaceOnUse"
+              patternTransform="rotate(45)"
+            >
+              <line
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="12"
+                stroke="#DDE2E6"
+                strokeWidth="4"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="#F7F9FA" />
+          <rect width="100%" height="100%" fill="url(#placeholder-stripes)" />
+        </svg>
+      </div>
+      <figcaption className="home-page__image-caption">
+        IMAGE — {caption}
+      </figcaption>
+    </figure>
+  )
 }
 
 function InlineContent({ text }: { text: string }) {
   const nodes = parseInlineGlossary(text)
-
   return (
     <>
       {nodes.map((node, index) => (
@@ -158,7 +230,6 @@ function InlineNode({ node }: { node: InlineContentNode }) {
   if (node.type === 'text') {
     return <Fragment>{node.text}</Fragment>
   }
-
   return <GlossaryTerm termKey={node.termKey}>{node.displayText}</GlossaryTerm>
 }
 
@@ -166,6 +237,5 @@ function createInlineKey(node: InlineContentNode, index: number) {
   if (node.type === 'text') {
     return `text-${index}-${node.text}`
   }
-
   return `glossary-${index}-${node.termKey}-${node.displayText}`
 }
