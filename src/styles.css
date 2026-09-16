@@ -525,8 +525,7 @@ select {
 }
 
 .toolkit-page__hero,
-.glossary-page__hero,
-.epilogue-page__hero {
+.glossary-page__hero {
   display: grid;
   gap: var(--space-md);
   max-width: 44rem;
@@ -1565,27 +1564,25 @@ select {
 
 .epilogue-page {
   display: grid;
-  gap: clamp(2.25rem, 4vw, 3rem);
-  background: var(--paper);
+  gap: 64px;
 }
 
-.epilogue-page__hero,
-.epilogue-page__content {
-  display: grid;
-  width: min(100%, 720px);
-  margin: 0 auto;
-}
-
-.epilogue-page__hero,
-.epilogue-page__content {
-  gap: var(--space-lg);
+.epilogue-page__header {
+  padding-bottom: 8px;
 }
 
 .epilogue-page__title {
-  max-width: 14ch;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: var(--chapter-title-max-width);
 }
 
-.epilogue-page__narrative {
+.epilogue-page__content {
   display: grid;
   gap: 32px;
 }
@@ -1594,80 +1591,96 @@ select {
   gap: 32px;
 }
 
-.epilogue-page__content .chapter-paragraph,
-.epilogue-page__content .chapter-bullet-list,
-.epilogue-page__content .chapter-exit__text,
-.epilogue-page__content .chapter-visual__description {
-  max-width: 45rem;
+.epilogue-page__content .chapter-paragraph {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--body-color);
+  max-width: 640px;
 }
 
-.epilogue-page__closing,
-.epilogue-page__closing .chapter-renderer {
-  display: grid;
-  gap: 32px;
+/* Stewardship statement: Instrument Serif 34px, navy rules */
+.epilogue-page__stewardship {
+  padding: 28px 0;
+  border-top: 2px solid var(--clock-annual);
+  border-bottom: 2px solid var(--clock-annual);
 }
 
+.epilogue-page__stewardship .chapter-paragraph {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  max-width: 30ch;
+}
+
+/* Three-clock visual: decorative dials, centered */
 .epilogue-page__clocks {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 2.5rem;
+  gap: 48px;
+  padding: 16px 0;
 }
 
-.epilogue-page__clock {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-}
-
-.epilogue-page__clock--annual {
-  background: var(--clock-annual);
-}
-
-.epilogue-page__clock--trajectory {
-  background: var(--clock-trajectory);
-}
-
-.epilogue-page__clock--generational {
-  background: var(--clock-generational);
-}
-
-.epilogue-page__next-steps {
+/* Two centered closing lines */
+.epilogue-page__closing {
   display: grid;
-  gap: 80px;
+  gap: 16px;
+}
+
+.epilogue-page__closing .chapter-paragraph {
+  text-align: center;
+  max-width: none;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--body-color);
+}
+
+/* Handoff block */
+.epilogue-page__handoff {
+  display: grid;
+  gap: 40px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+}
+
+.epilogue-page__handoff-kicker {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clock-annual);
 }
 
 .epilogue-page__transition {
   display: grid;
-  gap: 32px;
-  margin-top: 80px;
+  gap: 20px;
 }
 
 .epilogue-page__transition-paragraph {
-  max-width: 45rem;
   margin: 0;
+  max-width: 640px;
+  font-size: 17.5px;
+  line-height: 1.75;
   color: var(--ink);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.85;
 }
 
 .epilogue-page__cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
-  margin-bottom: 80px;
 }
 
 .epilogue-page__card {
   display: grid;
-  gap: 12px;
+  gap: 10px;
   align-content: start;
-  min-height: 100%;
-  padding: 24px 26px 26px;
+  padding: 28px 28px 32px;
   border: 1px solid var(--rule);
   border-top: 3px solid var(--clock-annual);
-  border-radius: 0;
   background: var(--panel);
   color: var(--ink);
   text-decoration: none;
@@ -1679,18 +1692,7 @@ select {
 .epilogue-page__card:hover,
 .epilogue-page__card:focus-visible {
   background: var(--paper);
-  border-top-color: var(--clock-annual);
-  border-left-color: var(--clock-annual);
-  border-right-color: var(--clock-annual);
-  border-bottom-color: var(--clock-annual);
-}
-
-.epilogue-page__card-icon {
-  color: var(--clock-annual);
-}
-
-.epilogue-page__card--glossary .epilogue-page__card-icon {
-  color: var(--secondary);
+  border-color: var(--clock-annual);
 }
 
 .epilogue-page__card-title {
@@ -1698,12 +1700,13 @@ select {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.25;
+  color: var(--ink);
 }
 
 .epilogue-page__card-description {
-  color: var(--secondary);
   font-size: 15px;
   line-height: 1.6;
+  color: var(--secondary);
 }
 
 @media (max-width: 720px) {
