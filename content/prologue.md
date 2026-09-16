@@ -2,7 +2,7 @@
 
 Imagine you are a newly elected official. You ran because you care about your community — maybe it was the state of the roads, the quality of the schools, the cost of government, or the feeling that things could be better and you were willing to do something about it. You won. And now you're sitting in your first budget briefing.
 
-The finance director is walking you through a document. It is enormous. There are numbers everywhere. You are hearing new words like [GLOSSARY:budget]"funds"[/GLOSSARY], "appropriations", [GLOSSARY:reserves]"reserves"[/GLOSSARY], and more. The budget is balanced, you're told. Things are fine.
+The finance director is walking you through a long document that is full of numbers and terms like [GLOSSARY:budget]"funds"[/GLOSSARY], "appropriations," [GLOSSARY:reserves]"reserves"[/GLOSSARY], and more — and you are told the budget is balanced, that things are fine.
 
 But you find yourself wondering: are they? And more uncomfortably: would you know if they weren't?
 

@@ -303,51 +303,114 @@ select {
 
 .home-page {
   display: grid;
-  gap: 2.4rem;
+  gap: 40px;
 }
 
-.home-page__goal-group {
-  display: grid;
-  gap: 16px;
+.home-page__header {
+  padding-bottom: 8px;
 }
 
-.home-page__goal-block {
+.home-page__eyebrow {
+  display: inline-block;
+  margin: 0 0 22px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clock-annual);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--clock-annual);
+}
+
+.home-page__title {
   margin: 0;
+  font-family: var(--font-serif);
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
   color: var(--ink);
+  max-width: 18ch;
+}
+
+.home-page .chapter-divider {
+  display: none;
+}
+
+.home-page .chapter-paragraph {
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--body-muted);
+}
+
+.home-page .chapter-heading--level-2 {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* Goal ledger */
+
+.home-page__goal-ledger {
+  border-top: 2px solid var(--clock-annual);
+  border-bottom: 2px solid var(--clock-annual);
+  max-width: 640px;
+}
+
+.home-page__goal-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.home-page__goal-row:last-child {
+  border-bottom: none;
+}
+
+.home-page__goal-number {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--clock-annual);
+  line-height: 1.65;
+}
+
+.home-page__goal-content {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--body-color);
 }
 
 .home-page__goal-lead {
   font-weight: 600;
+  color: var(--ink);
 }
 
-.home-page__primary-cta-wrap {
-  display: flex;
-  justify-content: center;
-  margin-top: 64px;
-  margin-bottom: 80px;
+/* Image placeholder */
+
+.home-page__image-placeholder {
+  margin: 0;
+  max-width: 640px;
 }
 
-.home-page__primary-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 22px;
-  border: 0;
-  border-radius: 0;
-  background: var(--clock-annual);
-  color: #FFFFFF;
+.home-page__image-placeholder__box {
+  height: 280px;
+  background: #F7F9FA;
+  overflow: hidden;
+}
+
+.home-page__image-caption {
+  display: block;
+  margin-top: 12px;
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-decoration: none;
-  transition: background-color 150ms ease;
-}
-
-.home-page__primary-cta:hover,
-.home-page__primary-cta:focus-visible {
-  background: var(--clock-annual-hover);
+  color: var(--secondary);
 }
 
 .home-page__actions {
