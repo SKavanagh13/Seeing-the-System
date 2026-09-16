@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import toolkitSource from '../../content/toolkit.json'
 
+import { ClockDial } from '../components/ClockDial'
 import { GlossaryTerm } from '../components/GlossaryTerm'
 
 type Availability = 'green' | 'yellow' | 'red'
@@ -56,67 +57,81 @@ const availabilityCopy: Record<
 export function ToolkitPage() {
   return (
     <section className="page toolkit-page">
-      <header className="toolkit-page__hero">
-        <h1 className="page__title toolkit-page__title">Critical Questions</h1>
-        <p className="page__description toolkit-page__description">
+      <div className="toolkit-page__header">
+        <h1 className="toolkit-page__title">Critical Questions</h1>
+        <p className="toolkit-page__description">
           This is a field guide for better questions: what to ask, what to look
           for, and where a first answer may already be waiting. Each table
           begins with the questions most likely to be within reach. These are
-          the “green” items. You can also see other items, which are not so
-          easily available in all governments. As a steward, you can advocate
-          for your government to produce these.
+          the "green" items — commonly available from your finance staff or
+          annual reports. Yellow and red items require more follow-up but are
+          worth advocating for.
         </p>
-      </header>
+      </div>
 
-      <div className="toolkit-page__legend" aria-label="Availability legend">
-        {availabilityOrder.map((availability) => (
-          <div
-            key={availability}
-            className={`toolkit-legend__item toolkit-legend__item--${availability}`}
-          >
-            <span
-              className={`toolkit-legend__dot toolkit-legend__dot--${availability}`}
-              aria-hidden="true"
-            />
-            <div>
-              <p className="toolkit-legend__label">
-                {availabilityCopy[availability].label}
-              </p>
-              <p className="toolkit-legend__detail">
-                {availabilityCopy[availability].detail}
-              </p>
+      <div className="toolkit-page__legend-band" aria-label="Availability legend">
+        <span className="toolkit-legend-band__kicker">Availability</span>
+        <div className="toolkit-legend-band__items">
+          {availabilityOrder.map((av) => (
+            <div key={av} className="toolkit-legend-band__item">
+              <span
+                className={`toolkit-availability__dot toolkit-availability__dot--${av}`}
+                aria-hidden="true"
+              />
+              <span className={`toolkit-legend-band__label toolkit-legend-band__label--${av}`}>
+                {availabilityCopy[av].label}
+              </span>
+              <span className="toolkit-legend-band__detail">
+                {availabilityCopy[av].detail}
+              </span>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <div className="toolkit-page__sections">
-        {toolkit.sections.map((section) => (
-          <section
-            key={section.clock}
-            className={`toolkit-section toolkit-section--${section.clock}`}
-            aria-labelledby={`toolkit-section-${section.clock}`}
-          >
-            <div className="toolkit-section__header">
-              <h2
-                id={`toolkit-section-${section.clock}`}
-                className="toolkit-section__title"
-              >
-                {section.clockLabel}
-              </h2>
-            </div>
+        {toolkit.sections.map((section) => {
+          const totalRows = section.questions.reduce(
+            (n, q) => n + q.rows.length,
+            0,
+          )
+          return (
+            <section
+              key={section.clock}
+              className={`toolkit-section toolkit-section--${section.clock}`}
+              aria-labelledby={`toolkit-section-${section.clock}`}
+            >
+              <div className="toolkit-section__header">
+                <div className="toolkit-section__header-left">
+                  <ClockDial clock={section.clock} size={42} visited={false} />
+                  <h2
+                    id={`toolkit-section-${section.clock}`}
+                    className="toolkit-section__title"
+                  >
+                    {section.clockLabel}
+                  </h2>
+                </div>
+                <div className="toolkit-section__header-counts">
+                  <span className="toolkit-section__count">
+                    {section.questions.length}{' '}
+                    {section.questions.length === 1 ? 'question' : 'questions'}
+                  </span>
+                  <span className="toolkit-section__count">{totalRows} rows</span>
+                </div>
+              </div>
 
-            <div className="toolkit-section__tables">
-              {section.questions.map((question) => (
-                <ToolkitQuestionTable
-                  key={`${section.clock}-${question.keyQuestion}`}
-                  clock={section.clock}
-                  question={question}
-                />
-              ))}
-            </div>
-          </section>
-        ))}
+              <div className="toolkit-section__tables">
+                {section.questions.map((question) => (
+                  <ToolkitQuestionTable
+                    key={`${section.clock}-${question.keyQuestion}`}
+                    clock={section.clock}
+                    question={question}
+                  />
+                ))}
+              </div>
+            </section>
+          )
+        })}
       </div>
     </section>
   )
@@ -141,13 +156,17 @@ function ToolkitQuestionTable({
 
   return (
     <article className="toolkit-table-card">
-      <div className="toolkit-table-card__header">
-        <div className="toolkit-table-card__heading">
-          <p className="toolkit-table-card__label">Key question</p>
-          <h3 className="toolkit-table-card__title">{question.keyQuestion}</h3>
-        </div>
+      <div className="toolkit-table-card__heading">
+        <p className="toolkit-table-card__label">Key question</p>
+        <h3 className="toolkit-table-card__title">{question.keyQuestion}</h3>
+      </div>
 
-        {hasAdditionalRows ? (
+      {question.note ? (
+        <p className="toolkit-table-card__note">{question.note}</p>
+      ) : null}
+
+      {hasAdditionalRows ? (
+        <div className="toolkit-table-card__toggle-row">
           <button
             type="button"
             className="toolkit-table-card__toggle"
@@ -155,28 +174,21 @@ function ToolkitQuestionTable({
             aria-expanded={showAll}
             aria-controls={tableId}
           >
-            {showAll ? 'Show only green questions' : '+ Show all questions'}
+            {showAll
+              ? `Show green only (${greenRows.length})`
+              : `+ Show all questions (${question.rows.length})`}
           </button>
-        ) : null}
-      </div>
-
-      {question.note ? (
-        <p className="toolkit-table-card__note">{question.note}</p>
+        </div>
       ) : null}
-
-      <div className="toolkit-table-card__meta">
-        <p className="toolkit-table-card__summary">
-          Showing {visibleRows.length} of {question.rows.length} questions
-        </p>
-        {!showAll && hasAdditionalRows ? (
-          <p className="toolkit-table-card__summary">
-            Yellow and red questions stay tucked away until you open them.
-          </p>
-        ) : null}
-      </div>
 
       <div className="toolkit-table-card__table-wrap">
         <table id={tableId} className="toolkit-table">
+          <colgroup>
+            <col style={{ width: '28%' }} />
+            <col style={{ width: '30%' }} />
+            <col style={{ width: '25%' }} />
+            <col style={{ width: '17%' }} />
+          </colgroup>
           <thead>
             <tr>
               <th scope="col">Question</th>
@@ -187,7 +199,14 @@ function ToolkitQuestionTable({
           </thead>
           <tbody>
             {visibleRows.map((row) => (
-              <tr key={`${row.question}-${row.availability}`}>
+              <tr
+                key={`${row.question}-${row.availability}`}
+                className={
+                  row.availability !== 'green'
+                    ? `toolkit-table__row--${row.availability}`
+                    : undefined
+                }
+              >
                 <th scope="row" data-label="Question">
                   <div className="toolkit-table__question">
                     <span>{row.question}</span>
