@@ -1,4 +1,4 @@
-import { stripInlineGlossaryMarkup, type ContentNode } from './contentParser'
+import type { ContentNode } from './contentParser'
 import type { ChapterId } from './chapterContent'
 
 export type CardType = 'challenge' | 'steward' | 'offramp' | 'practice'
@@ -52,7 +52,10 @@ const keyQuestionInventories: Record<
     { cards: ['challenge', 'steward', 'offramp'] },
     { cards: ['challenge', 'steward', 'offramp'] },
   ],
-  'generational-clock': [{ cards: ['challenge', 'steward', 'offramp'] }],
+  'generational-clock': [
+    { cards: ['challenge', 'steward', 'offramp'] },
+    { cards: ['challenge', 'steward', 'offramp'] },
+  ],
 }
 
 export function transformChapterNodes(
@@ -219,16 +222,12 @@ function transformKeyQuestionSection(
 }
 
 function getChallengeContent(
-  chapterId: ChapterId,
+  _chapterId: ChapterId,
   title: string,
   mainNodes: ContentNode[],
   stewardBlockIndex: number,
 ): { openingNodes: ContentNode[]; card: Card } {
   const challengeNodes = mainNodes.slice(0, stewardBlockIndex)
-
-  if (chapterId === 'generational-clock') {
-    return getGenerationalClockChallengeContent(challengeNodes, title)
-  }
 
   const challengeHeadingIndex = findNodeIndex(
     challengeNodes,
@@ -242,43 +241,6 @@ function getChallengeContent(
   return {
     openingNodes: challengeNodes.slice(0, challengeHeadingIndex),
     card: createTitledCard('challenge', challengeNodes.slice(challengeHeadingIndex)),
-  }
-}
-
-function getGenerationalClockChallengeContent(
-  challengeNodes: ContentNode[],
-  sectionTitle: string,
-): { openingNodes: ContentNode[]; card: Card } {
-  const splitIndex = findNodeIndex(
-    challengeNodes,
-    (node) =>
-      node.type === 'paragraph' &&
-      stripInlineGlossaryMarkup(node.text).startsWith(
-        'The compounding nature of these obligations',
-      ),
-  )
-
-  if (splitIndex === -1) {
-    throw new Error(
-      `Missing Chapter 3 challenge split paragraph in key question "${sectionTitle}".`,
-    )
-  }
-
-  const challengeList = challengeNodes[splitIndex + 1]
-
-  if (!challengeList || challengeList.type !== 'bulletList') {
-    throw new Error(
-      `Expected bullet list after Chapter 3 challenge split in key question "${sectionTitle}".`,
-    )
-  }
-
-  return {
-    openingNodes: challengeNodes.slice(0, splitIndex),
-    card: {
-      type: 'challenge',
-      title: "Why it's harder than it looks",
-      children: [challengeNodes[splitIndex], challengeList],
-    },
   }
 }
 

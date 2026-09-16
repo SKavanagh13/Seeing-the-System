@@ -406,18 +406,61 @@ select {
 
 /* ── Chapter page ───────────────────────────────────────────────────────────── */
 
+/* Per-chapter clock color custom property */
+.chapter-page--annual-clock       { --chapter-clock: var(--clock-annual);       --chapter-clock-hover: var(--clock-annual-hover); }
+.chapter-page--trajectory-clock   { --chapter-clock: var(--clock-trajectory);   --chapter-clock-hover: var(--clock-trajectory-hover); }
+.chapter-page--generational-clock { --chapter-clock: var(--clock-generational); --chapter-clock-hover: var(--clock-generational-hover); }
+
 .chapter-page {
+  padding: 72px 90px 80px;
   display: grid;
-  gap: 2.75rem;
+  gap: 0;
 }
 
-.chapter-page__content,
-.chapter-page__footer,
-.chapter-page__closing {
-  width: min(100%, var(--chapter-content-max-width));
+.chapter-page__header {
+  max-width: var(--chapter-content-max-width);
+  margin-bottom: 20px;
 }
 
-.chapter-page__hero,
+.chapter-eyebrow {
+  margin: 0 0 18px;
+  color: var(--chapter-clock, var(--clock-annual));
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--chapter-clock, var(--clock-annual));
+}
+
+.chapter-page__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: var(--chapter-title-max-width);
+}
+
+.chapter-page__intro {
+  max-width: var(--chapter-content-max-width);
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.chapter-page__intro .chapter-paragraph {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--body-muted);
+}
+
+.chapter-page__body {
+  max-width: var(--chapter-content-max-width);
+}
+
 .toolkit-page__hero,
 .glossary-page__hero,
 .epilogue-page__hero {
@@ -426,17 +469,9 @@ select {
   max-width: 44rem;
 }
 
-.chapter-page__hero {
-  max-width: var(--chapter-title-max-width);
-}
-
-.chapter-page__title {
-  max-width: var(--chapter-title-max-width);
-}
-
 .chapter-renderer {
   display: grid;
-  gap: 1.35rem;
+  gap: 22px;
 }
 
 .chapter-paragraph,
@@ -477,17 +512,169 @@ select {
   letter-spacing: 0.01em;
 }
 
+/* Question block */
+
+.chapter-question-block {
+  padding-bottom: 56px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.chapter-question-block:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.chapter-question-eyebrow {
+  margin: 0 0 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--chapter-clock, var(--clock-annual));
+}
+
+.chapter-question-title {
+  margin: 0 0 36px;
+  font-family: var(--font-sans);
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 640px;
+}
+
+.chapter-question-sequence {
+  display: grid;
+  gap: 36px;
+}
+
+.chapter-question-content .chapter-renderer {
+  gap: 22px;
+}
+
+/* Hide subsection dividers between question blocks */
+.chapter-page__body .chapter-divider {
+  display: none;
+}
+
+/* Label chip (challenge / steward / practice headings) */
+
+.chapter-label-chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: var(--label-chip-bg);
+  padding: 5px 10px;
+  margin-bottom: 16px;
+}
+
+/* Always-visible block (challenge, steward, practice) */
+
+.chapter-always-block {
+  max-width: 640px;
+}
+
+.chapter-always-block .chapter-renderer {
+  gap: 22px;
+}
+
+/* Offramp disclosure ("Want to go further?") */
+
+.chapter-offramp {
+  max-width: 640px;
+}
+
+.chapter-offramp__trigger {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 0 0 4px;
+  border: 0;
+  border-bottom: 1px solid var(--gofurther-rule);
+  background: none;
+  color: var(--gofurther-trigger);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.chapter-offramp__trigger:hover {
+  color: var(--gofurther-trigger-hover);
+  border-bottom-color: var(--gofurther-trigger);
+}
+
+.chapter-offramp__glyph {
+  font-style: normal;
+  line-height: 1;
+}
+
+.chapter-offramp__body {
+  margin-top: 22px;
+  padding-left: 22px;
+  border-left: 2px solid var(--gofurther-rule);
+  display: grid;
+  gap: 20px;
+}
+
+.chapter-offramp__sublabel {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gofurther-trigger);
+}
+
+.chapter-offramp__body .chapter-billboard__text {
+  margin-bottom: 0;
+  font-size: 17px;
+}
+
+.chapter-offramp__body .chapter-bullet-list {
+  gap: 12px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.chapter-offramp__body .chapter-bullet-item {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--secondary);
+  padding-left: 0;
+}
+
+.chapter-offramp__body .chapter-bullet-item::marker {
+  content: '';
+}
+
+/* Legacy billboard/exit styles (kept for backward compat) */
+
 .chapter-key-question,
 .chapter-billboard,
 .chapter-visual {
   display: grid;
   gap: 0.7rem;
-  padding: clamp(1.35rem, 2.5vw, 1.85rem);
-  border: 1px solid var(--rule);
-  border-radius: 0;
 }
 
 .chapter-key-question {
+  padding: clamp(1.35rem, 2.5vw, 1.85rem);
+  border: 1px solid var(--rule);
+  border-radius: 0;
   background: var(--paper);
 }
 
@@ -691,40 +878,80 @@ select {
   text-transform: uppercase;
 }
 
-.chapter-page__footer {
+/* Chapter closing panel */
+
+.chapter-closing-panel {
+  display: grid;
+  gap: 16px;
+  background: var(--panel);
+  border-top: 3px solid var(--chapter-clock, var(--clock-annual));
+  padding: 44px 44px 48px;
+  margin-top: 0;
+}
+
+.chapter-closing-panel__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-  padding-top: 1.15rem;
-  border-top: 1px solid var(--rule);
+  gap: 14px;
 }
 
-.chapter-page__closing {
-  display: grid;
-  gap: 24px;
-}
-
-.chapter-page__closing-eyebrow {
-  margin: 0;
-  color: var(--secondary);
+.chapter-closing-panel__label {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--chapter-clock, var(--clock-annual));
+}
+
+.chapter-closing-panel__primary {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.chapter-closing-panel__secondary {
+  margin: 0 0 14px;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--secondary);
+}
+
+/* Generational closing panel: prose paragraph as primary-line weight */
+.chapter-closing-panel .chapter-paragraph {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+/* CTA button (forward-colored — background set via inline style) */
+
+.chapter-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  padding: 14px 22px;
+  border: 0;
+  background: var(--clock-annual); /* fallback; overridden by inline style */
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.08em;
-  line-height: 1;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: filter 150ms ease;
 }
 
-.chapter-page__closing .chapter-renderer {
-  gap: 0;
-}
-
-.chapter-page__closing-action {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
-  margin-bottom: 80px;
+.chapter-cta:hover,
+.chapter-cta:focus-visible {
+  filter: brightness(0.85);
 }
 
 /* ── Glossary page ──────────────────────────────────────────────────────────── */
