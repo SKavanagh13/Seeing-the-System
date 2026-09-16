@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom'
 
+import { ClockDial } from '../components/ClockDial'
 import { ChapterRenderer } from '../components/chapter/ChapterRenderer'
 import {
   getChapterContent,
-  type ChapterId,
+  type ChapterContent,
+  type ChapterClosingMetadata,
 } from '../lib/chapterContent'
+import type { ChapterId } from '../lib/chapterContent'
 
 type ChapterPageProps = {
   chapterId: Exclude<ChapterId, 'prologue'>
@@ -12,68 +15,93 @@ type ChapterPageProps = {
 
 export function ChapterPage({ chapterId }: ChapterPageProps) {
   const chapter = getChapterContent(chapterId)
-  const previousChapter = chapter.previousChapterId
-    ? getChapterContent(chapter.previousChapterId)
-    : null
-  const nextChapter = chapter.nextChapterId
-    ? getChapterContent(chapter.nextChapterId)
-    : null
+
+  // Detect markdown-based closing (Generational only)
   const closingStartIndex = getClosingStartIndex(chapter)
   const hasDedicatedClosing = closingStartIndex !== -1
   const contentEndIndex =
     hasDedicatedClosing && chapter.nodes[closingStartIndex - 1]?.type === 'subsectionDivider'
       ? closingStartIndex - 1
       : closingStartIndex
-  const contentNodes = hasDedicatedClosing
+  const allContentNodes = hasDedicatedClosing
     ? chapter.nodes.slice(0, contentEndIndex)
     : chapter.nodes
   const closingNodes = hasDedicatedClosing
     ? chapter.nodes.slice(closingStartIndex + 1)
     : []
 
-  return (
-    <section className={`page chapter-page chapter-page--${chapter.id}`}>
-      <header className="chapter-page__hero">
-        <h1 className="page__title chapter-page__title">{chapter.title}</h1>
-      </header>
+  // Split intro (before first keyQuestionSection) from body
+  const firstKQIndex = allContentNodes.findIndex((n) => n.type === 'keyQuestionSection')
+  const introNodes = firstKQIndex >= 0 ? allContentNodes.slice(0, firstKQIndex) : []
+  const bodyNodes = firstKQIndex >= 0 ? allContentNodes.slice(firstKQIndex) : allContentNodes
 
-      <div className="chapter-page__content">
-        <ChapterRenderer nodes={contentNodes} />
+  return (
+    <article className={`page chapter-page chapter-page--${chapterId}`}>
+      <div className="chapter-page__header">
+        {chapter.clockNumber && (
+          <p className="chapter-eyebrow">
+            Clock {chapter.clockNumber} / {chapter.eyebrow}
+          </p>
+        )}
+        <h1 className="chapter-page__title">{chapter.title}</h1>
       </div>
 
-      {hasDedicatedClosing ? (
-        <section className="chapter-page__closing" aria-label="Closing">
-          <p className="chapter-page__closing-eyebrow">Closing</p>
-          <ChapterRenderer nodes={closingNodes} />
-          <div className="chapter-page__closing-action">
-            <NavLink to="/epilogue" className="home-page__primary-cta">
-              Continue to the Epilogue {'\u2192'}
-            </NavLink>
-          </div>
-        </section>
-      ) : (
-        <nav className="chapter-page__footer" aria-label="Chapter navigation">
-          {previousChapter ? (
-            <NavLink to={previousChapter.route} className="chapter-page__link">
-              Back to {previousChapter.eyebrow}
-            </NavLink>
-          ) : <span />}
-
-          {nextChapter ? (
-            <NavLink to={nextChapter.route} className="chapter-page__link">
-              Continue to {nextChapter.eyebrow}
-            </NavLink>
-          ) : null}
-        </nav>
+      {introNodes.length > 0 && (
+        <div className="chapter-page__intro">
+          <ChapterRenderer nodes={introNodes} />
+        </div>
       )}
+
+      <div className="chapter-page__body">
+        <ChapterRenderer nodes={bodyNodes} />
+      </div>
+
+      {/* Annual / Trajectory: structured closing panel */}
+      {chapter.closing && (
+        <StructuredClosingPanel closing={chapter.closing} />
+      )}
+
+      {/* Generational: prose closing panel */}
+      {hasDedicatedClosing && (
+        <section className="chapter-closing-panel" aria-label="Closing">
+          <ChapterRenderer nodes={closingNodes} />
+          <NavLink
+            to="/epilogue"
+            className="chapter-cta"
+            style={{ background: '#1F4E79' }}
+          >
+            Continue to the Epilogue &#x2192;
+          </NavLink>
+        </section>
+      )}
+    </article>
+  )
+}
+
+function StructuredClosingPanel({ closing }: { closing: ChapterClosingMetadata }) {
+  return (
+    <section className="chapter-closing-panel" aria-label="Closing">
+      <div className="chapter-closing-panel__header">
+        <ClockDial clock={closing.clockKey} size={40} visited={true} />
+        <span className="chapter-closing-panel__label">{closing.clockLabel}</span>
+      </div>
+      <p className="chapter-closing-panel__primary">{closing.primaryLine}</p>
+      <p className="chapter-closing-panel__secondary">{closing.secondaryLine}</p>
+      <NavLink
+        to={closing.ctaTo}
+        className="chapter-cta"
+        style={{ background: closing.ctaColor }}
+      >
+        {closing.ctaLabel}
+      </NavLink>
     </section>
   )
 }
 
-function getClosingStartIndex(chapter: ReturnType<typeof getChapterContent>) {
+function getClosingStartIndex(chapter: ChapterContent) {
   if (chapter.id !== 'generational-clock') return -1
   const headingIndex = chapter.nodes.findLastIndex(
-    (node) => node.type === 'heading' && node.text === 'Closing'
+    (node) => node.type === 'heading' && node.text === 'Closing',
   )
   if (headingIndex === -1) return -1
   const paragraphNode = chapter.nodes[headingIndex + 1]

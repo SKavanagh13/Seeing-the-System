@@ -91,12 +91,3 @@ A [GLOSSARY:budget]budget[/GLOSSARY] tells you how much is being spent. The stew
 
 [/L2]
 
----
-
-## Chapter closing — the reveal
-
-You leave this chapter genuinely equipped for the annual clock. You know what "balanced" really means, what questions to ask before and during the year, and how annual choices begin to shape long-term outcomes.
-
-But something is nagging. The annual budget is a one-year picture. A government could answer both questions well in any given year and still be drifting toward trouble — because some forces only become visible across years and decades.
-
-The trajectory clock is running. That's where we're headed next.

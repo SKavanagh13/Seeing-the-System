@@ -1,59 +1,64 @@
-# Chapter 3: The Generational Clock
+# Are we building a community that will be stronger for the next generation — or quietly depleting it?
 
-You can read the annual clock now. You can read the trajectory clock. But there is a third dimension that neither of those captures — one that extends beyond your term, your career, and even your lifetime.
-
-The generational clock doesn't ask where you are or where you're headed. It asks what you are choosing to hand forward — to residents, taxpayers, and elected officials who will sit where you are sitting now.
-
-This is the hardest clock of all. And it has one defining question.
+You can read the annual clock now. You can read the trajectory clock. But there's a third dimension — one that extends beyond your term, your career, even your lifetime. The generational clock asks what you're choosing to hand forward — to residents, taxpayers, and elected officials who will sit where you're sitting now.
 
 ---
 
-## Are we building a community that can sustain itself?
+## Are we addressing our compounding obligations — pensions, deferred maintenance — or leaving a larger bill for the next generation?
 
-Every decision made on the annual and trajectory clock eventually lands here. The generational clock is where the consequences of [GLOSSARY:compounding]compounding[/GLOSSARY] decisions become most visible and severe. The steward's question is: are the choices we are making today building a community that will be stronger for the next generation, or quietly depleting the local government they will inherit?
+### Why it's harder than it looks
 
-### The liabilities you already know — now seen in a new light
-
-The issues you saw on the trajectory clock don't disappear here — they deepen. On the generational clock, the frame shifts — from trajectory to legacy. An underfunded [GLOSSARY:postemployment_benefit_obligations]pension obligation[/GLOSSARY] is no longer just a warning sign on a balance sheet. It becomes a choice about what you are handing to the next generation of taxpayers and officials who will sit where you are sitting now.
-
-The [GLOSSARY:compounding]compounding[/GLOSSARY] nature of these obligations makes the generational frame urgent in a way the trajectory clock alone doesn't capture:
-
-- A [GLOSSARY:postemployment_benefit_obligations]pension liability[/GLOSSARY] that is merely concerning today becomes crushing in twenty years if left unaddressed — not because anything dramatic happened, but because of the mathematics of compounding. What was a manageable problem becomes an inheritance. The pension that gets paid down, by contrast, frees up resources for the investments that make a community thrive.
-- [GLOSSARY:deferred_maintenance]Deferred infrastructure maintenance[/GLOSSARY] works the same way — a road that needs resurfacing today will need full reconstruction in future years. The cost doesn't stay the same. It multiplies. Healthy infrastructure makes a community more attractive to residents and businesses and builds the foundation for long-term prosperity.
-- Each generation of elected officials that defers these obligations makes the next generation's job harder. That is the generational choice, made one seemingly reasonable annual decision at a time.
-- Conversely, elected officials who make wise investments in people and place leave behind communities that are stronger, more resilient, and better positioned for whatever comes next.
+On the generational clock, the frame shifts from trajectory to legacy. An underfunded [GLOSSARY:postemployment_benefit_obligations]pension obligation[/GLOSSARY] is no longer just a warning sign on a balance sheet — it's a choice about what you're handing to the next generation. That's because these obligations [GLOSSARY:compounding]compound[/GLOSSARY]: a pension liability that's merely concerning today becomes crushing in twenty years if left unaddressed. Not because something dramatic occurred in a given year, but because the problem slowly multiplied over time. Infrastructure works the same way — a road that needs resurfacing today will need full reconstruction in future years if not maintained. The cost doesn't stay the same. It multiplies.
 
 [L1]
 
-### What every steward needs to know...
+### What every steward needs to know
 
-- Are we addressing our [GLOSSARY:compounding]compounding[/GLOSSARY] obligations — [GLOSSARY:postemployment_benefit_obligations]pensions[/GLOSSARY], [GLOSSARY:deferred_maintenance]deferred maintenance[/GLOSSARY] — or leaving a larger bill for the next generation?
-- What would it look like to hand this community to the next generation in better fiscal shape than we found it?
+Ask whether your government is addressing its [GLOSSARY:compounding]compounding[/GLOSSARY] obligations — [GLOSSARY:postemployment_benefit_obligations]pensions[/GLOSSARY], [GLOSSARY:deferred_maintenance]deferred maintenance[/GLOSSARY].
+
+Ask what it would look like to hand this community to the next generation in better fiscal shape than you found it. Paying down a pension liability frees up resources for the investments that make a community thrive; staying current on infrastructure keeps a community attractive to residents and businesses. Each generation that defers these obligations makes the next one's job harder — and each generation that invests wisely leaves the community stronger.
 
 [/L1]
 
-Addressing these liabilities is critical, but your community's long-term fiscal health will ultimately be determined by forces that never appear in a [GLOSSARY:budget]budget[/GLOSSARY] or a balance sheet.
-
-[BILLBOARD]Your community's long-term fiscal health will ultimately be determined by forces that never appear in a budget or a balance sheet.[/BILLBOARD]
-[EXIT]See what to ask →[/EXIT]
+[BILLBOARD]A pension shortfall compounds like an unpaid credit card balance — the longer it's carried, the faster the interest outpaces the payments.[/BILLBOARD]
+[EXIT]Here's what to ask →[/EXIT]
 
 [L2]
 
-Local governments are fundamentally about place. They exist to make a specific piece of geography work well for the people who live there. And the long-term financial health of that place is inseparable from how that land is used.
+- How has our [GLOSSARY:postemployment_benefit_obligations]pension liability[/GLOSSARY] changed over the past five years?
+- Do we have a plan — and a funding source — to catch up on [GLOSSARY:deferred_maintenance]deferred maintenance[/GLOSSARY]?
+- What would it take to hand this community to the next generation in better shape than we found it?
 
-This is the insight that most elected officials never encounter in a budget briefing: different land uses generate different amounts of [GLOSSARY:revenue_per_acre]revenue per acre[/GLOSSARY] and cost different amounts to serve per acre. A dense mixed-use downtown generates far more revenue per acre than a subdivision at the edge of town. It also typically costs less to serve with roads, utilities, and emergency services, especially when compared to the amount of tax money generated.
+[/L2]
 
-A community that has been growing in ways that cost more to serve than they generate in revenue can look financially healthy for years — even decades — before the math catches up. The annual clock looks fine. The trajectory clock looks manageable. But the generational clock is running, and the land use pattern is slowly undermining the fiscal foundation of the community.
+---
 
-Every government wrestles with [GLOSSARY:postemployment_benefit_obligations]pensions[/GLOSSARY] and infrastructure. But the relationship between land use and long-term fiscal health is specific to your community — to the decisions made about where to grow, how to grow, and what to build. And it connects directly to why most officials ran for office in the first place: they care about their community as a place.
+## Are we developing our community in ways that generate more revenue than the cost to serve development?
 
-### What to ask
+### Why it's harder than it looks
 
-- Are we growing in ways that generate more revenue than they cost to serve — or are we making long-term fiscal commitments that look affordable today and won't be tomorrow?
-- Do we know our [GLOSSARY:revenue_per_acre]revenue per acre[/GLOSSARY] profile — which parts of our community are financially carrying the load?
-- When we make land use decisions, are we accounting for their long-term fiscal implications?
+Local governments are fundamentally about place. They exist to make a specific piece of geography work well for the people who live there. The long-term financial health of that place is inseparable from how the land is used. Different land uses generate different amounts of [GLOSSARY:revenue_per_acre]revenue per acre[/GLOSSARY], and cost different amounts to serve. A dense mixed-use downtown generates far more revenue per acre than a subdivision at the edge of town — and typically costs less to serve with roads, utilities, and emergency services, especially set against the tax revenue it generates. A community that has been growing in ways that cost more to serve than they generate in revenue can look financially healthy for years, even decades, before the math catches up. The annual clock looks fine. The trajectory clock looks manageable. But the generational clock is running, and the land use pattern is slowly undermining the fiscal foundation of the community.
 
-[VISUAL:Revenue per acre comparison — dense downtown block vs sprawling subdivision, with revenue and cost figures. Placeholder for existing GFOA visual.]
+[L1]
+
+### What every steward needs to know
+
+Every government wrestles with [GLOSSARY:postemployment_benefit_obligations]pensions[/GLOSSARY] and infrastructure. But the relationship between land use and long-term fiscal health is specific to your community — to the decisions made about where to grow, how to grow, and what to build. It also connects directly to why most officials ran for office in the first place: they care about their community as a place.
+
+Ask whether your government tracks [GLOSSARY:revenue_per_acre]revenue per acre[/GLOSSARY] — which parts of the community are financially carrying the load, and which are being subsidized. When land use decisions come up, ask whether their long-term fiscal implications are part of the conversation. This doesn't mean every development project has to be "revenue positive." However, enough must be for the community to remain fiscally strong.
+
+[/L1]
+
+[BILLBOARD]Your community's long-term fiscal health will ultimately be determined by forces that never appear in a budget or a balance sheet.[/BILLBOARD]
+[EXIT]Here's what to ask →[/EXIT]
+
+[L2]
+
+- Do we know our [GLOSSARY:revenue_per_acre]revenue per acre[/GLOSSARY] profile — which parts of our community are carrying the fiscal load, and which are being subsidized?
+- When we make land use decisions, do we account for their long-term fiscal implications?
+- How has our revenue per acre changed as the community has grown?
+
+[VISUAL:Revenue per acre comparison — dense downtown block vs. sprawling subdivision, with revenue and cost figures.]
 
 [/L2]
 
