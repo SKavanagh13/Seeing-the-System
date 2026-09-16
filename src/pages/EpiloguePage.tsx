@@ -1,8 +1,8 @@
 import epilogueSource from '../../content/epilogue.md?raw'
 
-import { BookOpen, Search } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
+import { ClockDial } from '../components/ClockDial'
 import { ChapterRenderer } from '../components/chapter/ChapterRenderer'
 import { parseContent, type ContentNode } from '../lib/contentParser'
 
@@ -42,78 +42,59 @@ const closingNodes = epilogueDocument.nodes.slice(closingStartIndex)
 
 export function EpiloguePage() {
   return (
-    <section className="page epilogue-page">
-      <header className="epilogue-page__hero">
-        <h1 className="page__title epilogue-page__title">
-          {epilogueDocument.title}
-        </h1>
-      </header>
+    <article className="page epilogue-page">
+      <div className="epilogue-page__header">
+        <h1 className="epilogue-page__title">{epilogueDocument.title}</h1>
+      </div>
 
       <div className="epilogue-page__content">
-        <div className="epilogue-page__narrative">
-          <ChapterRenderer nodes={introNodes} />
+        <ChapterRenderer nodes={introNodes} />
+
+        <div className="epilogue-page__stewardship">
           <ChapterRenderer nodes={[stewardshipNode]} />
-          <ChapterRenderer nodes={reflectionNodes} />
-
-          <section className="epilogue-page__closing" aria-label="Closing reflection">
-            <ChapterRenderer nodes={closingNodes} />
-
-            <div className="epilogue-page__clocks" aria-hidden="true">
-              <span
-                className="epilogue-page__clock epilogue-page__clock--annual"
-              />
-              <span
-                className="epilogue-page__clock epilogue-page__clock--trajectory"
-              />
-              <span
-                className="epilogue-page__clock epilogue-page__clock--generational"
-              />
-            </div>
-          </section>
         </div>
 
-        <section className="epilogue-page__next-steps" aria-label="Next destinations">
-          <div className="epilogue-page__transition">
-            {transitionParagraphs.map((paragraph) => (
-              <p key={paragraph} className="epilogue-page__transition-paragraph">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+        <ChapterRenderer nodes={reflectionNodes} />
 
-          <nav className="epilogue-page__cards" aria-label="Related links">
-            <NavLink to="/toolkit" className="epilogue-page__card">
-              <Search
-                className="epilogue-page__card-icon"
-                aria-hidden="true"
-                size={28}
-                strokeWidth={1.75}
-              />
-              <span className="epilogue-page__card-title">Critical Questions</span>
-              <span className="epilogue-page__card-description">
-                Organized by clock. Ready to ask.
-              </span>
-            </NavLink>
+        <div className="epilogue-page__clocks" aria-hidden="true">
+          <ClockDial clock="annual" size={76} visited={true} />
+          <ClockDial clock="trajectory" size={76} visited={true} />
+          <ClockDial clock="generational" size={76} visited={true} />
+        </div>
 
-            <NavLink
-              to="/glossary"
-              className="epilogue-page__card epilogue-page__card--glossary"
-            >
-              <BookOpen
-                className="epilogue-page__card-icon"
-                aria-hidden="true"
-                size={28}
-                strokeWidth={1.75}
-              />
-              <span className="epilogue-page__card-title">Glossary</span>
-              <span className="epilogue-page__card-description">
-                Every defined term in one place.
-              </span>
-            </NavLink>
-          </nav>
+        <section className="epilogue-page__closing" aria-label="Closing reflection">
+          <ChapterRenderer nodes={closingNodes} />
         </section>
       </div>
-    </section>
+
+      <section className="epilogue-page__handoff" aria-label="Next destinations">
+        <p className="epilogue-page__handoff-kicker">Where you go from here</p>
+
+        <div className="epilogue-page__transition">
+          {transitionParagraphs.map((paragraph) => (
+            <p key={paragraph} className="epilogue-page__transition-paragraph">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
+        <nav className="epilogue-page__cards" aria-label="Related links">
+          <NavLink to="/toolkit" className="epilogue-page__card">
+            <span className="epilogue-page__card-title">Critical Questions</span>
+            <span className="epilogue-page__card-description">
+              Organized by clock. Ready to ask.
+            </span>
+          </NavLink>
+
+          <NavLink to="/glossary" className="epilogue-page__card">
+            <span className="epilogue-page__card-title">Glossary</span>
+            <span className="epilogue-page__card-description">
+              Every defined term in one place.
+            </span>
+          </NavLink>
+        </nav>
+      </section>
+    </article>
   )
 }
 
