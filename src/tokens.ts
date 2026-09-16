@@ -1,40 +1,47 @@
+// Design tokens — mirrors the CSS custom properties in styles.css.
+// Use CSS variables in component styles; this file is a reference/documentation.
+
 export const tokens = {
   color: {
-    background: '#f6f1e8',
-    surface: '#fffaf2',
-    surfaceStrong: '#f1e5d1',
-    text: '#1f1a17',
-    textMuted: '#5e554d',
-    border: '#d4c2aa',
-    annual: '#1F4E79',
-    trajectory: '#C97D1A',
-    generational: '#0D6B5E',
-    link: '#6d2e1c',
+    // Clock colors (semantic — never collapse to one accent)
+    clockAnnual: '#1F4E79',
+    clockTrajectory: '#C97D1A',
+    clockGenerational: '#0D6B5E',
+    clockAnnualHover: '#163A5A',
+    clockTrajectoryHover: '#A8650F',
+    clockGenerationalHover: '#0A574C',
+    // Neutrals
+    ink: '#14222F',
+    bodyColor: '#24303B',
+    bodyMuted: '#3B4650',
+    secondary: '#4A5560',
+    labelChipBg: '#4E5A66',
+    paper: '#FFFFFF',
+    paperMasthead: '#FFFDF8',
+    panel: '#F2F5F7',
+    rule: '#DDE2E6',
+    ruleWarm: '#E3DFD4',
+    dialInactive: '#C0BCB2',
+    labelInactive: '#8C8A82',
+    mastheadMuted: '#6B6A64',
+    glossaryUnderline: '#8B99A5',
+    termHoverTint: '#EEF3F7',
+    // Status colors (toolkit only)
+    statusGreen: '#2F6F4E',
+    statusYellow: '#8A6A12',
+    statusRed: '#A23B2E',
+    // Go-further purple
+    goFurtherTrigger: '#6B5F7D',
+    goFurtherTriggerHover: '#4A3F58',
+    goFurtherBillboard: '#3F3550',
+    goFurtherRule: '#C9C0D6',
   },
   font: {
-    body: '"Georgia", "Times New Roman", serif',
-    heading: '"Avenir Next", "Segoe UI", sans-serif',
-    mono: '"Consolas", "Courier New", monospace',
+    serif: "'Instrument Serif', Georgia, serif",
+    sans: "'IBM Plex Sans', system-ui, sans-serif",
+    mono: "'IBM Plex Mono', 'Consolas', monospace",
+    work: "'Work Sans', system-ui, sans-serif",
   },
-  size: {
-    body: '17px',
-    keyQuestion: '28px',
-    title: 'clamp(2rem, 3vw, 3rem)',
-  },
-  space: {
-    xs: '0.25rem',
-    sm: '0.5rem',
-    md: '1rem',
-    lg: '1.5rem',
-    xl: '2rem',
-    xxl: '3rem',
-  },
-  radius: {
-    sm: '0.375rem',
-    md: '0.75rem',
-    pill: '999px',
-  },
-  shadow: {
-    soft: '0 14px 40px rgba(74, 55, 34, 0.08)',
-  },
+  // Border radius: 0 everywhere — squareness is load-bearing for the institutional tone
+  radius: 0,
 } as const
