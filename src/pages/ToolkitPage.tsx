@@ -103,7 +103,7 @@ export function ToolkitPage() {
             >
               <div className="toolkit-section__header">
                 <div className="toolkit-section__header-left">
-                  <ClockDial clock={section.clock} size={42} visited={false} />
+                  <ClockDial clock={section.clock} size={42} visited={true} />
                   <h2
                     id={`toolkit-section-${section.clock}`}
                     className="toolkit-section__title"
