@@ -261,6 +261,18 @@ function InlineNode({ node }: { node: InlineContentNode }) {
     return <Fragment>{node.text}</Fragment>
   }
 
+  if (node.type === 'bold') {
+    return <strong>{node.text}</strong>
+  }
+
+  if (node.type === 'link') {
+    return (
+      <a href={node.href} target="_blank" rel="noopener noreferrer">
+        {node.text}
+      </a>
+    )
+  }
+
   return <InlineGlossaryTerm node={node} />
 }
 

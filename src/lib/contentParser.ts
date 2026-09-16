@@ -13,6 +13,8 @@ export type ContentNode =
 
 export type InlineContentNode =
   | { type: 'text'; text: string }
+  | { type: 'bold'; text: string }
+  | { type: 'link'; text: string; href: string }
   | Extract<ContentNode, { type: 'glossaryTerm' }>
 
 type ParseResult = {
@@ -20,8 +22,8 @@ type ParseResult = {
   nextIndex: number
 }
 
-const glossaryPattern =
-  /\[GLOSSARY:([a-z0-9_]+)\]([\s\S]*?)\[\/GLOSSARY\]/g
+const inlinePattern =
+  /\[GLOSSARY:([a-z0-9_]+)\]([\s\S]*?)\[\/GLOSSARY\]|\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)]+)\)/g
 
 export function parseContent(markdown: string): ContentNode[] {
   const lines = normalizeLineEndings(markdown).split('\n')
@@ -37,33 +39,31 @@ export function parseInlineGlossary(text: string): InlineContentNode[] {
   const nodes: InlineContentNode[] = []
   let lastIndex = 0
 
-  glossaryPattern.lastIndex = 0
+  inlinePattern.lastIndex = 0
 
-  for (const match of text.matchAll(glossaryPattern)) {
-    const [fullMatch, termKey, displayText] = match
+  for (const match of text.matchAll(inlinePattern)) {
     const matchIndex = match.index ?? 0
 
     if (matchIndex > lastIndex) {
-      nodes.push({
-        type: 'text',
-        text: text.slice(lastIndex, matchIndex),
-      })
+      nodes.push({ type: 'text', text: text.slice(lastIndex, matchIndex) })
     }
 
-    nodes.push({
-      type: 'glossaryTerm',
-      termKey,
-      displayText,
-    })
+    if (match[1] !== undefined) {
+      // [GLOSSARY:key]text[/GLOSSARY]
+      nodes.push({ type: 'glossaryTerm', termKey: match[1], displayText: match[2] })
+    } else if (match[3] !== undefined) {
+      // **bold**
+      nodes.push({ type: 'bold', text: match[3] })
+    } else if (match[4] !== undefined) {
+      // [text](href)
+      nodes.push({ type: 'link', text: match[4], href: match[5] })
+    }
 
-    lastIndex = matchIndex + fullMatch.length
+    lastIndex = matchIndex + match[0].length
   }
 
   if (lastIndex < text.length) {
-    nodes.push({
-      type: 'text',
-      text: text.slice(lastIndex),
-    })
+    nodes.push({ type: 'text', text: text.slice(lastIndex) })
   }
 
   if (nodes.length === 0) {
@@ -75,7 +75,11 @@ export function parseInlineGlossary(text: string): InlineContentNode[] {
 
 export function stripInlineGlossaryMarkup(text: string): string {
   return parseInlineGlossary(text)
-    .map((node) => (node.type === 'text' ? node.text : node.displayText))
+    .map((node) => {
+      if (node.type === 'text' || node.type === 'bold') return node.text
+      if (node.type === 'link') return node.text
+      return node.displayText
+    })
     .join('')
 }
 

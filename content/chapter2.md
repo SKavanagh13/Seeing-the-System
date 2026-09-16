@@ -29,6 +29,8 @@ Treat net position as one signal among several, not the whole picture. Like all 
 - For any new capital asset in the pipeline, do we know what it will cost to operate and where that money will come from?
 - Is our [GLOSSARY:postemployment_benefit_obligations]pension liability[/GLOSSARY] shrinking or growing this year, and are the assumptions behind it realistic and current?
 
+**Further reading:** GFOA — [Capital Asset Management](https://www.gfoa.org/materials/capital-asset-management)
+
 [/L2]
 
 ---
@@ -58,6 +60,8 @@ Also ask whether reserves are being used to cover ongoing [GLOSSARY:operating_co
 - How have our reserve levels trended over the past several years — steadily healthy, or quietly eroding?
 - When reserves have been drawn down for a legitimate purpose, do we follow a policy to rebuild them?
 
+**Further reading:** GFOA — [Should We Rethink Reserves? A Multimillion-Dollar Question](https://www.gfoa.org/materials/rethinkingreserves)
+
 [/L2]
 
 ---
@@ -85,5 +89,7 @@ Then ask whether that forecast only extends past trends forward, or accounts for
 
 - What are the biggest risks to our long-term financial health, and are they reflected in our forecast?
 - What decisions are we making today that will be hardest to reverse later?
+
+**Further reading:** GFOA — [Long-Term Financial Planning](https://www.gfoa.org/materials/long-term-financial-planning) · NLC — [City Fiscal Conditions](https://www.nlc.org/wp-content/uploads/2025/11/2025-City-Fiscal-Conditions-ReportwebA.pdf)
 
 [/L2]

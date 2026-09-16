@@ -686,6 +686,16 @@ select {
   content: '';
 }
 
+.chapter-offramp__body a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chapter-offramp__body a:hover {
+  text-decoration: none;
+}
+
 /* Legacy billboard/exit styles (kept for backward compat) */
 
 .chapter-key-question,
