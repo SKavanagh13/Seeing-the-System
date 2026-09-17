@@ -31,7 +31,7 @@ export function HomePage() {
           <span className="chapter-closing-panel__label">Clock 01 / The Annual Clock</span>
         </div>
         <p className="chapter-closing-panel__primary">
-          Every steward starts with the same question: how is this year really going?
+          Every steward starts with the same question: how is this year going?
         </p>
         <p className="chapter-closing-panel__secondary">
           The Annual Clock is where the work begins — and the foundation for everything that follows.

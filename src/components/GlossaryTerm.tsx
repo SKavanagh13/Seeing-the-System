@@ -2,7 +2,6 @@ import type { ReactNode } from 'react'
 
 import { getGlossaryEntry } from '../lib/glossary'
 import { useGlossaryDrawer } from '../lib/useGlossaryDrawer'
-import { useSeenTerms } from '../lib/seenTerms'
 
 type GlossaryTermProps = {
   termKey: string
@@ -12,18 +11,9 @@ type GlossaryTermProps = {
 export function GlossaryTerm({ termKey, children }: GlossaryTermProps) {
   const term = getGlossaryEntry(termKey)
   const { openTerm } = useGlossaryDrawer()
-  const seenTerms = useSeenTerms()
 
   if (!term) {
     return <>{children ?? termKey}</>
-  }
-
-  // First-mention-only: render plain text on second+ occurrence
-  if (seenTerms) {
-    if (seenTerms.has(termKey)) {
-      return <>{children ?? term.term}</>
-    }
-    seenTerms.add(termKey)
   }
 
   return (

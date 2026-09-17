@@ -184,6 +184,13 @@
               "whereToFind": "Request from staff",
               "availability": "yellow",
               "glossaryTerms": ["reserves"]
+            },
+            {
+              "question": "Are our reserves sized appropriately given the risks we face?",
+              "whatToLookFor": "A reserve target derived from a risk analysis (revenue volatility, disaster exposure, etc).",
+              "whereToFind": "Request from finance director; ask whether the reserve policy references a risk assessment",
+              "availability": "yellow",
+              "glossaryTerms": ["reserves"]
             }
           ]
         },
@@ -255,7 +262,7 @@
               "question": "Do we have a long-term capital plan?",
               "whatToLookFor": "Plan covering five or more years of capital needs and financing strategy",
               "whereToFind": "Request from staff",
-              "availability": "red",
+              "availability": "yellow",
               "glossaryTerms": ["long_term_capital_planning", "capital_assets"]
             },
             {

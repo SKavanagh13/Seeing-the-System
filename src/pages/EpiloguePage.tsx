@@ -68,7 +68,7 @@ export function EpiloguePage() {
       </div>
 
       <section className="epilogue-page__handoff" aria-label="Next destinations">
-        <p className="epilogue-page__handoff-kicker">Where you go from here</p>
+        <h2 className="epilogue-page__handoff-heading">Where you go from here</h2>
 
         <div className="epilogue-page__transition">
           {transitionParagraphs.map((paragraph) => (

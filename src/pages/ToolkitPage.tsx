@@ -176,7 +176,7 @@ function ToolkitQuestionTable({
           >
             {showAll
               ? `Show green only (${greenRows.length})`
-              : `+ Show all questions (${question.rows.length})`}
+              : `+ Show yellow and red rows (${hiddenRows.length})`}
           </button>
         </div>
       ) : null}

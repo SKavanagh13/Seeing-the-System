@@ -910,7 +910,7 @@ select {
   background: var(--panel);
   border-top: 3px solid var(--chapter-clock, var(--clock-annual));
   padding: 44px 44px 48px;
-  margin-top: 0;
+  margin-top: 56px;
 }
 
 .chapter-closing-panel__header {
@@ -1802,14 +1802,14 @@ select {
   border-top: 1px solid var(--rule);
 }
 
-.epilogue-page__handoff-kicker {
+.epilogue-page__handoff-heading {
   margin: 0;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-family: var(--font-sans);
+  font-size: 29px;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--clock-annual);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
 
 .epilogue-page__transition {
