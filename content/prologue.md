@@ -14,8 +14,6 @@ Your community's financial capacity — and therefore its well-being — is a sh
 
 This guide won't make you a financial expert. That's not your job. It will help you see the system — and ask the questions that keep it healthy.
 
-That's the job.
-
 ---
 
 ## What this guide will give you

@@ -17,7 +17,7 @@ Two questions will guide you through the annual clock.
 
 ---
 
-## Key Question 1: Are we living within our means?
+## Are we living within our means?
 
 A [GLOSSARY:budget]balanced budget[/GLOSSARY] is a legal requirement. But legal balance and financial reality can diverge in ways that matter enormously. The steward's question is sharper: are we truly living within our means?
 
@@ -62,7 +62,7 @@ Ask for [GLOSSARY:budget_to_actual_exception_reporting]budget-to-actual exceptio
 
 ---
 
-## Key Question 2: Where is the money going?
+## Where is the money going?
 
 A [GLOSSARY:budget]budget[/GLOSSARY] tells you how much is being spent. The steward's question goes further: what is that spending actually producing for the community? This is what taxpayers most want to know.
 
