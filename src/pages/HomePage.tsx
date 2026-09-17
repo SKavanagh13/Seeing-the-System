@@ -213,12 +213,23 @@ function InlineNode({ node }: { node: InlineContentNode }) {
   if (node.type === 'text') {
     return <Fragment>{node.text}</Fragment>
   }
+  if (node.type === 'bold') {
+    return <strong>{node.text}</strong>
+  }
+  if (node.type === 'link') {
+    return <a href={node.href} target="_blank" rel="noopener noreferrer">{node.text}</a>
+  }
   return <GlossaryTerm termKey={node.termKey}>{node.displayText}</GlossaryTerm>
 }
 
 function createInlineKey(node: InlineContentNode, index: number) {
-  if (node.type === 'text') {
-    return `text-${index}-${node.text}`
+  switch (node.type) {
+    case 'text':
+    case 'bold':
+      return `${node.type}-${index}-${node.text}`
+    case 'link':
+      return `link-${index}-${node.href}`
+    case 'glossaryTerm':
+      return `glossary-${index}-${node.termKey}-${node.displayText}`
   }
-  return `glossary-${index}-${node.termKey}-${node.displayText}`
 }
