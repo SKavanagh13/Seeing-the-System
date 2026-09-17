@@ -1,7 +1,8 @@
-import { Fragment, type ReactNode } from 'react'
+import { Fragment, useEffect, useState, type ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { ClockDial } from '../components/ClockDial'
+import { StreetSectionSvg } from '../components/StreetSectionSvg'
 import { GlossaryTerm } from '../components/GlossaryTerm'
 import { ChapterRenderer } from '../components/chapter/ChapterRenderer'
 import { getChapterContent } from '../lib/chapterContent'
@@ -70,7 +71,7 @@ function renderHomeSegments(segments: HomeSegment[]): ReactNode[] {
 
     if (seg.type === 'visual') {
       result.push(
-        <ImagePlaceholder key={`visual-${i}`} caption={seg.visual.caption} />,
+        <StreetSectionIllustration key={`visual-${i}`} />,
       )
       i += 1
       continue
@@ -176,41 +177,23 @@ function GoalRow({
   )
 }
 
-function ImagePlaceholder({ caption }: { caption: string }) {
+function StreetSectionIllustration() {
+  const [narrow, setNarrow] = useState(
+    () => window.matchMedia('(max-width: 560px)').matches,
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 560px)')
+    const handler = (e: MediaQueryListEvent) => setNarrow(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+
+  const viewBox = narrow ? '330 150 180 150' : '0 0 640 300'
+
   return (
-    <figure className="home-page__image-placeholder">
-      <div className="home-page__image-placeholder__box" aria-hidden="true">
-        <svg
-          width="100%"
-          height="100%"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="placeholder-stripes"
-              width="12"
-              height="12"
-              patternUnits="userSpaceOnUse"
-              patternTransform="rotate(45)"
-            >
-              <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="12"
-                stroke="#DDE2E6"
-                strokeWidth="4"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="#F7F9FA" />
-          <rect width="100%" height="100%" fill="url(#placeholder-stripes)" />
-        </svg>
-      </div>
-      <figcaption className="home-page__image-caption">
-        IMAGE — {caption}
-      </figcaption>
+    <figure className="street-section">
+      <StreetSectionSvg viewBox={viewBox} />
     </figure>
   )
 }
