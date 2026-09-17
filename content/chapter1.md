@@ -1,4 +1,4 @@
-# Chapter 1: The Annual Clock
+# Is "balanced" the same as healthy?
 
 The finance director has just said "the [GLOSSARY:budget]budget[/GLOSSARY] is balanced." You nod. But something the prologue planted is already stirring: "would I know if it wasn't?"
 
@@ -23,19 +23,19 @@ A [GLOSSARY:budget]balanced budget[/GLOSSARY] is a legal requirement. But legal 
 
 ### Why it's harder than it looks
 
-The challenge is not that the numbers are wrong — it's that they don't tell the whole story. A budget can be legally balanced and [GLOSSARY:structural_balance]structurally unbalanced[/GLOSSARY] at the same time.
-
-- [GLOSSARY:non_recurring_revenues]One-time or non-recurring revenues[/GLOSSARY] — asset sales, legal settlements, grants — can mask a structural gap between [GLOSSARY:ongoing_expenses]ongoing costs[/GLOSSARY] and the [GLOSSARY:ongoing_revenues]revenues[/GLOSSARY] available to pay for them
-- [GLOSSARY:reserves]Reserves[/GLOSSARY] can be drawn down to cover costs they were never meant to cover
-- The realization: the budget may be legally balanced — and still not be sustainable
+The challenge is not that the numbers are wrong — it's that they don't tell the whole story. A budget can be legally balanced and [GLOSSARY:structural_balance]structurally unbalanced[/GLOSSARY] at the same time. [GLOSSARY:non_recurring_revenues]One-time or non-recurring revenues[/GLOSSARY] — asset sales, legal settlements, grants — can mask a structural gap between [GLOSSARY:ongoing_expenses]ongoing costs[/GLOSSARY] and the [GLOSSARY:ongoing_revenues]revenues[/GLOSSARY] available to pay for them, and [GLOSSARY:reserves]reserves[/GLOSSARY] can be drawn down to cover costs they were never meant to cover. The budget may be legally balanced — and still not be sustainable.
 
 [L1]
 
-### What every steward needs to know...
+### What every steward needs to know
 
-- Are we [GLOSSARY:structural_balance]structurally balanced[/GLOSSARY]? That is, are [GLOSSARY:ongoing_expenses]ongoing expenses[/GLOSSARY] being funded by [GLOSSARY:ongoing_revenues]ongoing revenues[/GLOSSARY]?
-- Are critical assumptions on costs realistic? Examples include [GLOSSARY:vacancy_savings]vacancy savings[/GLOSSARY], [GLOSSARY:efficiency_savings]efficiency savings[/GLOSSARY], and employee compensation increases
-- Are we funding less than our full [GLOSSARY:postemployment_benefit_obligations]postemployment benefit obligations[/GLOSSARY], or deferring important repairs on major assets like buildings or roads? This is a small, reasonable choice that quietly [GLOSSARY:compounding]compounds[/GLOSSARY]. The full consequences live in the future — but the mechanism is here, in this year's budget
+Ask whether the budget is [GLOSSARY:structural_balance]structurally balanced[/GLOSSARY] — whether [GLOSSARY:ongoing_expenses]ongoing expenses[/GLOSSARY] are being funded by [GLOSSARY:ongoing_revenues]ongoing revenues[/GLOSSARY], not by one-time money filling a recurring gap.
+
+Check whether critical cost assumptions are realistic. [GLOSSARY:vacancy_savings]Vacancy savings[/GLOSSARY], [GLOSSARY:efficiency_savings]efficiency savings[/GLOSSARY], and employee compensation increases are common places where optimistic assumptions quietly understate next year's costs.
+
+Ask whether the government is funding less than its full [GLOSSARY:postemployment_benefit_obligations]postemployment benefit obligations[/GLOSSARY], or deferring repairs on major assets like buildings and roads. These are small, reasonable-looking choices that quietly [GLOSSARY:compounding]compound[/GLOSSARY] — the consequences live in the future, but the mechanism is here, in this year's budget.
+
+Ask for [GLOSSARY:budget_to_actual_exception_reporting]budget-to-actual exception reporting[/GLOSSARY] that flags areas going out of bounds, along with updated projections for the remaining periods. A budget is a plan, and plans need monitoring — the steward's posture here is not interrogation, but shared accountability for staying on course.
 
 [/L1]
 
@@ -44,21 +44,13 @@ The challenge is not that the numbers are wrong — it's that they don't tell th
 
 [L2]
 
-- What is the risk that we don't realize as much revenue as our [GLOSSARY:revenue_forecast]revenue forecast[/GLOSSARY] predicts? What are the key assumptions behind the forecast?
-- What if things don't go according to the budget plan? How are we managing risk?
-- If all forecasts and cost estimates in this budget are correct, will our overall financial position be stronger than last year when we include [GLOSSARY:long_term_obligations]long-term obligations[/GLOSSARY]?
+- What is the risk that we don't realize as much revenue as our [GLOSSARY:revenue_forecast]revenue forecast[/GLOSSARY] predicts, and what are the key assumptions behind that forecast?
+- Has the government identified its biggest financial risks — a major revenue source, a large capital project, a legal contingency — and does it have a specific plan for each one?
+- If every forecast and cost estimate in this budget turns out correct, will the government's overall financial position — including [GLOSSARY:long_term_obligations]long-term obligations[/GLOSSARY] — actually be stronger than it was last year?
 
 **Further reading:** GFOA — [Achieving a Structurally Balanced Budget](https://www.gfoa.org/materials/achieving-a-structurally-balanced-budget) · NLC — [Making Sense of Municipal Budgets](https://www.nlc.org/article/2019/09/11/making-sense-of-municipal-budgets/)
 
 [/L2]
-
----
-
-### Staying on track during the year
-
-The budget is a plan. Plans need monitoring. The steward's posture is not interrogation, but shared accountability for staying on course.
-
-Ask for [GLOSSARY:budget_to_actual_exception_reporting]budget-to-actual exception reporting[/GLOSSARY] that flags areas going out of bounds and projections for remaining periods.
 
 ---
 
@@ -68,17 +60,17 @@ A [GLOSSARY:budget]budget[/GLOSSARY] tells you how much is being spent. The stew
 
 ### Why it's harder than it looks
 
-- A budget always shows where money is allocated. It does not always show what that money is accomplishing. A police department is an administrative unit. Public safety is the outcome. The steward's job is to connect the two.
-- Current services and future investment often compete for the same dollars — and the tension between them is never fully resolved, only managed
-- [GLOSSARY:long_term_capital_planning]Capital planning[/GLOSSARY] hides a trap: [GLOSSARY:capital_assets]capital assets[/GLOSSARY] are acquired with one kind of money — funds that have been saved up or debt — but operated and maintained with another kind of money — ongoing taxes and fees, the same pool that existing services draw from
+A budget always shows where money is allocated. It does not always show what that money is accomplishing — a police department is an administrative unit, but public safety is the outcome, and the steward's job is to connect the two. Current services and future investment often compete for the same dollars, and the tension between them is never fully resolved, only managed. [GLOSSARY:long_term_capital_planning]Capital planning[/GLOSSARY] hides its own trap: [GLOSSARY:capital_assets]capital assets[/GLOSSARY] are acquired with one kind of money — funds that have been saved up, or debt — but operated and maintained with another kind of money — ongoing taxes and fees, the same pool that existing services draw from.
 
 [L1]
 
-### What every steward needs to know...
+### What every steward needs to know
 
-- What [GLOSSARY:programs_and_services]programs and services[/GLOSSARY] are we actually delivering — not just what [GLOSSARY:departments]departments[/GLOSSARY] and [GLOSSARY:line_items]line-items[/GLOSSARY] are we funding?
-- How does this budget make the community better off?
-- Are we funding the same things we've always provided or are we successfully adapting to new community needs as well?
+Ask what [GLOSSARY:programs_and_services]programs and services[/GLOSSARY] are actually being delivered — not just which [GLOSSARY:departments]departments[/GLOSSARY] or [GLOSSARY:line_items]line items[/GLOSSARY] are funded. The two views of the same budget can look very different.
+
+Ask how this budget makes the community better off. A good finance team can walk through intended outcomes, not just dollar amounts.
+
+Ask whether the government is funding the same things it has always funded, or adapting as community needs change. Neither answer is automatically wrong — but it should be a choice, not an accident.
 
 [/L1]
 
@@ -94,4 +86,3 @@ A [GLOSSARY:budget]budget[/GLOSSARY] tells you how much is being spent. The stew
 **Further reading:** GFOA — [Performance Measures](https://www.gfoa.org/materials/performance-measures)
 
 [/L2]
-
