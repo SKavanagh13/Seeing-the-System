@@ -44,7 +44,7 @@ const keyQuestionInventories: Record<
   readonly KeyQuestionInventory[]
 > = {
   'annual-clock': [
-    { cards: ['challenge', 'steward', 'offramp', 'practice'] },
+    { cards: ['challenge', 'steward', 'offramp'] },
     { cards: ['challenge', 'steward', 'offramp'] },
   ],
   'trajectory-clock': [

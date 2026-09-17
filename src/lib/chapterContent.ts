@@ -68,7 +68,7 @@ const chapterSources: Record<
     nextChapterId: 'trajectory-clock',
     closing: {
       clockKey: 'annual',
-      clockLabel: 'Clock 01 complete',
+      clockLabel: 'The annual clock',
       primaryLine: 'You leave this chapter genuinely equipped for the annual clock — you know what \u201cbalanced\u201d really means, what questions to ask before and during the year, and how annual choices begin to shape long-term outcomes.',
       secondaryLine: 'But the annual budget is a one-year picture. A government could answer both questions well in any given year and still be drifting toward trouble \u2014 because some forces only become visible across years and decades.',
       ctaLabel: 'Continue to the Trajectory Clock \u2192',
