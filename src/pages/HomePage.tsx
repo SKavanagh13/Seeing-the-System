@@ -148,10 +148,8 @@ function getGoalMarkup(node: ChapterRenderNode): GoalMarkup | null {
 }
 
 function getVisualMarkup(node: ChapterRenderNode): VisualMarkup | null {
-  if (node.type !== 'paragraph') return null
-  const match = node.text.match(/^\[VISUAL:(.+)\]$/)
-  if (!match) return null
-  return { caption: match[1].trim() }
+  if (node.type !== 'visual') return null
+  return { caption: node.description }
 }
 
 function GoalRow({
