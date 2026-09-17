@@ -321,9 +321,13 @@ function createSequenceKey(node: KeyQuestionSequenceNode, index: number) {
 }
 
 function createInlineKey(node: InlineContentNode, index: number) {
-  if (node.type === 'text') {
-    return `text-${index}-${node.text}`
+  switch (node.type) {
+    case 'text':
+    case 'bold':
+      return `${node.type}-${index}-${node.text}`
+    case 'link':
+      return `link-${index}-${node.href}`
+    case 'glossaryTerm':
+      return `glossary-${index}-${node.termKey}-${node.displayText}`
   }
-
-  return `glossary-${index}-${node.termKey}-${node.displayText}`
 }
