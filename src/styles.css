@@ -360,27 +360,17 @@ select {
   color: var(--ink);
 }
 
-/* Image placeholder */
+/* Street section illustration */
 
-.home-page__image-placeholder {
+.street-section {
   margin: 0;
-  max-width: 640px;
+  max-width: 960px;
 }
 
-.home-page__image-placeholder__box {
-  height: 280px;
-  background: #F7F9FA;
-  overflow: hidden;
-}
-
-.home-page__image-caption {
+.street-section svg {
   display: block;
-  margin-top: 12px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--secondary);
+  width: 100%;
+  height: auto;
 }
 
 .home-page__actions {
