@@ -1,8 +1,7 @@
-import { Fragment, useEffect, useState, type ReactNode } from 'react'
+import { Fragment, type ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { ClockDial } from '../components/ClockDial'
-import { StreetSectionSvg } from '../components/StreetSectionSvg'
 import { GlossaryTerm } from '../components/GlossaryTerm'
 import { ChapterRenderer } from '../components/chapter/ChapterRenderer'
 import { getChapterContent } from '../lib/chapterContent'
@@ -53,14 +52,9 @@ type GoalMarkup = {
   body: string
 }
 
-type VisualMarkup = {
-  caption: string
-}
-
 type HomeSegment =
   | { type: 'chapter'; nodes: ChapterRenderNode[] }
   | { type: 'goal'; goal: GoalMarkup }
-  | { type: 'visual'; visual: VisualMarkup }
 
 function renderHomeSegments(segments: HomeSegment[]): ReactNode[] {
   const result: ReactNode[] = []
@@ -68,14 +62,6 @@ function renderHomeSegments(segments: HomeSegment[]): ReactNode[] {
 
   while (i < segments.length) {
     const seg = segments[i]
-
-    if (seg.type === 'visual') {
-      result.push(
-        <StreetSectionIllustration key={`visual-${i}`} />,
-      )
-      i += 1
-      continue
-    }
 
     if (seg.type === 'chapter') {
       result.push(
@@ -120,16 +106,6 @@ function buildHomeSegments(nodes: ChapterRenderNode[]): HomeSegment[] {
       continue
     }
 
-    const visual = getVisualMarkup(node)
-    if (visual) {
-      if (currentNodes.length > 0) {
-        segments.push({ type: 'chapter', nodes: currentNodes })
-        currentNodes = []
-      }
-      segments.push({ type: 'visual', visual })
-      continue
-    }
-
     currentNodes.push(node)
   }
 
@@ -145,11 +121,6 @@ function getGoalMarkup(node: ChapterRenderNode): GoalMarkup | null {
   const match = node.text.match(/^\[GOAL\]([^|]+)\|(.+)\[\/GOAL\]$/)
   if (!match) return null
   return { lead: match[1].trim(), body: match[2].trim() }
-}
-
-function getVisualMarkup(node: ChapterRenderNode): VisualMarkup | null {
-  if (node.type !== 'visual') return null
-  return { caption: node.description }
 }
 
 function GoalRow({
@@ -172,27 +143,6 @@ function GoalRow({
         <InlineContent text={body} />
       </div>
     </div>
-  )
-}
-
-function StreetSectionIllustration() {
-  const [narrow, setNarrow] = useState(
-    () => window.matchMedia('(max-width: 560px)').matches,
-  )
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 560px)')
-    const handler = (e: MediaQueryListEvent) => setNarrow(e.matches)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
-
-  const viewBox = narrow ? '330 150 180 150' : '0 0 640 300'
-
-  return (
-    <figure className="street-section">
-      <StreetSectionSvg viewBox={viewBox} />
-    </figure>
   )
 }
 
