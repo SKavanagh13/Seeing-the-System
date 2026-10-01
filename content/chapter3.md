@@ -62,8 +62,6 @@ Ask whether your government tracks [GLOSSARY:revenue_per_acre]revenue per acre[/
 
 **Further reading:** GFOA — [The Root of Local Government Revenues](https://www.gfoa.org/materials/the-root-of-local-government-revenues)
 
-[VISUAL:Revenue per acre comparison — dense downtown block vs. sprawling subdivision, with revenue and cost figures.]
-
 [/L2]
 
 ---

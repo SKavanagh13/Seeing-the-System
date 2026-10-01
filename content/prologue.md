@@ -29,5 +29,3 @@ You don't need to be a public finance expert. That's what your finance director 
 [GOAL]Asking the powerful questions.|You'll have a set of questions that any elected official can ask — in a budget briefing, a mid-year review, or an end-of-year report — that cut through complexity and go straight to what matters for long-term financial stewardship.[/GOAL]
 
 These aren't just things to know. They're things to do — in every budget cycle, for as long as you serve.
-
-[VISUAL:A city as something held in trust — the commons idea. Could be an aerial view of a community, or an abstract illustration of shared stewardship.]

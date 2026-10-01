@@ -13,8 +13,6 @@ Which means the steward's job starts before the budget is adopted — and doesn'
 
 Two questions will guide you through the annual clock.
 
-[VISUAL:The annual clock — a sense of the yearly budget cycle.]
-
 ---
 
 ## Are we living within our means?
