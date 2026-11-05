@@ -61,11 +61,10 @@ export function ToolkitPage() {
         <h1 className="toolkit-page__title">Critical Questions</h1>
         <p className="toolkit-page__description">
           This is a field guide for better questions: what to ask, what to look
-          for, and where a first answer may already be waiting. Each table
-          begins with the questions most likely to be within reach. These are
-          the "green" items — commonly available from your finance staff or
-          annual reports. Yellow and red items require more follow-up but are
-          worth advocating for.
+          for, and where a first answer may already be waiting. Green items
+          are commonly available from your finance staff or annual reports.
+          Yellow and red items require more follow-up but are worth advocating
+          for.
         </p>
       </div>
 
@@ -146,7 +145,7 @@ function ToolkitQuestionTable({
   clock,
   question,
 }: ToolkitQuestionTableProps) {
-  const [showAll, setShowAll] = useState(false)
+  const [showAll, setShowAll] = useState(true)
   const groupedRows = groupRowsByAvailability(question.rows)
   const greenRows = groupedRows.green
   const hiddenRows = [...groupedRows.yellow, ...groupedRows.red]

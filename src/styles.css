@@ -360,19 +360,6 @@ select {
   color: var(--ink);
 }
 
-/* Street section illustration */
-
-.street-section {
-  margin: 0;
-  max-width: 960px;
-}
-
-.street-section svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .home-page__actions {
   display: flex;
   flex-wrap: wrap;

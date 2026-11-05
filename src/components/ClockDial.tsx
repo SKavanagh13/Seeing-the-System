@@ -11,12 +11,12 @@ const CLOCK_COLOR: Record<ClockKey, string> = {
 }
 
 // Hand angles in degrees from 12 o'clock (clockwise positive).
-// Annual: hour at 9:00 (270°). Trajectory: hour at 6:00 (180°). Generational: hour at ~4:00 (120°).
+// The journey advances through the day: Annual at 9am, Trajectory at noon, Generational at 5pm.
 // Minute hand is always at 12:00 (0°) on every clock.
 const HAND_ANGLES: Record<ClockKey, { hour: number; minute: number }> = {
   annual:       { hour: 270, minute: 0 },
-  trajectory:   { hour: 180, minute: 0 },
-  generational: { hour: 120, minute: 0 },
+  trajectory:   { hour: 0, minute: 0 },
+  generational: { hour: 150, minute: 0 },
 }
 
 const CX = 18
